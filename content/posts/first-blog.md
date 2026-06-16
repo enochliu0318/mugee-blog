@@ -1,12 +1,12 @@
-+++ 
++++
 draft = false
 date = 2026-06-16T09:44:38+08:00
 title = "使用arch linux搭建Hugo博客"
 description = ""
 slug = ""
-authors = []
-tags = []
-categories = []
+authors = ["Mugee"]
+tags = ["Linux","Hugo","Website"]
+categories = ["Coding"]
 externalLink = ""
 series = []
 +++
