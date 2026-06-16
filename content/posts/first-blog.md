@@ -37,4 +37,4 @@ series = []
 
 #### 而且这里也可以放图片~~
 
-[myaratar](/images/avatar.jpg)
+![myaratar](/images/avatar.jpg)
