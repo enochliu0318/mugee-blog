@@ -1,14 +1,8 @@
 baseURL = 'https://blog.mugee.uk/'
 languageCode = 'zh-cn'
-title = 'mugee.uk'
-theme = 'hugo-coder'
+title = 'Mugee 的个人空间'
+theme = 'ananke'
 
 [params]
-    author = "Mugee"
-    description = "我的个人博客"
-    keywords = "blog, developer, personal"
-    info = "一个在 Arch Linux 上写代码的极客"
-    avatarurl = "images/avatar.jpg" # 以后可以把你的头像放在 static/images/avatar.jpg
-    
-    # 开启暗黑模式切换
-    colorScheme = "auto"
+  description = "一个在 Arch Linux 上写代码的极客"
+  background_color_class = "bg-black" # 经典的极客黑顶栏
