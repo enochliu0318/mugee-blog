@@ -29,7 +29,7 @@ style = 'github-dark'
   tag = "tags"
   author = "authors"
 
-[[params.posts]]
+[[params.social]]
   name = "posts"
   icon = "fa-solid fa-newspaper fa-2x"
   weight = 2
