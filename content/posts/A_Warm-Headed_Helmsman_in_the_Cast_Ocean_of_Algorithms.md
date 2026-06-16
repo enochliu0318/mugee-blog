@@ -6,7 +6,7 @@ description = "AI 的未来与人类的主体性"
 slug = ""
 authors = ["Mugee"]
 tags = ["AI","Essay"]
-categories = ["Thingking"]
+categories = ["Thinking"]
 externalLink = ""
 series = []
 +++
