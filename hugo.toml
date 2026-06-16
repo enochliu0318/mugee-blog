@@ -29,6 +29,12 @@ style = 'github-dark'
   tag = "tags"
   author = "authors"
 
+[[params.artical]]
+  name = "posts"
+  icon = "fa-solid fa-newspaper fa-2x"
+  weight = 1
+  url = "http://blog.mugee.uk/posts"
+
 [[params.social]]
   name = "Instagram"
   icon = "fa-brands fa-instagram fa-2x"
