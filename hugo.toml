@@ -1,7 +1,7 @@
 baseURL = 'https://blog.mugee.uk/'
 languageCode = 'zh-cn'
 title = 'mugee.uk'
-theme = 'hugo-theme-terminal'
+theme = 'hugo-coder'
 
 [params]
     author = "Mugee"
