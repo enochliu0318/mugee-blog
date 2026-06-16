@@ -41,6 +41,11 @@ style = 'github-dark'
   weight = 1
   url = "https://github.com/enochliu0318"
 
+[[params.social]]
+  name = "Gmail"
+  weight = 1
+  url = 'enochliu0318@gmail.com'
+
 [[menu.main]]
   name = "文章"
   weight = 1
