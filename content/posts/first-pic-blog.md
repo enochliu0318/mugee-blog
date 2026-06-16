@@ -12,4 +12,4 @@ series = []
 +++
 
 我的头像：
-![pic1](/static/images/avatar.jpg)
+![pic1](/images/avatar.jpg)
