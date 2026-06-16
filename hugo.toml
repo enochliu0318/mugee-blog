@@ -45,7 +45,7 @@ style = 'github-dark'
   name = "Gmail"
   icon = "fa-brands fa-google fa-2x"
   weight = 1
-  url = 'enochliu0318@gmail.com'
+  url = 'https://enochliu0318@gmail.com'
 
 [[menu.main]]
   name = "文章"
