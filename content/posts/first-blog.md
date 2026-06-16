@@ -21,10 +21,10 @@ series = []
 #### 搭建过程及方案
 采用Jamstack架构：
 
-1. *本地开发环境*：Arch Linux + Hugo框架 + Vim编辑器
-2. *版本控制与源码管理*：GitHub仓库(mugee-blog)
-3. *云端构建和全球部署*：Cloudflare Pages
-4. *专属域名*：[blog.mugee.uk](http://blog.mugee.uk)
+1. **_本地开发环境_**：Arch Linux + Hugo框架 + Vim编辑器
+2. **_版本控制与源码管理_**：GitHub仓库(mugee-blog)
+3. **_云端构建和全球部署*：Cloudflare Pages
+4. **_专属域名_**：[blog.mugee.uk](http://blog.mugee.uk)
 
 #### 为什么选择这个方案？
 1. **费用较低**：不需要购买昂贵的云服务器，只需要买私人域名。（我为了省事直接在 cf 上直接购买的，费用会稍微比在其他平台高一点点，像我这个域名的话是一年5美金左右。）
