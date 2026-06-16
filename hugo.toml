@@ -31,7 +31,7 @@ style = 'github-dark'
 
 [[params.social]]
   name = "posts"
-  icon = "fa-solid fa-newspaper fa-3x"
+  icon = "fa-regular fa-newspaper fa-2x"
   weight = 1
   url = "http://blog.mugee.uk/posts"
 
