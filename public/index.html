@@ -1,202 +1,280 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta name="generator" content="Hugo 0.163.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  
-    <title>mugee.uk</title>
-  
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
-<meta name="keywords" content="blog, developer, personal" />
-
-  <meta name="robots" content="noodp" />
-
-<link rel="canonical" href="http://localhost:1313/" />
-
-
-
-
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/code.min.c4581949edab7810737609fc5568852bcd908945f14561e366dcd2300a370545.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/syntax.min.a2cc694a9b481f15d41722bffc2cc54eea4c4f74fd9072b0b33253604c22606e.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
-
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
-
-
-
-
-
-
-
-<link rel="shortcut icon" href="http://localhost:1313/favicon.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
-
-
-<meta name="twitter:card" content="summary" />
-
-
-
-<meta property="og:locale" content="en" />
-<meta property="og:type" content="website" />
-<meta property="og:title" content="mugee.uk">
-<meta property="og:description" content="" />
-<meta property="og:url" content="http://localhost:1313/" />
-<meta property="og:site_name" content="mugee.uk" />
-
-  <meta property="og:image" content="http://localhost:1313/og-image.png">
-
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="627">
-
-
-
-
-
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="mugee.uk" />
-
-
-
-
-
-
-
-
-
-</head>
-<body>
-
-
-<div class="container">
-
-  <header class="header">
-  <div class="header__inner">
-    <div class="header__logo">
-      <a href="http://localhost:1313/">
-  <div class="logo">
-    Terminal
-  </div>
-</a>
-
-    </div>
+<html lang="zh-cn">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Mugee 的个人空间</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="一个在 Arch Linux 上写代码的极客">
+    <meta name="generator" content="Hugo 0.163.1">
     
     
-  </div>
-  
-</header>
-
-
-  <div class="content">
     
-  
-  <div class="posts">
+      <meta name="robots" content="noindex, nofollow">
     
     
 
+    <link rel="stylesheet" href="/ananke/css/main.css">
+    <script>
+  (function () {
+    "use strict";
+
     
+    
+    function revealButtons() {
+      var buttons = document.querySelectorAll(".code-block .code-copy[hidden]");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].hidden = false;
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", revealButtons);
+    } else {
+      revealButtons();
+    }
+
+    function flash(button) {
+      var label = button.querySelector(".code-copy-label");
+      var previous = label ? label.textContent : null;
+      button.classList.add("is-copied");
+      if (label) label.textContent = "Copied";
+      window.setTimeout(function () {
+        button.classList.remove("is-copied");
+        if (label && previous !== null) label.textContent = previous;
+      }, 2000);
+    }
+
+    function legacyCopy(text) {
+      var area = document.createElement("textarea");
+      area.value = text;
+      area.setAttribute("readonly", "");
+      area.style.position = "absolute";
+      area.style.left = "-9999px";
+      document.body.appendChild(area);
+      area.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (e) {
+        ok = false;
+      }
+      document.body.removeChild(area);
+      return ok;
+    }
+
+    function copyFrom(button) {
+      var container = button.closest(".code-block");
+      if (!container) return;
+      var pre = container.querySelector("pre");
+      if (!pre) return;
+      var source = pre.querySelector("code") || pre;
+      var text = source.innerText;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(
+          function () { flash(button); },
+          function () { if (legacyCopy(text)) flash(button); }
+        );
+      } else if (legacyCopy(text)) {
+        flash(button);
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var button = event.target.closest(".code-copy");
+      if (button) copyFrom(button);
+    });
+  })();
+</script>
+
     
       
-    
+
     
 
     
-      <article class="post on-list">
-        <h2 class="post-title">
-          <a href="http://localhost:1313/posts/hello-coder/">你好，Coder</a>
-        </h2>
+    
+      <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Mugee 的个人空间" />
+      <link href="/index.xml" rel="feed" type="application/rss+xml" title="Mugee 的个人空间" />
+      
+    
 
-        <div class="post-meta"><time class="post-date">2026-06-16</time></div>
+    
+      <link rel="canonical" href="http://localhost:1313/">
+    
 
+    
+    
+    <meta property="og:url" content="http://localhost:1313/">
+	<meta property="og:site_name" content="Mugee 的个人空间">
+	<meta property="og:title" content="Mugee 的个人空间">
+	<meta property="og:description" content="一个在 Arch Linux 上写代码的极客">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="website">
+
+	<meta itemprop="name" content="Mugee 的个人空间">
+	<meta itemprop="description" content="一个在 Arch Linux 上写代码的极客">
+	<meta itemprop="datePublished" content="2026-06-16T09:44:38+08:00">
+	<meta itemprop="dateModified" content="2026-06-16T09:44:38+08:00">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Mugee 的个人空间">
+	<meta name="twitter:description" content="一个在 Arch Linux 上写代码的极客">
+
+	
+  </head><body class="ma0 avenir bg-near-white development is-home">
+
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l center items-center justify-between">
+    <a href="/" class="f3 fw2 hover-white white-90 dib no-underline">
+      
+        Mugee 的个人空间
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Mugee 的个人空间
+        </h1>
         
+      </div>
+    </div>
+  </header>
 
+<main class="pb7" role="main"><article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy nested-links mid-gray">
+    
+  </article>
+
+  
+  
+  
+  
+  
+
+  
+    <div class="pa3 pa4-ns w-100 w-70-ns center">
+      
+
+      <section class="w-100 mw8">
         
+        
+          <div class="w-100 mb4 relative">
+            
 
-
-        <div class="post-content">
-          
-            <p>欢迎来到mugee的个人博客，这是使用&rsquo;hugo-coder&rsquo;发布的第一篇文章!</p>
-          
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        
+          <time class="f6 db" datetime="2026-06-16T09:44:38+08:00">June 16, 2026</time>
+        
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/first-blog/" class="color-inherit dim link">
+            使用arch linux搭建Hugo博客
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <h3 id="hello-world">hello, world!</h3>
+<p>成功使用 <strong>Hugo</strong> + <strong>GitHub</strong> + <strong>Cloudflare Pages</strong> 搭建起了个人博客 <code>blog.mugee.uk</code>。</p>
+<h4 id="为什么选择这个方案">为什么选择这个方案？</h4>
+<ol>
+<li><strong>完全免费</strong>：不需要购买昂贵的云服务器。</li>
+<li><strong>速度极快</strong>：静态页面配合 Cloudflare CDN 简直飞起。</li>
+<li><strong>极客范儿</strong>：在 Arch 终端里写 Markdown 提交，这才叫优雅。</li>
+</ol>
         </div>
+        <a href="/posts/first-blog/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+      </div>
+    </div>
+  </div>
+</article>
 
-        
-          <div>
-            <a class="read-more button inline" href="/posts/hello-coder/">[]</a>
           </div>
         
-      </article>
-    
+          <div class="w-100 mb4 relative">
+            
 
-    <div class="pagination">
-  <div class="pagination__buttons">
-    
-    
-    
-  </div>
-</div>
-
-  </div>
-
-  </div>
-
-  
-    <footer class="footer">
-  <div class="footer__inner">
-    
-      <div class="copyright">
-        <span>© 2026 Powered by <a href="https://gohugo.io">Hugo</a></span>
-    
-      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l dark-gray no-underline">
+    <div class="flex-column flex-row-ns flex">
+      
+      <div class="blah w-100">
+        
+          <time class="f6 db" datetime="2026-06-16T09:00:54+08:00">June 16, 2026</time>
+        
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/hello-coder/" class="color-inherit dim link">
+            你好，Coder
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          <p>欢迎来到mugee的个人博客，这是使用&rsquo;hugo-coder&rsquo;发布的第一篇文章!</p>
+        </div>
+        <a href="/posts/hello-coder/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
       </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+      </section>
+
+      
+
+    </div>
+  
+</main><footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="http://localhost:1313/" >
+    &copy;  Mugee 的个人空间 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
   </div>
 </footer>
-
-
-
-
-
-
-<script type="text/javascript" src="/bundle.min.js"></script>
-
-
-
-
-
-  
-</div>
-
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

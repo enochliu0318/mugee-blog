@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>mugee.uk</title>
+		<title>Mugee 的个人空间</title>
 		<link>http://localhost:1313/</link>
-		<description>Recent content on mugee.uk</description>
+		<description>Recent content on Mugee 的个人空间</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
 		
 		
 		
 		
-			<lastBuildDate>Tue, 16 Jun 2026 09:00:54 +0800</lastBuildDate>
+			<lastBuildDate>Tue, 16 Jun 2026 09:44:38 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>使用arch linux搭建Hugo博客</title>
+				<link>http://localhost:1313/posts/first-blog/</link>
+				<pubDate>Tue, 16 Jun 2026 09:44:38 +0800</pubDate>
+				<guid>http://localhost:1313/posts/first-blog/</guid>
+				<description>&lt;h3 id=&#34;hello-world&#34;&gt;hello, world!&lt;/h3&gt;&#xA;&lt;p&gt;成功使用 &lt;strong&gt;Hugo&lt;/strong&gt; + &lt;strong&gt;GitHub&lt;/strong&gt; + &lt;strong&gt;Cloudflare Pages&lt;/strong&gt; 搭建起了个人博客 &lt;code&gt;blog.mugee.uk&lt;/code&gt;。&lt;/p&gt;&#xA;&lt;h4 id=&#34;为什么选择这个方案&#34;&gt;为什么选择这个方案？&lt;/h4&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;strong&gt;完全免费&lt;/strong&gt;：不需要购买昂贵的云服务器。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;速度极快&lt;/strong&gt;：静态页面配合 Cloudflare CDN 简直飞起。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;极客范儿&lt;/strong&gt;：在 Arch 终端里写 Markdown 提交，这才叫优雅。&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+			</item>
 			<item>
 				<title>你好，Coder</title>
 				<link>http://localhost:1313/posts/hello-coder/</link>

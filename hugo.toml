@@ -1,7 +1,7 @@
 baseURL = 'https://blog.mugee.uk/'
 languageCode = 'zh-cn'
-title = 'Mugee 的个人空间'
-theme = 'ananke'
+title = "mugee's personal space"
+theme = 'hugo-theme-terminal'
 
 [params]
   description = "一个在 Arch Linux 上写代码的极客"
