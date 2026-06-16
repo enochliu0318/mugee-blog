@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>mugee.uk</title>
+		<link>http://localhost:1313/</link>
+		<description>Recent content on mugee.uk</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Tue, 16 Jun 2026 09:00:54 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>你好，Coder</title>
+				<link>http://localhost:1313/posts/hello-coder/</link>
+				<pubDate>Tue, 16 Jun 2026 09:00:54 +0800</pubDate>
+				<guid>http://localhost:1313/posts/hello-coder/</guid>
+				<description>&lt;p&gt;欢迎来到mugee的个人博客，这是使用&amp;rsquo;hugo-coder&amp;rsquo;发布的第一篇文章!&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
