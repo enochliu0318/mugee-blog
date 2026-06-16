@@ -1,8 +1,43 @@
 baseURL = 'https://blog.mugee.uk/'
 languageCode = 'zh-cn'
-title = "mugee's personal space"
-theme = 'hugo-theme-terminal'
+title = "mugee"
+theme = 'hugo-coder'
+
+[pagination]
+pagerSize = 20
+
+[makeup.highlight]
+style = 'github-dark'
 
 [params]
+  author = "Mugee"
   description = "一个在 Arch Linux 上写代码的极客"
-  background_color_class = "bg-black" # 经典的极客黑顶栏
+  keywords = "blog, developer, personal"
+  since = 2026
+
+  colorScheme = "auto"
+  hidecolorschemetoggle = false
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+[[params.social]]
+  name = "Instagram"
+  icon = "fa-brands fa-instagram fa-2x"
+  weight = 1
+  url = "https://www.instagram.com/enochliu0318"
+
+[[menu.main]]
+  name = "Blog"
+  weight = 1
+  url = "posts/"
+
+[[menu.main]]
+  name = "About"
+  weight = 2
+  url = "about/"
+
+
