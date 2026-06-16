@@ -43,6 +43,7 @@ style = 'github-dark'
 
 [[params.social]]
   name = "Gmail"
+  icon = "fa-brands fa-google fa-2x"
   weight = 1
   url = 'enochliu0318@gmail.com'
 
