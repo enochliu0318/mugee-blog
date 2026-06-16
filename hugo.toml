@@ -29,10 +29,10 @@ style = 'github-dark'
   tag = "tags"
   author = "authors"
 
-[[params.artical]]
+[[params.posts]]
   name = "posts"
   icon = "fa-solid fa-newspaper fa-2x"
-  weight = 1
+  weight = 2
   url = "http://blog.mugee.uk/posts"
 
 [[params.social]]
