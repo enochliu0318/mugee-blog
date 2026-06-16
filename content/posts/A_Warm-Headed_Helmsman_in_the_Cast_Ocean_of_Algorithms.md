@@ -2,7 +2,7 @@
 draft = false
 date = 2026-04-01T18:21:24+08:00
 title = "算法汪洋中有温度的舵手"
-description = "AI 的未来与人类的主体性"
+description = "AI的未来与人类的主体性"
 slug = ""
 authors = ["Mugee"]
 tags = ["AI","Essay"]
@@ -11,6 +11,7 @@ externalLink = ""
 series = []
 +++
 
+#### _ ———AI的未来与人类的主体性 _
 
 ### 引言：数字镜像的投射
 
