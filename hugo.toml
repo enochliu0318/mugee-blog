@@ -2,6 +2,8 @@ baseURL = 'https://blog.mugee.uk/'
 languageCode = 'zh-cn'
 title = "mugee"
 theme = 'hugo-coder'
+hasCJKLanguage = true
+summaryLength = 70
 
 [pagination]
 pagerSize = 20
