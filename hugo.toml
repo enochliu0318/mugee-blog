@@ -6,17 +6,20 @@ theme = 'hugo-coder'
 [pagination]
 pagerSize = 20
 
-[makeup.highlight]
+[markup.highlight]
 style = 'github-dark'
 
 [params]
   author = "Mugee"
-  description = "一个在 Arch Linux 上写代码的极客"
+  info = "一个在 Arch Linux 上写代码的极客"
+  description = "Mugee's personal website"
   keywords = "blog, developer, personal"
   since = 2026
 
   colorScheme = "auto"
   hidecolorschemetoggle = false
+
+  avatarurl = "images/avatar.jpg"
 
 [taxonomies]
   category = "categories"
@@ -30,14 +33,29 @@ style = 'github-dark'
   weight = 1
   url = "https://www.instagram.com/enochliu0318"
 
-[[menu.main]]
-  name = "Blog"
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
   weight = 1
-  url = "posts/"
+  url = "https://github.com/enochliu0318"
 
 [[menu.main]]
-  name = "About"
+  name = "文章"
+  weight = 1
+  url = "/posts/"
+
+[[menu.main]]
+  name = "标签"
   weight = 2
-  url = "about/"
+  url = "/tags/"
+[[menu.main]]
+  name = "分类"
+  weight = 3
+  url = "/categories/"
+
+[[menu.main]]
+  name = "关于"
+  weight = 4
+  url = "/about/"
 
 
