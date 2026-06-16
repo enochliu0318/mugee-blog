@@ -13,10 +13,12 @@ style = 'github-dark'
 
 [params]
   author = "Mugee"
-  info = "一个在 Arch Linux 上写代码的极客"
+  info = "一个在 Arch Linux 上写代码的小极客"
   description = "Mugee's personal website"
   keywords = "blog, developer, personal"
   since = 2026
+
+  commit = "https://github.com/enochliu0318/mugee-blog"
 
   colorScheme = "auto"
   hidecolorschemetoggle = false
