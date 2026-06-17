@@ -17,6 +17,8 @@ series = []
 
 ![messi](/images/post_img/messi.jpg)
 
+_2026世界杯小组赛阿根廷对战阿尔及利亚_
+
 ---
 
 ### 引言
