@@ -6,7 +6,7 @@ description = "Mugee的自我介绍"
 slug = ""
 authors = ["Mugee"]
 tags = ["Essay"]
-categories = ["Living"]
+categories = ["Thinking"]
 externalLink = ""
 series = []
 +++
