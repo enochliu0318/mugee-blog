@@ -45,3 +45,7 @@ series = []
 ### 结语
 
 在当代社会，“快餐式爱情”盛行，人们更容易陷入罗密欧与朱丽叶式的激情漩涡。但真正成熟的爱情，应当如但丁在《新生》中所写，是 “在理性指引下对至善的共同追寻”，更是应当如圣经中所说的“爱是恒久忍耐，又有恩慈；爱是不嫉妒，爱是不自夸，不张狂，不作害羞的事，不求自己的益处，不轻易发怒，不计算人的恶，不喜欢不义，只喜欢真理；凡事包容，凡事相信，凡事盼望，凡事忍耐”，而这爱最终指向的是基督“在我们还在罪人的时候为我们死了”的终极大爱。
+
+---
+_citation:_
+_picture Link:_ <https://www.google.com.hk/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fwww.harpersbazaar.com%2Fuk%2Fculture%2Fa38131468%2Fromeo-juliet-film%2F&ved=0CBYQjRxqFwoTCIj2_Jj7jJUDFQAAAAAdAAAAABA4&opi=89978449>
