@@ -85,11 +85,6 @@ series = []
 
   - 当向团队或同伴提出某个方案或想法时，若观察到其面部出现这种细微的“抿嘴偏下”组合，说明其内心极大概率持否定或怀疑态度，此时应主动询问其顾虑。
 
-### 三、资源共享
-
-1. 获取[《Facial Action Coding System》](https://pan.baidu.com/s/1t4QNfoCdZbha1q08jTkHfA?pwd=facs)面部表情手册，链接: https://pan.baidu.com/s/1t4QNfoCdZbha1q08jTkHfA?pwd=facs 提取码: facs
-2. 获取[视频训练软件](https://pan.baidu.com/s/1jjH4CCYP90xbTxx6ELdmEA?pwd=facs)，链接: https://pan.baidu.com/s/1jjH4CCYP90xbTxx6ELdmEA?pwd=facs 提取码: facs
-
 ---
 
 ### 结语
@@ -107,3 +102,10 @@ series = []
 3. 切忌孤立解读，需结合多模态线索
 
    在生活实战中，微表情必须与上下文语境、说话的语音语调（如迟疑、颤抖）、身体微动作等线索结合使用。微表情应被视为日常沟通中的“探测器”和“共情提示器”，而不是绝对的“测谎仪”。
+
+---
+
+### 资源共享
+
+1. 获取[《Facial Action Coding System》](https://pan.baidu.com/s/1t4QNfoCdZbha1q08jTkHfA?pwd=facs)面部表情手册，链接: https://pan.baidu.com/s/1t4QNfoCdZbha1q08jTkHfA?pwd=facs 提取码: facs
+2. 获取[视频训练软件](https://pan.baidu.com/s/1jjH4CCYP90xbTxx6ELdmEA?pwd=facs)，链接: https://pan.baidu.com/s/1jjH4CCYP90xbTxx6ELdmEA?pwd=facs 提取码: facs
