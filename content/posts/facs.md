@@ -1,7 +1,7 @@
 +++ 
 draft = false
 date = 2026-06-19T11:12:19+08:00
-title = "面部表情编码（FACS）与微表情识别系统研究总结报告"
+title = "面部表情编码（FACS）与基础微表情识别系统研究总结报告"
 description = ""
 slug = ""
 authors = ["Mugee"]
