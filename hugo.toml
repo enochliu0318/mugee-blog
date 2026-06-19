@@ -12,7 +12,7 @@ pagerSize = 20
 style = 'github-dark'
 
 [params]
-  author = "Mugee"
+  author = "MUGEE"
   info = "一个在 Arch Linux 上写代码的小极客"
   description = "Mugee's personal website"
   keywords = "blog, developer, personal"
