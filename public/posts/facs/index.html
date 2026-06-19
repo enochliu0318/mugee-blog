@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  面部表情编码（FACS）与基础微表情识别系统研究总结报告 · MUGEE·首页
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="MUGEE">
+<meta name="description" content="
+
+  引言
+  
+    
+    链接到标题
+  
+
+传统的面部表情编码系统（FACS）由于其数以百计的动作单元（AUs）组合，是普通人难以跨越的学术门槛。然而，由保罗·艾克曼教授基于FACS开发的微表情训练工具（METT）与细微表情训练工具（SETT），为普通大众提供了一条将心理学研究转化为日常应用技能的捷径。本研究旨在总结如何将METT与SETT的核心识别机制普及化，帮助大众在同僚关系、亲密关系和日常社交中，通过观察面部“漏出”的信号，实现更高效的共情、沟通与信任评估。">
+<meta name="keywords" content="blog, developer, personal">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="面部表情编码（FACS）与基础微表情识别系统研究总结报告">
+	<meta name="twitter:description" content="引言 链接到标题 传统的面部表情编码系统（FACS）由于其数以百计的动作单元（AUs）组合，是普通人难以跨越的学术门槛。然而，由保罗·艾克曼教授基于FACS开发的微表情训练工具（METT）与细微表情训练工具（SETT），为普通大众提供了一条将心理学研究转化为日常应用技能的捷径。本研究旨在总结如何将METT与SETT的核心识别机制普及化，帮助大众在同僚关系、亲密关系和日常社交中，通过观察面部“漏出”的信号，实现更高效的共情、沟通与信任评估。">
+
+<meta property="og:url" content="https://blog.mugee.uk/posts/facs/">
+	<meta property="og:site_name" content="MUGEE·首页">
+	<meta property="og:title" content="面部表情编码（FACS）与基础微表情识别系统研究总结报告">
+	<meta property="og:description" content="引言 链接到标题 传统的面部表情编码系统（FACS）由于其数以百计的动作单元（AUs）组合，是普通人难以跨越的学术门槛。然而，由保罗·艾克曼教授基于FACS开发的微表情训练工具（METT）与细微表情训练工具（SETT），为普通大众提供了一条将心理学研究转化为日常应用技能的捷径。本研究旨在总结如何将METT与SETT的核心识别机制普及化，帮助大众在同僚关系、亲密关系和日常社交中，通过观察面部“漏出”的信号，实现更高效的共情、沟通与信任评估。">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-06-19T11:12:19+08:00">
+		<meta property="article:modified_time" content="2026-06-19T11:12:19+08:00">
+		<meta property="article:tag" content="FACS">
+
+
+
+
+<link rel="canonical" href="https://blog.mugee.uk/posts/facs/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.f6b1b35a7b02521b25338f6cf58975f9980a6c12847763fe35a48307758cd1e7.css" integrity="sha256-9rGzWnsCUhslM49s9Yl1&#43;ZgKbBKEd2P&#43;NaSDB3WM0ec=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://blog.mugee.uk/">
+      MUGEE·首页
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">文章</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/categories/">分类</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/authors/">作者</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://blog.mugee.uk/posts/facs/">
+              面部表情编码（FACS）与基础微表情识别系统研究总结报告
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-06-19T11:12:19&#43;08:00">
+                June 19, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：4 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/mugee/">Mugee</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/learning/">Learning</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/facs/">FACS</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <hr>
+<h3 id="引言">
+  引言
+  <a class="heading-link" href="#%e5%bc%95%e8%a8%80">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>传统的面部表情编码系统（FACS）由于其数以百计的动作单元（AUs）组合，是普通人难以跨越的学术门槛。然而，由保罗·艾克曼教授基于FACS开发的微表情训练工具（METT）与细微表情训练工具（SETT），为普通大众提供了一条将心理学研究转化为日常应用技能的捷径。本研究旨在总结如何将METT与SETT的核心识别机制普及化，帮助大众在同僚关系、亲密关系和日常社交中，通过观察面部“漏出”的信号，实现更高效的共情、沟通与信任评估。</p>
+<hr>
+<h3 id="一mett与sett的核心实用概念区分">
+  一、METT与SETT的核心实用概念区分
+  <a class="heading-link" href="#%e4%b8%80mett%e4%b8%8esett%e7%9a%84%e6%a0%b8%e5%bf%83%e5%ae%9e%e7%94%a8%e6%a6%82%e5%bf%b5%e5%8c%ba%e5%88%86">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<ol>
+<li><strong>METT（微表情识别）</strong>：捕捉“压抑与隐瞒”的瞬间</li>
+</ol>
+<ul>
+<li>特点：速度极快，通常在1/5秒甚至1/25秒内闪过。</li>
+<li>实用场景：当对方刻意隐藏真实想法（如撒谎、掩饰不满、强颜欢笑）时，由于不随意肌（平滑肌）的自发运动，真实的感情会在瞬间“漏出”。</li>
+</ul>
+<ol start="2">
+<li><strong>SETT（细微表情识别）</strong>：捕捉“刚萌芽或微弱”的情绪</li>
+</ol>
+<ul>
+<li>特点：速度不一定快，但肌肉运动强度极低、不完整或仅局限于面部的某一个区域（如只有眉毛运动，嘴部不动）。</li>
+<li>实用场景：当对方情绪刚刚开始萌生、或情绪程度很弱时（例如在会议中听到某个方案时隐约有一丝担忧），SETT能帮助我们实现“超前共情”。</li>
+</ul>
+<h3 id="二常用表情解构指南">
+  二、常用表情解构指南
+  <a class="heading-link" href="#%e4%ba%8c%e5%b8%b8%e7%94%a8%e8%a1%a8%e6%83%85%e8%a7%a3%e6%9e%84%e6%8c%87%e5%8d%97">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<ol>
+<li><strong>快乐的真伪识别：杜氏微笑vs.社交假笑（METT/SETT通用）</strong></li>
+</ol>
+<ul>
+<li>
+<p>识别点：必须同时具备大颧肌的拉动（AU12，嘴角上翘）和眼轮匝肌外圈的收紧（AU6，眼角出现鱼尾纹、下眼睑隆起、脸颊提升）。眼轮匝肌属于不随意肌，人们无法控制该肌肉自然运动。</p>
+<p><img src="/images/post_img/facs/AU12AU6+AU12.jpg" alt="AU12,AU6+AU12"></p>
+<p><em>——左为AU12假笑，右为AU6+AU12真笑</em></p>
+</li>
+<li>
+<p>如果看到一个人对你的提议微笑，但其眼睛周围没有任何肌肉收缩（缺乏AU6），这只是一个礼貌的社交面具。如果其间还混杂了下巴的轻微抬起，可能是在掩饰尴尬。</p>
+</li>
+</ul>
+<ol start="2">
+<li><strong>悲伤与担忧的捕捉：眉毛内角的秘密（SETT核心）</strong></li>
+</ol>
+<ul>
+<li>
+<p>识别点：眉毛内角上升并向中间靠拢（AU1+4）。这一动作由极难自主控制的肌肉支配，日常生活中极少有人能伪造出来。</p>
+<p><img src="/images/post_img/facs/AU1.jpg" alt="AU1"></p>
+<p><em>——AU1</em></p>
+<p><img src="/images/post_img/facs/AU4.jpg" alt="AU4"></p>
+<p><em>——AU4</em></p>
+</li>
+<li>
+<p>当家人或朋友说“我没事/我很好”时，如果通过SETT观察到他们额头中央和眉毛内角有瞬间的微微抬起和聚拢，说明他们内心正承受着悲伤、失望或极大的压力，此时及时的关怀能极大地增强彼此的信任感。</p>
+</li>
+</ul>
+<ol start="3">
+<li><strong>负面关系的预警：轻蔑与厌恶的显现（METT核心）</strong></li>
+</ol>
+<ul>
+<li>
+<p>轻蔑：全脸唯一一个非对称性（单边）的动作——单边嘴角收紧并微微向上翘起（非对称的AU12/14组合）。</p>
+<p><img src="/images/post_img/facs/SingleAU14.jpg" alt="单边AU14"></p>
+<p><em>——单边AU14</em></p>
+</li>
+<li>
+<p>厌恶：皱鼻（AU9）或上唇提升（AU10）。</p>
+<p><img src="/images/post_img/facs/AU9.jpg" alt="AU9"></p>
+<p><em>——AU9</em></p>
+<p><img src="/images/post_img/facs/AU10.jpg" alt="AU10"></p>
+<p><em>——AU10</em></p>
+</li>
+<li>
+<p>在沟通中，如果对方一侧嘴角突然闪现出轻微的单边上扬，或者鼻子轻微一皱，表明其内心对当前的话题充满了不屑、反感或不信任。捕获这一微表情能让人及时调整谈话策略，避免冲突升级。</p>
+</li>
+</ul>
+<ol start="4">
+<li><strong>潜在抗拒与不同意的识别（SETT核心）</strong></li>
+</ol>
+<ul>
+<li>
+<p>识别点：嘴角向下拉动（AU15）同时伴随下巴尖向上推（AU17）。</p>
+<p><img src="/images/post_img/facs/AU15.jpg" alt="AU15"></p>
+<p><em>——AU15</em></p>
+<p><img src="/images/post_img/facs/AU17.jpg" alt="AU17"></p>
+<p><em>——AU17</em></p>
+</li>
+<li>
+<p>当向团队或同伴提出某个方案或想法时，若观察到其面部出现这种细微的“抿嘴偏下”组合，说明其内心极大概率持否定或怀疑态度，此时应主动询问其顾虑。</p>
+</li>
+</ul>
+<hr>
+<h3 id="结语">
+  结语
+  <a class="heading-link" href="#%e7%bb%93%e8%af%ad">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>为了确保这套系统在日常应用中不被误用，本研究特别指出了三个落地实施的关键原则：</p>
+<ol>
+<li>
+<p>确立“面部生理基线”的重要性：</p>
+<p>不同的个体具有不同的常态脸。有些人的常态眉毛生理结构就是内角偏高的，有些人常态下嘴角就是下垂的。普通大众在使用METT/SETT时，必须先观察对方在放松、说真话状态下的“基线形态”，只有偏离基线的瞬间变化才具有情绪诊断价值。</p>
+</li>
+<li>
+<p>防范“奥赛罗错误（Othello Error）”</p>
+<p>微表情只能告诉我们对方“当下正处于什么情绪”，但无法直接告诉你情绪背后的原因。例如，当你询问某人是否拿了桌上的东西时，对方脸上闪过一瞬间的“恐惧”。这并不意味着他就是小偷，他也可能是因为害怕被你冤枉而感到恐惧。</p>
+</li>
+<li>
+<p>切忌孤立解读，需结合多模态线索</p>
+<p>在生活实战中，微表情必须与上下文语境、说话的语音语调（如迟疑、颤抖）、身体微动作等线索结合使用。微表情应被视为日常沟通中的“探测器”和“共情提示器”，而不是绝对的“测谎仪”。</p>
+</li>
+</ol>
+<hr>
+<h3 id="资源共享">
+  资源共享
+  <a class="heading-link" href="#%e8%b5%84%e6%ba%90%e5%85%b1%e4%ba%ab">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<ol>
+<li>获取<a href="https://pan.baidu.com/s/1t4QNfoCdZbha1q08jTkHfA?pwd=facs"  class="external-link" target="_blank" rel="noopener">《Facial Action Coding System》</a>面部表情手册，链接: <a href="https://pan.baidu.com/s/1t4QNfoCdZbha1q08jTkHfA?pwd=facs"  class="external-link" target="_blank" rel="noopener">https://pan.baidu.com/s/1t4QNfoCdZbha1q08jTkHfA?pwd=facs</a> 提取码: facs</li>
+<li>获取<a href="https://pan.baidu.com/s/1jjH4CCYP90xbTxx6ELdmEA?pwd=facs"  class="external-link" target="_blank" rel="noopener">视频训练软件</a>，链接: <a href="https://pan.baidu.com/s/1jjH4CCYP90xbTxx6ELdmEA?pwd=facs"  class="external-link" target="_blank" rel="noopener">https://pan.baidu.com/s/1jjH4CCYP90xbTxx6ELdmEA?pwd=facs</a> 提取码: facs</li>
+</ol>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     MUGEE 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

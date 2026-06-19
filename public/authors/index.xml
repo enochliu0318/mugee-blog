@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Authors on MUGEE·首页</title>
+		<link>https://blog.mugee.uk/authors/</link>
+		<description>Recent content in Authors on MUGEE·首页</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Fri, 19 Jun 2026 11:12:19 +0800</lastBuildDate>
+		
+			<atom:link href="https://blog.mugee.uk/authors/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Mugee</title>
+				<link>https://blog.mugee.uk/authors/mugee/</link>
+				<pubDate>Fri, 19 Jun 2026 11:12:19 +0800</pubDate>
+				<guid>https://blog.mugee.uk/authors/mugee/</guid>
+				<description></description>
+			</item>
+	</channel>
+</rss>

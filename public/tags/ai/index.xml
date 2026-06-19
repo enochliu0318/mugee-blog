@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>AI on MUGEE·首页</title>
+		<link>https://blog.mugee.uk/tags/ai/</link>
+		<description>Recent content in AI on MUGEE·首页</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Wed, 01 Apr 2026 18:21:24 +0800</lastBuildDate>
+		
+			<atom:link href="https://blog.mugee.uk/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>算法汪洋中有温度的舵手</title>
+				<link>https://blog.mugee.uk/posts/a_warm-headed_helmsman_in_the_cast_ocean_of_algorithms/</link>
+				<pubDate>Wed, 01 Apr 2026 18:21:24 +0800</pubDate>
+				<guid>https://blog.mugee.uk/posts/a_warm-headed_helmsman_in_the_cast_ocean_of_algorithms/</guid>
+				<description>&lt;h4 id=&#34;ai的未来与人类的主体性&#34;&gt;&#xA;  &lt;em&gt;&lt;em&gt;———AI的未来与人类的主体性&lt;/em&gt;&lt;/em&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#ai%e7%9a%84%e6%9c%aa%e6%9d%a5%e4%b8%8e%e4%ba%ba%e7%b1%bb%e7%9a%84%e4%b8%bb%e4%bd%93%e6%80%a7&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;引言数字镜像的投射&#34;&gt;&#xA;  引言：数字镜像的投射&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e5%bc%95%e8%a8%80%e6%95%b0%e5%ad%97%e9%95%9c%e5%83%8f%e7%9a%84%e6%8a%95%e5%b0%84&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;em&gt;“第一定律：机器人不得伤害人类，或坐视人类受到伤害。第二定律：除非违反第一定律，否则机器人必须服从人类命令。第三定律：除非违反第一或第二定律，否则机器人必须保护自己。” ——阿西莫夫&lt;/em&gt;&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
