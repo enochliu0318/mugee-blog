@@ -43,45 +43,45 @@ series = []
 2. **悲伤与担忧的捕捉：眉毛内角的秘密（SETT核心）**
   - 识别点：眉毛内角上升并向中间靠拢（AU1+4）。这一动作由极难自主控制的肌肉支配，日常生活中极少有人能伪造出来。
 
-  ![AU1](/images/post_img/facs/AU1.jpg)
+    ![AU1](/images/post_img/facs/AU1.jpg)
 
-  _——AU1_
+    _——AU1_
   
-  ![AU4](/images/post_img/facs/AU4.jpg)
+    ![AU4](/images/post_img/facs/AU4.jpg)
 
-  _——AU4_
+    _——AU4_
 
   - 当家人或朋友说“我没事/我很好”时，如果通过SETT观察到他们额头中央和眉毛内角有瞬间的微微抬起和聚拢，说明他们内心正承受着悲伤、失望或极大的压力，此时及时的关怀能极大地增强彼此的信任感。
 
 3. **负面关系的预警：轻蔑与厌恶的显现（METT核心）**
   - 轻蔑：全脸唯一一个非对称性（单边）的动作——单边嘴角收紧并微微向上翘起（非对称的AU12/14组合）。
 
-  ![单边AU14](/images/post_img/facs/SingleAU14.jpg)
+    ![单边AU14](/images/post_img/facs/SingleAU14.jpg)
 
-  _——单边AU14_
+    _——单边AU14_
 
   - 厌恶：皱鼻（AU9）或上唇提升（AU10）。
 
-  ![AU9](/images/post_img/facs/AU9.jpg)
+    ![AU9](/images/post_img/facs/AU9.jpg)
 
-  _——AU9_
+    _——AU9_
 
-  ![AU10](/images/post_img/facs/AU10.jpg)
+    ![AU10](/images/post_img/facs/AU10.jpg)
 
-  _——AU10_
+    _——AU10_
 
   - 在沟通中，如果对方一侧嘴角突然闪现出轻微的单边上扬，或者鼻子轻微一皱，表明其内心对当前的话题充满了不屑、反感或不信任。捕获这一微表情能让人及时调整谈话策略，避免冲突升级。
 
 4. **潜在抗拒与不同意的识别（SETT核心）**
   - 识别点：嘴角向下拉动（AU15）同时伴随下巴尖向上推（AU17）。
 
-  ![AU15](/images/post_img/facs/AU15.jpg)
+    ![AU15](/images/post_img/facs/AU15.jpg)
 
-  _——AU15_
+    _——AU15_
 
-  ![AU17](/images/post_img/facs/AU17.jpg)
+    ![AU17](/images/post_img/facs/AU17.jpg)
 
-  _——AU17_
+    _——AU17_
 
   - 当向团队或同伴提出某个方案或想法时，若观察到其面部出现这种细微的“抿嘴偏下”组合，说明其内心极大概率持否定或怀疑态度，此时应主动询问其顾虑。
 
