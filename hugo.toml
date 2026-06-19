@@ -58,6 +58,7 @@ style = 'github-dark'
   name = "标签"
   weight = 2
   url = "/tags/"
+
 [[menu.main]]
   name = "分类"
   weight = 3
@@ -67,7 +68,6 @@ style = 'github-dark'
   name = "作者"
   weight = 4
   url = "/authors/"
-
 
 [[menu.main]]
   name = "关于"
