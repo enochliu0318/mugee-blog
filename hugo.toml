@@ -68,4 +68,9 @@ style = 'github-dark'
   weight = 4
   url = "/about/"
 
+[[menu.main]]
+  name = "作者"
+  weight = 5
+  url = "/author/"
+
 
