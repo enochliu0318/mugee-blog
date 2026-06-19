@@ -80,7 +80,7 @@ summaryLength = 50
   url = "/about/"
 
 [[menu.main]]
-  name = "🔎"
+  name = "搜索🔎"
   weight = 6
   url = "/search/"
 
