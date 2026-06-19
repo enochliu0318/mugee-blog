@@ -80,4 +80,4 @@ _(以Windows系统示例)_
 
 #### 1.3.2 下载JDK
 
-官网下载链接：https://www.oracle.com/java/technologies/downloads/
+官网下载链接：<https://www.oracle.com/java/technologies/downloads/>
