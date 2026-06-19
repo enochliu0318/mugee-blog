@@ -81,3 +81,33 @@ _(以Windows系统示例)_
 #### 1.3.2 下载JDK
 
 官网下载链接：<https://www.oracle.com/java/technologies/downloads/>
+
+下载成功后的JDK是一个可执行文件
+
+### 1.4 开发第一个Java应用程序
+
+开发Java程序需经过三个步骤：
+
+1. 创建源文件
+2. 将源文件编译成`.class`文件
+3. 运行程序
+
+#### 1.4.1 创建源文件
+
+1. 打开记事本，在新打开的文本文档中输入代码。
+```
+//使用Java输出"hello world!"
+public class HelloJava {
+    public static void main (String[] args) {
+        //输出
+        System.out.println("hello world!");
+    }
+}
+```
+
+2. 将代码保存到以`HelloJava.java`命名的文件中。在记事本中，选择【文件】->【另存为】。
+
+  1. 使用【保存】组合框，指定目录。
+  2. 在【文件名】文本框中输入`HelloJava.java`。
+  3. 在【保存类型】下拉列表框中，选择文本文档。
+  4. 在【编码】下拉列表框中，保持编码`ANSI`。
