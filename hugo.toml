@@ -1,6 +1,6 @@
 baseURL = 'https://blog.mugee.uk/'
 languageCode = 'zh-cn'
-title = "MUGEE首页"
+title = "MUGEE·首页"
 theme = 'hugo-coder'
 hasCJKLanguage = true
 summaryLength = 50
