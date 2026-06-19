@@ -5,11 +5,14 @@ theme = 'hugo-coder'
 hasCJKLanguage = true
 summaryLength = 50
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [pagination]
-pagerSize = 20
+  pagerSize = 20
 
 [markup.highlight]
-style = 'github-dark'
+  style = 'github-dark'
 
 [params]
   author = "MUGEE"
@@ -24,6 +27,8 @@ style = 'github-dark'
   hidecolorschemetoggle = false
 
   avatarurl = "images/avatar.jpg"
+
+  enableSearch = true 
 
 [taxonomies]
   category = "categories"
