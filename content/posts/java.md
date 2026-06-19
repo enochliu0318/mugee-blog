@@ -96,13 +96,13 @@ _(以Windows系统示例)_
 
 1. 打开记事本，在新打开的文本文档中输入代码。
 ```
-//使用Java输出"hello world!"
-public class HelloJava {
-    public static void main (String[] args) {
-        //输出
-        System.out.println("hello world!");
+  //使用Java输出"hello world!"
+    public class HelloJava {
+        public static void main (String[] args) {
+            //输出
+            System.out.println("hello world!");
+        }
     }
-}
 ```
 
 2. 将代码保存到以`HelloJava.java`命名的文件中。在记事本中，选择【文件】->【另存为】。
