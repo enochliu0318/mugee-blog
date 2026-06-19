@@ -83,3 +83,8 @@ summaryLength = 50
   name = "搜索"
   weight = 6
   url = "/search/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true # 允许在 markdown 中直接写原生 HTML 标签
