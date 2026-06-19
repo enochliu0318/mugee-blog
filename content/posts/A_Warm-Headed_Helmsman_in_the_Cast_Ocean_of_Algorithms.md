@@ -3,6 +3,7 @@ draft = false
 date = 2026-04-01T18:21:24+08:00
 title = "算法汪洋中有温度的舵手"
 description = "AI的未来与人类的主体性"
+toc = true
 slug = ""
 authors = ["Mugee"]
 tags = ["AI"]
