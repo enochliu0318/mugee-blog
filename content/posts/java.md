@@ -1,7 +1,7 @@
 +++ 
 draft = false
 date = 2026-06-20T05:40:47+08:00
-title = "Java入门"
+title = "Java入门（持续更新）"
 description = ""
 toc = true
 slug = ""
