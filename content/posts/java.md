@@ -172,10 +172,12 @@ public class HelloJava {
 
 2. **HelloJava**类定义
   
+---
 ```
 public class HelloJava {
 
 }
 ```
+---
 
 有关类的具体讲解说明见后续。
