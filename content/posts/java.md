@@ -246,3 +246,53 @@ final float NUM = 2.141F; //声明一个float类型常量，并初始化为2.14
 final int INT_NUM = 22; //声明一个整型常量，并初始化为22
 ```
 ---
+
+⚠️注意：初始化后，不能再在程序中对常量重新赋值，不能改变常量的值。
+
+#### 2.2.2 变量的概念及变量声明
+
+在程序运行期间**可以被改变值的量**被称为**变量**。变量是在运行过程中内存中能够存储信息的地方。
+
+声明常量的语法格式：
+
+---
+```
+变量类型 变量标识符;
+
+String teacherName; //声明一个String类型的变量，没有初始化
+int teacherAge;  //声明一个int类型的变量，没有初始化
+```
+---
+
+### 2.3 基本数据类型
+
+不同数据类型在内存中占据的空间大小不同。
+
+#### 2.3.1 原始数据类型和构造数据类型
+
+Java的数据类型可以分为**原始数据类型**（也叫**基本数据类型**）和**构造数据类型**。
+
+```mermaid
+graph TD
+    Root[Java 数据类型] --> Basic[基本数据类型 Base Types]
+    Root --> Ref[引用数据类型 Reference Types]
+
+    Basic --> Numeric[数值型]
+    Basic --> Character[字符型: char]
+    Basic --> Boolean[布尔型: boolean]
+
+    Numeric --> Integral[整数类型]
+    Numeric --> Floating[浮点类型]
+
+    Integral --> byte[byte]
+    Integral --> short[short]
+    Integral --> int[int]
+    Integral --> long[long]
+
+    Floating --> float[float]
+    Floating --> double[double]
+
+    Ref --> Class[类 class / 包括 String]
+    Ref --> Interface[接口 interface]
+    Ref --> Array[数组 array]
+```
