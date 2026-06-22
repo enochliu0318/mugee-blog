@@ -272,7 +272,7 @@ int teacherAge;  //声明一个int类型的变量，没有初始化
 
 Java的数据类型可以分为**原始数据类型**（也叫**基本数据类型**）和**构造数据类型**。
 
-```mermaid
+<div class="mermaid">
 graph TD
     Root[Java 数据类型] --> Basic["基本数据类型 (Base Types)"]
     Root --> Ref["引用数据类型 (Reference Types)"]
@@ -295,6 +295,9 @@ graph TD
     Ref --> Class["类 class (包括 String)"]
     Ref --> Interface["接口 interface"]
     Ref --> Array["数组 array"]
-```
-<script src="[https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js](https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js)"></script>
-<script>mermaid.initialize({startOnLoad:true});</script>
+</div>
+
+<script type="module">
+  import mermaid from '[https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs](https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs)';
+  mermaid.initialize({ startOnLoad: true });
+</script>
