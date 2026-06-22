@@ -272,30 +272,40 @@ int teacherAge;  //声明一个int类型的变量，没有初始化
 
 Java的数据类型可以分为**原始数据类型**（也叫**基本数据类型**）和**构造数据类型**。
 
-<div class="mermaid">
-graph TD
-    Root[Java DataTypes] --> Basic[Primitive Types]
-    Root --> Ref[Reference Types]
-
-    Basic --> Numeric[Numeric]
-    Basic --> Character[Character: char]
-    Basic --> Boolean[Boolean: boolean]
-
-    Numeric --> Integral[Integral]
-    Numeric --> Floating[Floating]
-
-    Integral --> byte[byte]
-    Integral --> short[short]
-    Integral --> int[int]
-    Integral --> long[long]
-
-    Floating --> float[float]
-    Floating --> double[double]
-
-    Ref --> Class[class / String]
-    Ref --> Interface[interface]
-    Ref --> Array[array]
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
-<script>mermaid.initialize({ startOnLoad: true });</script>
+<table style="width:100%; border-collapse: collapse; margin-top: 20px; font-family: monospace;">
+  <thead>
+    <tr style="background-color: #2a2a2a; color: #fff; text-align: left;">
+      <th style="padding: 12px; border: 1px solid #444; width: 25%;">第一级分类</th>
+      <th style="padding: 12px; border: 1px solid #444; width: 25%;">第二级分类</th>
+      <th style="padding: 12px; border: 1px solid #444; width: 25%;">具体类型</th>
+      <th style="padding: 12px; border: 1px solid #444; width: 25%;">包含关键字</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4" style="padding: 12px; border: 1px solid #444; background-color: #1a1a1a; font-weight: bold; color: #3498db;">基本数据类型<br>(Primitive)</td>
+      <td rowspan="2" style="padding: 12px; border: 1px solid #444;">数值型 (Numeric)</td>
+      <td style="padding: 12px; border: 1px solid #444;">整数类型</td>
+      <td style="padding: 12px; border: 1px solid #444; color: #e74c3c;">byte, short, int, long</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #444;">浮点类型</td>
+      <td style="padding: 12px; border: 1px solid #444; color: #e74c3c;">float, double</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #444;">字符型</td>
+      <td style="padding: 12px; border: 1px solid #444;">文本字符</td>
+      <td style="padding: 12px; border: 1px solid #444; color: #e74c3c;">char</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #444;">布尔型</td>
+      <td style="padding: 12px; border: 1px solid #444;">逻辑判断</td>
+      <td style="padding: 12px; border: 1px solid #444; color: #e74c3c;">boolean</td>
+    </tr>
+    <tr>
+      <td style="padding: 12px; border: 1px solid #444; background-color: #1a1a1a; font-weight: bold; color: #2ecc71;">引用数据类型<br>(Reference)</td>
+      <td colspan="2" style="padding: 12px; border: 1px solid #444;">对象与内存引用</td>
+      <td style="padding: 12px; border: 1px solid #444; color: #e67e22;">类 (class/String)<br>接口 (interface)<br>数组 (array)</td>
+    </tr>
+  </tbody>
+</table>
