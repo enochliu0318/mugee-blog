@@ -204,6 +204,7 @@ Java的关键字对编译器有特殊意义，是Java语言中因为语法定义
 
 ---
 
+| 关键字 | 关键字 | 关键字 | 关键字 | 关键字 |
 | :--- | :--- | :--- | :--- | :--- |
 | class | boolean | const | break | byte |
 | case | catch | continue | enum | if |
@@ -211,7 +212,7 @@ Java的关键字对编译器有特殊意义，是Java语言中因为语法定义
 | new | final | import | package | try |
 | do | int | switch | void | double |
 | for | public | char | else | goto |
-| long | return | this | while |
+| long | return | this | while | |
 
 ---
 
