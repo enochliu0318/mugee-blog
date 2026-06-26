@@ -1,4 +1,4 @@
-+++ 
++++
 draft = false
 date = 2026-06-20T05:40:47+08:00
 title = "Java入门（持续更新）"
@@ -14,218 +14,193 @@ series = []
 
 ## 第一章 Java概述
 
-Java——最常用的编程语言，1995年由SUN公司（2009年被Oracle公司收购）开发。显著特性——**跨平台运行：“一次编写，到处运行”**
+Java——最常用的编程语言，1995年由 SUN 公司（2009 年被 Oracle 公司收购）开发。显著特性——**跨平台运行："一次编写，到处运行"**
 
 ### 1.1 简介
-  
+
 #### 1.1.1 起源与发展
-  
-起源于Green项目，前身为Oak语言，目的为占领智能消费性电子产品的市场份额，初衷为开发嵌入式家用电器的分布式软件系统。为此，开发的一种可移植的、独立于平台的语言，可以运行在不同环境、不同CPU芯片上。
 
-发展历程：
+起源于 Green 项目，前身为 Oak 语言，目的为占领智能消费性电子产品的市场份额，初衷为开发嵌入式家用电器的分布式软件系统。为此，开发的一种可移植的、独立于平台的语言，可以运行在不同环境、不同 CPU 芯片上。
 
----
+**发展历程：**
 
 | 年份 | 发展 |
 | :--- | :--- |
-| 1993 | 万维网和因特网开始发展，但仅有静态网页，所以SUN公司决定将Java应用方向转向互联网。 |
-| 1996 | 推出Java1.0 (Java Development Kit1.0, JDK1.0) ，开发动态网页更加容易。 |
-| 1998 | 推出Java1.2 (JDK1.2) ，后更名为Java2 (Java Two) ，强化了Java的图形处理能力，增加大量类。 |
-| 1999 | 发布Java SE标准版 (J2SE) ，Java EE企业版 (J2EE) ，Java ME微型版 (J2ME) 。 |
+| 1993 | 万维网和因特网开始发展，但仅有静态网页，所以 SUN 公司决定将 Java 应用方向转向互联网。 |
+| 1996 | 推出 Java 1.0（Java Development Kit 1.0，JDK 1.0），开发动态网页更加容易。 |
+| 1998 | 推出 Java 1.2（JDK 1.2），后更名为 Java 2（Java Two），强化了 Java 的图形处理能力，增加大量类。 |
+| 1999 | 发布 Java SE 标准版（J2SE）、Java EE 企业版（J2EE）、Java ME 微型版（J2ME）。 |
 
----
-
-版本区别：
-
----
+**版本区别：**
 
 | 版本 | 描述 |
 | :--- | :--- |
 | Java SE | 重在开发图形用户界面（GUI）、复杂高性能桌面应用程序。 |
 | Java EE | 安全可靠，易于管理，多层体系结构。 |
-| Java ME | 有限连接，包含SE中部分类库，移动类、嵌入式开发。 |
-
----
+| Java ME | 有限连接，包含 SE 中部分类库，移动类、嵌入式开发。 |
 
 #### 1.1.2 优点
 
-Java最大优点是与平台无关，此外还有精炼——更少代码量。
+Java 最大优点是与平台无关，此外还有精炼——更少代码量。
 
-六大优点：
+**六大优点：**
 
 1. 容易入门
-2. 代码编写数量更少，比C++少约四分之一
+2. 代码编写数量更少，比 C++ 少约四分之一
 3. 代码编写质量更高，避免内存泄漏
-4. 开发程序速度更快，比C++短约三分之二
+4. 开发程序速度更快，比 C++ 短约三分之二
 5. 一次编写到处运行，避免平台依赖性
 6. 更方便的分配软件
 
 ### 1.2 语言与平台
 
-Java技术既可以指Java语言，也可以指Java平台。
+Java 技术既可以指 Java 语言，也可以指 Java 平台。
 
-#### 1.2.1 Java语言
+#### 1.2.1 Java 语言
 
-Java语言是一种面向对象dee高级语言，第一时间把源代码写成`.java`为拓展名的纯文本文件，紧接着被javac编译器编译为`.class`文件，该文件不包含本地处理器的代码，而包含字节码（bytecodes）—Java虚拟机（Java Virtual Machine, JVM）的机器语言。
+Java 语言是一种面向对象的高级语言，第一时间把源代码写成 `.java` 为拓展名的纯文本文件，紧接着被 javac 编译器编译为 `.class` 文件，该文件不包含本地处理器的代码，而包含字节码（bytecodes）— Java 虚拟机（Java Virtual Machine, JVM）的机器语言。
 
-一般的操作系统（如Windows, Solaris, Linux, MacOs）上都有可用的JVM。
+一般的操作系统（如 Windows、Solaris、Linux、macOS）上都有可用的 JVM。
 
-#### 1.2.2 Java平台
+#### 1.2.2 Java 平台
 
-平台：一个程序运行时所处的硬件和软件环境，基本可以描述为一个操作系统与其基础硬件的组合体。Java平台是纯软件平台。
+平台：一个程序运行时所处的硬件和软件环境，基本可以描述为一个操作系统与其基础硬件的组合体。Java 平台是纯软件平台。
 
-Java平台分为两部分，Java虚拟机和Java应用程序设计接口（API）。所谓API是指一个已经实现好的现成软件组件的大集合。此外，还被组织成相关类和接口的库，这就是“包”。
+Java 平台分为两部分，Java 虚拟机和 Java 应用程序设计接口（API）。所谓 API 是指一个已经实现好的现成软件组件的大集合。此外，还被组织成相关类和接口的库，这就是"包"。
 
-### 1.3 搭建Java程序开发平台
+### 1.3 搭建 Java 程序开发平台
 
-_(以Windows系统示例)_
+_（以 Windows 系统示例）_
 
 #### 1.3.1 系统要求
 
-1. 操作系统：Windors7以上
-2. Java SE开发工具箱：不同版本的JDK差别不大
-3. 文本编辑器：可以直接使用Windows自带的记事本
+1. 操作系统：Windows 7 以上
+2. Java SE 开发工具箱：不同版本的 JDK 差别不大
+3. 文本编辑器：可以直接使用 Windows 自带的记事本
 
-#### 1.3.2 下载JDK
+#### 1.3.2 下载 JDK
 
 官网下载链接：<https://www.oracle.com/java/technologies/downloads/>
 
-下载成功后的JDK是一个可执行文件
+下载成功后的 JDK 是一个可执行文件。
 
-### 1.4 开发第一个Java应用程序
+### 1.4 开发第一个 Java 应用程序
 
-开发Java程序需经过三个步骤：
+开发 Java 程序需经过三个步骤：
 
 1. 创建源文件
-2. 将源文件编译成`.class`文件
+2. 将源文件编译成 `.class` 文件
 3. 运行程序
 
 #### 1.4.1 创建源文件
 
-1. 打开记事本，在新打开的文本文档中输入代码。
+1. 打开记事本，在新打开的文本文档中输入代码：
 
----
-```
-//使用Java输出"hello world!"
+```java
+// 使用 Java 输出 "hello world!"
 public class HelloJava {
-    public static void main (String[] args) {
-        //输出
+    public static void main(String[] args) {
+        // 输出
         System.out.println("hello world!");
     }
 }
 ```
----
 
-2. 将代码保存到以`HelloJava.java`命名的文件中。在记事本中，选择【文件】->【另存为】。
+2. 将代码保存到以 `HelloJava.java` 命名的文件中。在记事本中，选择【文件】→【另存为】：
+   1. 使用【保存】组合框，指定目录。
+   2. 在【文件名】文本框中输入 `HelloJava.java`。
+   3. 在【保存类型】下拉列表框中，选择文本文档。
+   4. 在【编码】下拉列表框中，保持编码 `ANSI`。
 
-  1. 使用【保存】组合框，指定目录。
-  2. 在【文件名】文本框中输入`HelloJava.java`。
-  3. 在【保存类型】下拉列表框中，选择文本文档。
-  4. 在【编码】下拉列表框中，保持编码`ANSI`。
-
-#### 1.4.2 将源文件编译为`.class`文件
+#### 1.4.2 将源文件编译为 `.class` 文件
 
 1. 打开【命令提示符】窗口（cmd）
 2. 改变当前目录到源文件所在的目录。
-3. 查看源文件，`dir`命令。
-4. 输入`javac HelloJava.java`命令并回车。
-5. 查看`.class`类文件，`dir`命令，可以看到多了一个新的文件`HelloJava.class`。
+3. 查看源文件，`dir` 命令。
+4. 输入 `javac HelloJava.java` 命令并回车。
+5. 查看 `.class` 类文件，`dir` 命令，可以看到多了一个新的文件 `HelloJava.class`。
 
-#### 1.4.3 运行HelloJava应用程序
+#### 1.4.3 运行 HelloJava 应用程序
 
-在Java语言中，通过将源文件编译为字节码（.class）文件，就可以使用Java解释器（java.exe）来执行编译后的字节码文件。在与源文件同一目录下，在命令行输入`java HelloJava`并回车。
+在 Java 语言中，通过将源文件编译为字节码（`.class`）文件，就可以使用 Java 解释器（`java.exe`）来执行编译后的字节码文件。在与源文件同一目录下，在命令行输入 `java HelloJava` 并回车。
 
-#### 1.4.4 Java应用程序的基本结构
+#### 1.4.4 Java 应用程序的基本结构
 
-1. **源代码注释**：
+1. **源代码注释**
 
-  - 单行注释：以`//`开始，以换行符结束。
-  
-    例：
+   - **单行注释**：以 `//` 开始，以换行符结束。
 
----
-  ```
-  //单行注释。在代码前面，一般是对下面代码的说明。
-  代码1
-  ```
----
+     例：
 
+     ```java
+     // 单行注释。在代码前面，一般是对下面代码的说明。
+     代码1
+     ```
 
-  - 多行注释：以`/*`开始，以`*/`结束。
+   - **多行注释**：以 `/*` 开始，以 `*/` 结束。
 
-    例：
+     例：
 
----
-  ```
-  /*
-   *可以包含
-   *多行
-   *注释内容
-   */
-  ```
----
+     ```java
+     /*
+      * 可以包含
+      * 多行
+      * 注释内容
+      */
+     ```
 
+   - **文档注释**：以 `/**` 开始，以 `*/` 结束。
 
-  - 文档注释：以`/**`开始，以`*/`结束。
+   > ⚠️ **注意**：单行注释能嵌套在多行注释和文档注释中，但多行注释和文档注释不能被嵌套。
 
-  ⚠️注意：单行注释能嵌套在多行注释和文档注释中，但多行注释和文档注释不能被嵌套。
+2. **HelloJava 类定义**
 
-2. **HelloJava**类定义
-  
----
-```
-public class HelloJava {
+   ```java
+   public class HelloJava {
 
-}
-```
----
+   }
+   ```
 
-有关类的具体讲解说明见后续。
+   有关类的具体讲解说明见后续。
 
 ## 第二章 基本语法
 
-学习Java语言和学习英语、西班牙语等语言的原理相同，都要从最基础的语法开始学。
+学习 Java 语言和学习英语、西班牙语等语言的原理相同，都要从最基础的语法开始学。
 
 ### 2.1 标识符和关键字
 
-Java程序是由**类**和**对象**组成的，类和对象是由属性（通常用变量代表）和方法（通常用函数代表）等组成的。
+Java 程序是由**类**和**对象**组成的，类和对象是由属性（通常用变量代表）和方法（通常用函数代表）等组成的。
 
 #### 2.1.1 标识符
 
-标识符是用来标识**类名、对象名、方法名、类型名、数组名、文件名**的有效字符序列。简单来说，标识符就是名字。Java中的标识符由**字母、数字、下划线（_）、美元符号（$）组成**。
+标识符是用来标识**类名、对象名、方法名、类型名、数组名、文件名**的有效字符序列。简单来说，标识符就是名字。Java 中的标识符由**字母、数字、下划线（`_`）、美元符号（`$`）**组成。
 
-⚠️注意：标识符第一个字符不能使数字，字母大小写是有区分的，Name与name是两个不同的标识符。
+> ⚠️ **注意**：标识符第一个字符不能是数字，字母大小写是有区分的，`Name` 与 `name` 是两个不同的标识符。
 
 #### 2.1.2 关键字
 
-Java的关键字对编译器有特殊意义，是Java语言中因为语法定义的需要而特别定义的标识符。所以不能使用关键字定义标识符。
+Java 的关键字对编译器有特殊意义，是 Java 语言中因为语法定义的需要而特别定义的标识符，所以不能使用关键字定义标识符。
 
-常用关键字：
+**常用关键字：**
 
----
-
-| 关键字 | 关键字 | 关键字 | 关键字 | 关键字 | 关键字 | 关键字 |
+| `class` | `boolean` | `const` | `break` | `byte` | `long` | `return` |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| class | boolean | const | break | byte | long | return |
-| case | catch | continue | enum | if | this | while |
-| shrot | throw | throws | static | extends | for | public |
-| new | final | import | package | try | char | else |
-| do | int | switch | void | double | goto | | 
-
-
----
+| `case` | `catch` | `continue` | `enum` | `if` | `this` | `while` |
+| `short` | `throw` | `throws` | `static` | `extends` | `for` | `public` |
+| `new` | `final` | `import` | `package` | `try` | `char` | `else` |
+| `do` | `int` | `switch` | `void` | `double` | `goto` | |
 
 #### 2.1.3 标识符命名规则
 
-实际使用Java语言过程中，给程序定义标识符时要尽量遵循“顾名思义”的原则。所起的名字能代表变量本身的含义。
+实际使用 Java 语言过程中，给程序定义标识符时要尽量遵循"顾名思义"的原则，所起的名字能代表变量本身的含义。
 
-命名规则：
+**命名规则：**
 
-1. 一个标识符可以由多个单词连接而成，如`phoneprice`。
-2. 类名命名规则：除了每个单词的首字母都要大写外，其他字母都是小写，如`MugeeHelloWorld`。
-3. 方法名和变量名命名规则：第一个单词全部小写，其他单词首字母大写，如`mugeeName`。
-4. 常量名命名规则：所有字母都要大写，单词之间用下划线隔开，如`MIN_VALUE`。
-5. 包名命名规则：所有字母小写，如`com.example`。
+1. 一个标识符可以由多个单词连接而成，如 `phoneprice`。
+2. 类名命名规则：除了每个单词的首字母都要大写外，其他字母都是小写，如 `MugeeHelloWorld`。
+3. 方法名和变量名命名规则：第一个单词全部小写，其他单词首字母大写，如 `mugeeName`。
+4. 常量名命名规则：所有字母都要大写，单词之间用下划线隔开，如 `MIN_VALUE`。
+5. 包名命名规则：所有字母小写，如 `com.example`。
 
 ### 2.2 常量与变量
 
@@ -233,36 +208,32 @@ Java的关键字对编译器有特殊意义，是Java语言中因为语法定义
 
 程序执行时**值不能发生变化的数据**被称为**常量**。常量分为**字面常量**和**字符常量**两种。
 
-1. 字面常量：字面上是一个固定值，会在代码中直接显示，是不拥计算的数据。如365，34.52。
-2. 字符常量：代表一个固定值的标识符。需要在程序中声明后使用。
+1. **字面常量**：字面上是一个固定值，会在代码中直接显示，是不需计算的数据，如 `365`、`34.52`。
+2. **字符常量**：代表一个固定值的标识符，需要在程序中声明后使用。
 
-使用关键字`final`声明常量的语法格式：
+使用关键字 `final` 声明常量的语法格式：
 
----
-```
+```java
 final 常量类型 常量标识符 = 常量值;
 
-final float NUM = 2.141F; //声明一个float类型常量，并初始化为2.14
-final int INT_NUM = 22; //声明一个整型常量，并初始化为22
+final float NUM = 2.141F;  // 声明一个 float 类型常量，并初始化为 2.14
+final int INT_NUM = 22;    // 声明一个整型常量，并初始化为 22
 ```
----
 
-⚠️注意：初始化后，不能再在程序中对常量重新赋值，不能改变常量的值。
+> ⚠️ **注意**：初始化后，不能再在程序中对常量重新赋值，不能改变常量的值。
 
 #### 2.2.2 变量的概念及变量声明
 
 在程序运行期间**可以被改变值的量**被称为**变量**。变量是在运行过程中内存中能够存储信息的地方。
 
-声明常量的语法格式：
+声明变量的语法格式：
 
----
-```
+```java
 变量类型 变量标识符;
 
-String teacherName; //声明一个String类型的变量，没有初始化
-int teacherAge;  //声明一个int类型的变量，没有初始化
+String teacherName;  // 声明一个 String 类型的变量，没有初始化
+int teacherAge;      // 声明一个 int 类型的变量，没有初始化
 ```
----
 
 ### 2.3 基本数据类型
 
@@ -270,43 +241,14 @@ int teacherAge;  //声明一个int类型的变量，没有初始化
 
 #### 2.3.1 原始数据类型和构造数据类型
 
-Java的数据类型可以分为**原始数据类型**（也叫**基本数据类型**）和**构造数据类型**。
+Java 的数据类型可以分为**原始数据类型**（也叫**基本数据类型**）和**构造数据类型**（也叫**引用数据类型**）。
 
-<table style="width:100%; border-collapse: collapse; margin-top: 20px; font-family: monospace;">
-  <thead>
-    <tr style="background-color: #2a2a2a; color: #fff; text-align: left;">
-      <th style="padding: 12px; border: 1px solid #444; width: 25%;">第一级分类</th>
-      <th style="padding: 12px; border: 1px solid #444; width: 25%;">第二级分类</th>
-      <th style="padding: 12px; border: 1px solid #444; width: 25%;">具体类型</th>
-      <th style="padding: 12px; border: 1px solid #444; width: 25%;">包含关键字</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="4" style="padding: 12px; border: 1px solid #444; background-color: #1a1a1a; font-weight: bold; color: #3498db;">基本数据类型<br>(Primitive)</td>
-      <td rowspan="2" style="padding: 12px; border: 1px solid #444;">数值型 (Numeric)</td>
-      <td style="padding: 12px; border: 1px solid #444;">整数类型</td>
-      <td style="padding: 12px; border: 1px solid #444; color: #e74c3c;">byte, short, int, long</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border: 1px solid #444;">浮点类型</td>
-      <td style="padding: 12px; border: 1px solid #444; color: #e74c3c;">float, double</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border: 1px solid #444;">字符型</td>
-      <td style="padding: 12px; border: 1px solid #444;">文本字符</td>
-      <td style="padding: 12px; border: 1px solid #444; color: #e74c3c;">char</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border: 1px solid #444;">布尔型</td>
-      <td style="padding: 12px; border: 1px solid #444;">逻辑判断</td>
-      <td style="padding: 12px; border: 1px solid #444; color: #e74c3c;">boolean</td>
-    </tr>
-    <tr>
-      <td style="padding: 12px; border: 1px solid #444; background-color: #1a1a1a; font-weight: bold; color: #2ecc71;">引用数据类型<br>(Reference)</td>
-      <td colspan="2" style="padding: 12px; border: 1px solid #444;">对象与内存引用</td>
-      <td style="padding: 12px; border: 1px solid #444; color: #e67e22;">类 (class/String)<br>接口 (interface)<br>数组 (array)</td>
-    </tr>
-  </tbody>
-</table>
-
+| 一级分类 | 二级分类 | 具体类型 | 关键字 |
+| :--- | :--- | :--- | :--- |
+| 基本数据类型 | 数值型 | 整数类型 | `byte`, `short`, `int`, `long` |
+| 基本数据类型 | 数值型 | 浮点类型 | `float`, `double` |
+| 基本数据类型 | 字符型 | 文本字符 | `char` |
+| 基本数据类型 | 布尔型 | 逻辑判断 | `boolean` |
+| 引用数据类型 | 对象与内存引用 | 类 | `class`, `String` |
+| 引用数据类型 | 对象与内存引用 | 接口 | `interface` |
+| 引用数据类型 | 对象与内存引用 | 数组 | `array` |
