@@ -1,0 +1,30 @@
+<section class="container home-cover">
+  <div class="home-grid">
+    <div class="home-profile">
+      {{ partialCached "home/avatar.html" . }}
+
+      <div class="profile-text">
+        <h1>{{ .Site.Params.author }}</h1>
+        {{ if reflect.IsSlice .Site.Params.info }}
+        <p class="profile-tagline">{{ range .Site.Params.info }}{{ . | markdownify }}<br>{{ end }}</p>
+        {{ else }}
+        <p class="profile-tagline">{{ .Site.Params.info | markdownify }}</p>
+        {{ end }}
+      </div>
+
+      <nav class="quick-links" aria-label="快捷导航">
+        <a href="/posts/" class="quick-link"><i class="fa-regular fa-newspaper"></i> 文章</a>
+        <a href="/search/" class="quick-link"><i class="fa-solid fa-magnifying-glass"></i> 搜索</a>
+        <a href="/about/" class="quick-link"><i class="fa-regular fa-user"></i> 关于</a>
+      </nav>
+
+      {{ partialCached "home/social.html" . }}
+    </div>
+
+    <div class="home-updates">
+      {{ partial "home/latest-updates.html" . }}
+    </div>
+  </div>
+
+  {{ partialCached "home/extensions.html" . }}
+</section>

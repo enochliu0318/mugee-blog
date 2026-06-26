@@ -30,19 +30,13 @@ summaryLength = 50
 
   enableSearch = true
 
-  customSCSS = ["scss/latest-updates.scss"]
+  customSCSS = ["scss/home.scss"]
 
 [taxonomies]
   category = "categories"
   series = "series"
   tag = "tags"
   author = "authors"
-
-[[params.social]]
-  name = "posts"
-  icon = "fa-regular fa-newspaper fa-2x"
-  weight = 1
-  url = "http://blog.mugee.uk/posts"
 
 [[params.social]]
   name = "Instagram"
@@ -53,7 +47,7 @@ summaryLength = 50
 [[params.social]]
   name = "Github"
   icon = "fa-brands fa-github fa-2x"
-  weight = 1
+  weight = 2
   url = "https://github.com/enochliu0318"
 
 [[menu.main]]
