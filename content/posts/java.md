@@ -183,12 +183,11 @@ Java 的关键字对编译器有特殊意义，是 Java 语言中因为语法定
 
 **常用关键字：**
 
-| `class` | `boolean` | `const` | `break` | `byte` | `long` | `return` |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| `case` | `catch` | `continue` | `enum` | `if` | `this` | `while` |
-| `short` | `throw` | `throws` | `static` | `extends` | `for` | `public` |
-| `new` | `final` | `import` | `package` | `try` | `char` | `else` |
-| `do` | `int` | `switch` | `void` | `double` | `goto` | |
+`class`  &nbsp; `boolean`  &nbsp; `const`  &nbsp; `break`  &nbsp; `byte`  &nbsp; `long`  &nbsp; `return`  
+`case`  &nbsp; `catch`  &nbsp; `continue`  &nbsp; `enum`  &nbsp; `if`  &nbsp; `this`  &nbsp; `while`  
+`short`  &nbsp; `throw`  &nbsp; `throws`  &nbsp; `static`  &nbsp; `extends`  &nbsp; `for`  &nbsp; `public`  
+`new`  &nbsp; `final`  &nbsp; `import`  &nbsp; `package`  &nbsp; `try`  &nbsp; `char`  &nbsp; `else`  
+`do`  &nbsp; `int`  &nbsp; `switch`  &nbsp; `void`  &nbsp; `double`  &nbsp; `goto`
 
 #### 2.1.3 标识符命名规则
 
