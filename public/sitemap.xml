@@ -2,75 +2,90 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.mugee.uk/authors/</loc>
+    <loc>http://localhost:1313/authors/</loc>
+    <lastmod>2026-06-25T13:13:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2026-06-25T13:13:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/authors/mugee/</loc>
+    <lastmod>2026-06-25T13:13:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-06-25T13:13:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/photos/</loc>
+    <lastmod>2026-06-25T13:13:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2026-06-25T13:13:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/communityserviceblog/</loc>
+    <lastmod>2026-06-25T13:13:44+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/coding/</loc>
+    <lastmod>2026-06-20T05:40:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/java/</loc>
+    <lastmod>2026-06-20T05:40:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/java/</loc>
+    <lastmod>2026-06-20T05:40:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-06-20T05:40:47+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/search/</loc>
+    <lastmod>2026-06-19T20:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/facs/</loc>
     <lastmod>2026-06-19T11:12:19+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/categories/</loc>
+    <loc>http://localhost:1313/categories/learning/</loc>
     <lastmod>2026-06-19T11:12:19+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/tags/facs/</loc>
+    <loc>http://localhost:1313/posts/facs/</loc>
     <lastmod>2026-06-19T11:12:19+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/categories/learning/</loc>
-    <lastmod>2026-06-19T11:12:19+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.mugee.uk/authors/mugee/</loc>
-    <lastmod>2026-06-19T11:12:19+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.mugee.uk/</loc>
-    <lastmod>2026-06-19T11:12:19+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.mugee.uk/posts/</loc>
-    <lastmod>2026-06-19T11:12:19+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.mugee.uk/tags/</loc>
-    <lastmod>2026-06-19T11:12:19+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.mugee.uk/posts/facs/</loc>
-    <lastmod>2026-06-19T11:12:19+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.mugee.uk/categories/thinking/</loc>
+    <loc>http://localhost:1313/categories/thinking/</loc>
     <lastmod>2026-06-17T11:26:47+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/tags/world-cup/</loc>
+    <loc>http://localhost:1313/tags/world-cup/</loc>
     <lastmod>2026-06-17T11:26:47+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/posts/messi/</loc>
+    <loc>http://localhost:1313/posts/messi/</loc>
     <lastmod>2026-06-17T11:26:47+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/tags/website/</loc>
+    <loc>http://localhost:1313/tags/website/</loc>
     <lastmod>2026-06-16T16:35:34+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/posts/whoami/</loc>
+    <loc>http://localhost:1313/posts/whoami/</loc>
     <lastmod>2026-06-16T16:35:34+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2026-06-16T10:43:58+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/posts/first-blog/</loc>
+    <loc>http://localhost:1313/posts/first-blog/</loc>
     <lastmod>2026-06-16T09:44:38+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/categories/coding/</loc>
+    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2026-06-16T09:44:38+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/tags/hugo/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2026-06-16T09:44:38+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/tags/linux/</loc>
-    <lastmod>2026-06-16T09:44:38+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.mugee.uk/tags/ai/</loc>
+    <loc>http://localhost:1313/tags/ai/</loc>
     <lastmod>2026-04-01T18:21:24+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/posts/a_warm-headed_helmsman_in_the_cast_ocean_of_algorithms/</loc>
+    <loc>http://localhost:1313/posts/a_warm-headed_helmsman_in_the_cast_ocean_of_algorithms/</loc>
     <lastmod>2026-04-01T18:21:24+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/tags/book/</loc>
+    <loc>http://localhost:1313/tags/book/</loc>
     <lastmod>2025-06-19T00:24:57+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/posts/romeoandjuliet/</loc>
+    <loc>http://localhost:1313/posts/romeoandjuliet/</loc>
     <lastmod>2025-06-19T00:24:57+08:00</lastmod>
   </url><url>
-    <loc>https://blog.mugee.uk/series/</loc>
+    <loc>http://localhost:1313/series/</loc>
   </url>
 </urlset>

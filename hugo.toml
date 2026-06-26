@@ -28,7 +28,9 @@ summaryLength = 50
 
   avatarurl = "images/avatar.jpg"
 
-  enableSearch = true 
+  enableSearch = true
+
+  customSCSS = ["scss/latest-updates.scss"]
 
 [taxonomies]
   category = "categories"

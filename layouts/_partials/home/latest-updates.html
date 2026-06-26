@@ -1,0 +1,23 @@
+{{ $pages := where .Site.RegularPages "Section" "posts" }}
+{{ $sortedPages := sort $pages "Date" "desc" }}
+{{ $latestPosts := first 5 $sortedPages }}
+<section class="latest-updates">
+  <div class="updates-container">
+    <div class="updates-header">
+      <h2><i class="fa-regular fa-clock"></i> 最新更新</h2>
+      <span class="source-link">
+        <a href="https://github.com/enochliu0318/mugee-blog" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </span>
+    </div>
+    <ul class="updates-list">
+      {{ range $latestPosts }}
+      <li>
+        <span class="update-date">{{ .Date.Format "2006-01-02" }}</span>
+        <a href="{{ .RelPermalink }}" class="update-title">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+  </div>
+</section>
