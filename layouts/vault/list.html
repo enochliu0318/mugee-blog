@@ -1,0 +1,32 @@
+{{ define "title" }}
+  {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+{{ define "content" }}
+  {{ partial "vault/gate.html" . }}
+  <section class="container list vault-list">
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="{{ .Permalink | safeURL }}">
+          <i class="fa-solid fa-vault"></i> {{ .Title }}
+        </a>
+      </h1>
+      {{ with .Content }}
+      <div class="vault-intro">{{ . }}</div>
+      {{ end }}
+    </header>
+  {{- $pages := sort .Pages "Date" "desc" -}}
+  {{- if $pages -}}
+    <ul>
+      {{- range $pages -}}
+        <li>
+          <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</span>
+          <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{- end -}}
+    </ul>
+  {{- else -}}
+    <p class="vault-empty">保险箱里还没有文章。</p>
+  {{- end -}}
+  </section>
+  {{ partial "vault/gate-end.html" . }}
+{{ end }}

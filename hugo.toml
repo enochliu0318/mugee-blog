@@ -30,7 +30,15 @@ summaryLength = 50
 
   enableSearch = true
 
-  customSCSS = ["scss/home.scss"]
+  customSCSS = ["scss/home.scss", "scss/vault.scss"]
+  customJS = ["js/vault.js"]
+
+[params.vault]
+  title = "保险箱"
+  description = "此区域为私人文章，请输入密码后继续浏览。"
+  # 默认密码 mugee2026 — 请尽快修改。生成哈希: echo -n '你的密码' | sha256sum
+  passwordHash = "2d5b92d30aec3ecbd6e8e46b6fa18ec551dc5cfb1370e2802390c4b465d2ec48"
+  sessionHours = 24
 
 [taxonomies]
   category = "categories"
@@ -79,6 +87,11 @@ summaryLength = 50
   name = "搜索🔎"
   weight = 6
   url = "/search/"
+
+[[menu.main]]
+  name = "保险箱"
+  weight = 7
+  url = "/vault/"
 
 [markup]
   [markup.goldmark]

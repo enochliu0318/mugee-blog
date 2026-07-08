@@ -1,0 +1,44 @@
+{{ $vault := .Site.Params.vault }}
+<div
+  class="vault-shell"
+  data-vault="true"
+  data-vault-hash="{{ $vault.passwordHash }}"
+  data-vault-session-hours="{{ $vault.sessionHours | default 24 }}"
+  data-pagefind-ignore
+>
+  <div class="vault-gate" id="vault-gate">
+    <div class="vault-gate-card">
+      <div class="vault-gate-icon" aria-hidden="true">
+        <i class="fa-solid fa-lock"></i>
+      </div>
+      <h2 class="vault-gate-title">{{ $vault.title | default "保险箱" }}</h2>
+      <p class="vault-gate-desc">{{ $vault.description | default "此区域为私人文章，请输入密码后继续浏览。" }}</p>
+      <form class="vault-gate-form" id="vault-form" autocomplete="off">
+        <label class="vault-gate-label" for="vault-password">访问密码</label>
+        <input
+          class="vault-gate-input"
+          id="vault-password"
+          type="password"
+          name="password"
+          placeholder="请输入密码"
+          required
+          autofocus
+        >
+        <label class="vault-gate-remember">
+          <input type="checkbox" id="vault-remember" name="remember">
+          记住我（7 天内免输入）
+        </label>
+        <p class="vault-gate-error" id="vault-error" hidden>密码错误，请重试。</p>
+        <button class="vault-gate-submit" type="submit">
+          <i class="fa-solid fa-unlock"></i> 解锁
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div class="vault-body" id="vault-body" hidden>
+    <div class="vault-toolbar">
+      <button type="button" class="vault-lock-btn" id="vault-lock-btn">
+        <i class="fa-solid fa-lock"></i> 锁定保险箱
+      </button>
+    </div>
