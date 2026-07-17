@@ -36,7 +36,6 @@ summaryLength = 50
 [params.vault]
   title = "保险箱"
   description = "此区域为私人文章，请输入密码后继续浏览。"
-  # 默认密码 mugee2026 — 请尽快修改。生成哈希: echo -n '你的密码' | sha256sum
   passwordHash = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"
   sessionHours = 24
 
