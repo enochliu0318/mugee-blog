@@ -1,0 +1,49 @@
+<div class="gallery-masonry">
+  {{ $images := .Page.Resources.ByType "image" }}
+  {{ range $images }}
+    <div class="gallery-masonry-item">
+      <a href="{{ .RelPermalink }}" target="_blank">
+        <img src="{{ .RelPermalink }}" alt="{{ .Name }}" loading="lazy" />
+      </a>
+    </div>
+  {{ end }}
+</div>
+
+<style>
+/* 使用 CSS Columns 布局实现瀑布流，保留原始比例且不裁剪像素 */
+.gallery-masonry {
+  column-count: 3; /* 默认分 3 列 */
+  column-gap: 16px;
+  width: 100%;
+}
+
+.gallery-masonry-item {
+  break-inside: avoid; /* 阻止图片截断跨列 */
+  margin-bottom: 16px;
+}
+
+.gallery-masonry-item img {
+  width: 100%;
+  height: auto; /* 保留图片原始高宽比，不拉伸不裁剪 */
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.2s ease;
+}
+
+.gallery-masonry-item img:hover {
+  transform: scale(1.02);
+}
+
+/* 针对手机等小屏幕做适配 */
+@media (max-width: 768px) {
+  .gallery-masonry {
+    column-count: 2; /* 平板/大屏手机显示 2 列 */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-masonry {
+    column-count: 1; /* 小屏手机单列显示 */
+  }
+}
+</style>
