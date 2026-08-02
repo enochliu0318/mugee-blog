@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>NextWave on MUGEE·首页</title>
+		<link>http://localhost:1313/tags/nextwave/</link>
+		<description>Recent content in NextWave on MUGEE·首页</description>
+		<generator>Hugo</generator>
+		<language>zh-cn</language>
+		
+		
+		
+		
+			<lastBuildDate>Sun, 02 Aug 2026 11:51:46 +0800</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/nextwave/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>后浪NextWave网站开发全流程</title>
+				<link>http://localhost:1313/posts/nextwave-blog/</link>
+				<pubDate>Sun, 02 Aug 2026 11:51:46 +0800</pubDate>
+				<guid>http://localhost:1313/posts/nextwave-blog/</guid>
+				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;信仰的后浪，青春的发声。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;这段时间我做了一个叫「后浪 NextWave」的小项目，专门给青少年提供一个干净、安静、适合阅读与发表的文学平台。它没有复杂的后台，没有数据库，甚至没有评论系统——就是纯静态站点，用 Markdown 写文章，Git 管理内容，Hugo 生成，Cloudflare Pages 部署。&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>
