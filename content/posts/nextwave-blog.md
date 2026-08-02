@@ -5,7 +5,7 @@ title = "后浪NextWave网站开发全流程"
 description = "面向青少年的文学静态站，从零到上线的完整开发记录"
 slug = ""
 authors = ["Mugee"]
-tags = ["NextWave"]
+tags = ["NextWave","Hugo","Website"]
 categories = ["Coding"]
 externalLink = ""
 series = []
@@ -186,8 +186,6 @@ Cloudflare Pages 配置很简单：
 
 目前投稿走邮件，由编辑人工审核后写入仓库。  
 内容版权归作者所有，站点代码可自由使用与修改。
-
-如果以后想更规范，可以用 GitHub Pull Request + CODEOWNERS 实现审核流，或者再接入简单的表单。
 
 ---
 
