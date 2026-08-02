@@ -11,6 +11,9 @@
     <loc>http://localhost:1313/categories/coding/</loc>
     <lastmod>2026-08-02T11:51:46+08:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/hugo/</loc>
+    <lastmod>2026-08-02T11:51:46+08:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/authors/mugee/</loc>
     <lastmod>2026-08-02T11:51:46+08:00</lastmod>
   </url><url>
@@ -24,6 +27,9 @@
     <lastmod>2026-08-02T11:51:46+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-08-02T11:51:46+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/website/</loc>
     <lastmod>2026-08-02T11:51:46+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/nextwave-blog/</loc>
@@ -65,9 +71,6 @@
     <loc>http://localhost:1313/posts/messi/</loc>
     <lastmod>2026-06-17T11:26:47+08:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/website/</loc>
-    <lastmod>2026-06-16T16:35:34+08:00</lastmod>
-  </url><url>
     <loc>http://localhost:1313/posts/whoami/</loc>
     <lastmod>2026-06-16T16:35:34+08:00</lastmod>
   </url><url>
@@ -75,9 +78,6 @@
     <lastmod>2026-06-16T10:43:58+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/posts/first-blog/</loc>
-    <lastmod>2026-06-16T09:44:38+08:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
     <lastmod>2026-06-16T09:44:38+08:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/linux/</loc>
