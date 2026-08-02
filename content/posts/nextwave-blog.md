@@ -213,5 +213,5 @@ Cloudflare Pages 配置很简单：
 
 项目地址：[https://github.com/enochliu0318/NextWave](https://github.com/enochliu0318/NextWave)
 
-欢迎提 Issue 或直接投稿。
+欢迎提 Issue 、加入管理团队，或直接投稿。
 
