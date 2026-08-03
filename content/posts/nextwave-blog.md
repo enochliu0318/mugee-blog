@@ -105,6 +105,7 @@ hugo server -D
 hugo new poetry/my-poem.md
 hugo new prose/my-essay.md
 hugo new fiction/my-story.md
+hugo new non-fiction/my-essay.md
 ```
 
 Front Matter 大致如下：
@@ -135,6 +136,12 @@ Cloudflare Pages 配置很简单：
 - Build command：`hugo --minify`
 - Output directory：`public`
 - 环境变量：`HUGO_VERSION=0.128.0`
+
+```bash
+git add .
+git commit -m "new post"
+git push
+```
 
 推送到 GitHub 后，Cloudflare 自动构建并部署。绑定自定义域名，再把 `hugo.toml` 里的 `baseURL` 改成真实域名即可。
 
