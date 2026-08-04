@@ -13,7 +13,7 @@ series = []
 
 > 信仰的后浪，青春的发声。
 
-[**后浪 NextWave**](https://nextwave.mugee.uk)（https://nextwave.mugee.uk）是一个专为青少年打造的文学阅读与创作表达平台。它没有复杂的后台、没有数据库，用 Markdown 写文章、Git 管理内容、Hugo 生成静态页面、Cloudflare Pages 自动部署。
+[**后浪NextWave**](https://nextwave.mugee.uk)（https://nextwave.mugee.uk）是一个专为青少年打造的文学阅读与创作表达平台。它没有复杂的后台、没有数据库，用 Markdown 写文章、Git 管理内容、Hugo 生成静态页面、Cloudflare Pages 自动部署。
 
 目前已支持：
 
