@@ -13,7 +13,7 @@ series = []
 
 > 信仰的后浪，青春的发声。
 
-**后浪 NextWave**（https://nextwave.mugee.uk）是一个专为青少年打造的文学阅读与创作表达平台。它没有复杂的后台、没有数据库，用 Markdown 写文章、Git 管理内容、Hugo 生成静态页面、Cloudflare Pages 自动部署。
+[**后浪 NextWave**](https://nextwave.mugee.uk)（https://nextwave.mugee.uk）是一个专为青少年打造的文学阅读与创作表达平台。它没有复杂的后台、没有数据库，用 Markdown 写文章、Git 管理内容、Hugo 生成静态页面、Cloudflare Pages 自动部署。
 
 目前已支持：
 
@@ -26,7 +26,7 @@ series = []
 
 本文同时作为**网站简介**和**零基础维运手册**。新接手的同学请重点阅读「后期管理全流程」章节，有问题及时联系项目负责人和开发者。
 
-项目仓库：https://github.com/enochliu0318/NextWave
+项目仓库：<https://github.com/enochliu0318/NextWave>
 
 ---
 
@@ -105,19 +105,19 @@ NextWave/
 ### 2.1 你需要准备的账号和工具
 
 1. **GitHub 账号**
-   - 注册：https://github.com
+   - 注册：<https://github.com>
    - 注册后告诉负责人，把你加入仓库 Collaborator。
    - 加入后即可修改和推送代码。
 
 2. **电脑软件（推荐安装，但不是必须）**
    - **Git**
-     - Windows：https://git-scm.com/download/win （一路默认安装）
+     - Windows：<https://git-scm.com/download/win> （一路默认安装）
      - macOS：终端输入 `git --version`，没有会提示安装
    - **Hugo Extended**（本地预览用）
-     - 下载：https://github.com/gohugoio/hugo/releases
+     - 下载：<https://github.com/gohugoio/hugo/releases>
      - 选带 `extended` 的版本
    - **文本编辑器**
-     - 推荐 VS Code：https://code.visualstudio.com/
+     - 推荐 VS Code：<https://code.visualstudio.com/>
      - 记事本也可以
 
 3. **Cloudflare 账号**（可选）
@@ -127,9 +127,9 @@ NextWave/
 
 ### 2.2 日常两种工作方式
 
-#### 方式一：GitHub 网页直接改（推荐零基础）
+#### 方式一：GitHub 网页直接改
 
-1. 打开 https://github.com/enochliu0318/NextWave
+1. 打开 <https://github.com/enochliu0318/NextWave>
 2. 进入要改的文件或文件夹
 3. 点击右上角铅笔图标（Edit）或「Add file」→「Create new file」
 4. 修改后拉到页面底部：
@@ -137,9 +137,9 @@ NextWave/
    - 选择 Commit directly to the main branch
    - 点击绿色 Commit changes
 5. 等待 1～3 分钟，Cloudflare 自动构建
-6. 打开 https://nextwave.mugee.uk 刷新确认
+6. 打开 <https://nextwave.mugee.uk> 刷新确认
 
-#### 方式二：本地操作（更专业）
+#### 方式二：本地操作
 
 **第一次设置：**
 
@@ -149,7 +149,7 @@ cd NextWave
 hugo server -D
 ```
 
-浏览器打开 http://localhost:1313 预览。
+浏览器打开 <http://localhost:1313> 预览。
 
 **日常发文章 / 改文章：**
 
@@ -243,7 +243,7 @@ button_text: "关闭"
 - 正常情况无需配置
 - 如果评论不显示，检查网络或 GitHub 是否可访问
 - 需要审核/删除不当评论时，去仓库的 Discussions 里操作
-- 仓库地址：https://github.com/enochliu0318/NextWave/discussions
+- 仓库地址：<https://github.com/enochliu0318/NextWave/discussions>
 
 ### 2.6 投稿接收与审核流程
 
@@ -353,7 +353,7 @@ hugo --minify
 ### 评论配置位置
 
 `layouts/partials/comments.html`（一般不需要动）  
-如需更换仓库或分类，可到 https://giscus.app 重新生成配置。
+如需更换仓库或分类，可到 <https://giscus.app> 重新生成配置。
 
 ---
 
