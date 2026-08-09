@@ -11088,6 +11088,7 @@ figure {
       transform: translate(-50%, -50%); }
   .float-container a + a {
     margin-left: 0.65rem; }
+<<<<<<< HEAD
   .float-container .back-to-top-toggle,
   .float-container .colorscheme-toggle {
     display: inline-flex;
@@ -11109,6 +11110,8 @@ figure {
   .float-container .colorscheme-toggle:focus {
     color: #1565c0;
     opacity: 1; }
+=======
+>>>>>>> parent of 88340f7 (修复问题)
 
 .mastodon-wrapper {
   display: flex;
