@@ -152,6 +152,7 @@
   .vault-toolbar {
     padding: 0 1rem; } }
 
+<<<<<<< HEAD
 .top-anchor {
   display: block;
   position: relative;
@@ -189,4 +190,6 @@
   .article-controls {
     padding: 0 1rem; } }
 
+=======
+>>>>>>> parent of 7e0eff4 (添加返回上一层按钮,添加滚动最上端按钮)
 /*# sourceMappingURL=vault.css.map */

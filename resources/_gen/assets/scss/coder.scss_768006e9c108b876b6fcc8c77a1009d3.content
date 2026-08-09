@@ -11086,6 +11086,7 @@ figure {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
+<<<<<<< HEAD
   .float-container a + a {
     margin-left: 0.65rem; }
 <<<<<<< HEAD
@@ -11112,6 +11113,8 @@ figure {
     opacity: 1; }
 =======
 >>>>>>> parent of 88340f7 (修复问题)
+=======
+>>>>>>> parent of 7e0eff4 (添加返回上一层按钮,添加滚动最上端按钮)
 
 .mastodon-wrapper {
   display: flex;
