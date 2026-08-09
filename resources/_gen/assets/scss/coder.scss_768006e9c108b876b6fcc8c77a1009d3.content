@@ -11086,6 +11086,8 @@ figure {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
+  .float-container a + a {
+    margin-left: 0.65rem; }
 
 .mastodon-wrapper {
   display: flex;

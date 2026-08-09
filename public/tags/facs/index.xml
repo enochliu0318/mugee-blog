@@ -1,24 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-	<channel>
-		<title>FACS on MUGEE·首页</title>
-		<link>http://localhost:1313/tags/facs/</link>
-		<description>Recent content in FACS on MUGEE·首页</description>
-		<generator>Hugo</generator>
-		<language>zh-cn</language>
-		
-		
-		
-		
-			<lastBuildDate>Fri, 19 Jun 2026 11:12:19 +0800</lastBuildDate>
-		
-			<atom:link href="http://localhost:1313/tags/facs/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>面部表情编码（FACS）与基础微表情识别系统研究总结报告</title>
-				<link>http://localhost:1313/posts/facs/</link>
-				<pubDate>Fri, 19 Jun 2026 11:12:19 +0800</pubDate>
-				<guid>http://localhost:1313/posts/facs/</guid>
-				<description>&lt;hr&gt;&#xA;&lt;h3 id=&#34;引言&#34;&gt;&#xA;  引言&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e5%bc%95%e8%a8%80&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;传统的面部表情编码系统（FACS）由于其数以百计的动作单元（AUs）组合，是普通人难以跨越的学术门槛。然而，由保罗·艾克曼教授基于FACS开发的微表情训练工具（METT）与细微表情训练工具（SETT），为普通大众提供了一条将心理学研究转化为日常应用技能的捷径。本研究旨在总结如何将METT与SETT的核心识别机制普及化，帮助大众在同僚关系、亲密关系和日常社交中，通过观察面部“漏出”的信号，实现更高效的共情、沟通与信任评估。&lt;/p&gt;</description>
-			</item>
-	</channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FACS on MUGEE·首页</title><link>https://blog.mugee.uk/tags/facs/</link><description>Recent content in FACS on MUGEE·首页</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 19 Jun 2026 11:12:19 +0800</lastBuildDate><atom:link href="https://blog.mugee.uk/tags/facs/index.xml" rel="self" type="application/rss+xml"/><item><title>面部表情编码（FACS）与基础微表情识别系统研究总结报告</title><link>https://blog.mugee.uk/posts/facs/</link><pubDate>Fri, 19 Jun 2026 11:12:19 +0800</pubDate><guid>https://blog.mugee.uk/posts/facs/</guid><description>&lt;hr&gt;
+&lt;h3 id="引言"&gt;
+ 引言
+ &lt;a class="heading-link" href="#%e5%bc%95%e8%a8%80"&gt;
+ &lt;i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"&gt;&lt;/i&gt;
+ &lt;span class="sr-only"&gt;链接到标题&lt;/span&gt;
+ &lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;传统的面部表情编码系统（FACS）由于其数以百计的动作单元（AUs）组合，是普通人难以跨越的学术门槛。然而，由保罗·艾克曼教授基于FACS开发的微表情训练工具（METT）与细微表情训练工具（SETT），为普通大众提供了一条将心理学研究转化为日常应用技能的捷径。本研究旨在总结如何将METT与SETT的核心识别机制普及化，帮助大众在同僚关系、亲密关系和日常社交中，通过观察面部“漏出”的信号，实现更高效的共情、沟通与信任评估。&lt;/p&gt;</description></item></channel></rss>
