@@ -11088,6 +11088,9 @@ figure {
       transform: translate(-50%, -50%); }
   .float-container a + a {
     margin-left: 0.65rem; }
+  .float-container .back-to-top-toggle {
+    color: #000;
+    background-color: #e0e0e0; }
 
 .mastodon-wrapper {
   display: flex;
