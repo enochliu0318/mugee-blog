@@ -186,7 +186,7 @@ hugo server -D
 ```bash
 cd NextWave
 git pull                          # 先拉最新，很重要！避免覆盖其他协作者的修改
-hugo new poetry/文章文件名.md     # 或其他栏目：prose, fiction, nonfiction
+hugo new poetry/文章文件名.md     # 或其他栏目：prose, fiction, non-fiction
 # 用编辑器打开文件，改标题、作者、正文，把 draft: true 改成 false
 hugo server -D                    # 本地预览
 git add .
