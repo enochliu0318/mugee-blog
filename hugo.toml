@@ -31,7 +31,7 @@ summaryLength = 50
   enableSearch = true
 
   customSCSS = ["scss/home.scss", "scss/vault.scss"]
-  customJS = ["js/vault.js", "js/back-to-top.js"]
+  customJS = ["js/vault.js", "js/back-to-top.js", "js/gallery-lightbox.js"]
 
 [params.vault]
   title = "保险箱"
