@@ -9,6 +9,7 @@ tags = ["NextWave", "Hugo", "Website"]
 categories = ["Coding"]
 externalLink = ""
 series = []
+toc = true
 +++
 
 > 信仰的后浪，青春的发声。
