@@ -10,9 +10,23 @@
 		
 		
 		
-			<lastBuildDate>Tue, 04 Aug 2026 17:00:00 +0800</lastBuildDate>
+			<lastBuildDate>Wed, 12 Aug 2026 14:35:08 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title></title>
+				<link>http://localhost:1313/posts/test/</link>
+				<pubDate>Wed, 12 Aug 2026 14:35:08 +0800</pubDate>
+				<guid>http://localhost:1313/posts/test/</guid>
+				<description>&lt;h1 id=&#34;hi&#34;&gt;&#xA;  hi&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hi&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;hii&#34;&gt;&#xA;  hii&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hii&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;hiii&#34;&gt;&#xA;  hiii&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hiii&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;h4 id=&#34;hiiiii&#34;&gt;&#xA;  hiiiii &lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hiiiii&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;你好&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;del&gt;hello&lt;/del&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;u&gt;你好&lt;/u&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;nihao&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;nihao&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;nihao&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ni&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;ni&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;hi&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;hi&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.mugee.uk&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Enoch&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://blog.mugee.uk&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://blog.mugee.uk&lt;/a&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;table&gt;&#xA;&#x9;&lt;thead&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;1&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;2&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;th&gt;3&lt;/th&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/thead&gt;&#xA;&#x9;&lt;tbody&gt;&#xA;&#x9;&#x9;&#x9;&lt;tr&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;aarstiednhiast&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;b&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&lt;td&gt;&lt;/td&gt;&#xA;&#x9;&#x9;&#x9;&lt;/tr&gt;&#xA;&#x9;&lt;/tbody&gt;&#xA;&lt;/table&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 已完成任务&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 未完成任务&lt;/li&gt;&#xA;&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 另一个待办&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;a href=&#34;mailto:Enochliu0318@gmail.com&#34; &gt;Enoch&lt;/a&gt;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>markdown使用手册</title>
+				<link>http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
+				<pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
+				<guid>http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
+				<description>&lt;h1 id=&#34;markdown-详细使用手册&#34;&gt;&#xA;  Markdown 详细使用手册&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#markdown-%e8%af%a6%e7%bb%86%e4%bd%bf%e7%94%a8%e6%89%8b%e5%86%8c&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;本手册全面覆盖 Markdown 的基础语法、扩展语法（以 GitHub Flavored Markdown / CommonMark 为主）、最佳实践与常用技巧，适合初学者系统学习，也适合作为速查手册使用。&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>后浪 NextWave 网站简介与维运指南</title>
 				<link>http://localhost:1313/posts/nextwave-blog/</link>

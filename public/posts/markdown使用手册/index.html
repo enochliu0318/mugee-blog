@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  markdown使用手册 · MUGEE·首页
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="MUGEE">
+<meta name="description" content="
+  Markdown 详细使用手册
+  
+    
+    链接到标题
+  
+
+
+本手册全面覆盖 Markdown 的基础语法、扩展语法（以 GitHub Flavored Markdown / CommonMark 为主）、最佳实践与常用技巧，适合初学者系统学习，也适合作为速查手册使用。">
+<meta name="keywords" content="blog, developer, personal">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="markdown使用手册">
+	<meta name="twitter:description" content="Markdown 详细使用手册 链接到标题 本手册全面覆盖 Markdown 的基础语法、扩展语法（以 GitHub Flavored Markdown / CommonMark 为主）、最佳实践与常用技巧，适合初学者系统学习，也适合作为速查手册使用。">
+
+<meta property="og:url" content="http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+	<meta property="og:site_name" content="MUGEE·首页">
+	<meta property="og:title" content="markdown使用手册">
+	<meta property="og:description" content="Markdown 详细使用手册 链接到标题 本手册全面覆盖 Markdown 的基础语法、扩展语法（以 GitHub Flavored Markdown / CommonMark 为主）、最佳实践与常用技巧，适合初学者系统学习，也适合作为速查手册使用。">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-08-11T18:16:51+08:00">
+		<meta property="article:modified_time" content="2026-08-11T18:16:51+08:00">
+		<meta property="article:tag" content="NextWave">
+		<meta property="article:tag" content="Hugo">
+		<meta property="article:tag" content="Markdown">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/home.css" media="screen">
+  
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/vault.css" media="screen">
+  
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      MUGEE·首页
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">文章</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/categories/">分类</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/authors/">作者</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/search/">搜索🔎</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/vault/">保险箱</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+              markdown使用手册
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-08-11T18:16:51&#43;08:00">
+                August 11, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：7 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/mugee/">Mugee</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/coding/">Coding</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/nextwave/">NextWave</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/hugo/">Hugo</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/markdown/">Markdown</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+
+
+      <div class="post-content">
+        
+        <h1 id="markdown-详细使用手册">
+  Markdown 详细使用手册
+  <a class="heading-link" href="#markdown-%e8%af%a6%e7%bb%86%e4%bd%bf%e7%94%a8%e6%89%8b%e5%86%8c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h1>
+<blockquote>
+<p>本手册全面覆盖 Markdown 的基础语法、扩展语法（以 GitHub Flavored Markdown / CommonMark 为主）、最佳实践与常用技巧，适合初学者系统学习，也适合作为速查手册使用。</p>
+</blockquote>
+<hr>
+<h2 id="目录">
+  目录
+  <a class="heading-link" href="#%e7%9b%ae%e5%bd%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<ol>
+<li><a href="#1-%e4%bb%80%e4%b9%88%e6%98%af-markdown" >什么是 Markdown</a></li>
+<li><a href="#2-%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95" >基础语法</a>
+<ul>
+<li><a href="#21-%e6%a0%87%e9%a2%98" >2.1 标题</a></li>
+<li><a href="#22-%e6%ae%b5%e8%90%bd%e4%b8%8e%e6%8d%a2%e8%a1%8c" >2.2 段落与换行</a></li>
+<li><a href="#23-%e5%bc%ba%e8%b0%83%e7%b2%97%e4%bd%93%e6%96%9c%e4%bd%93%e5%88%a0%e9%99%a4%e7%ba%bf%e7%ad%89" >2.3 强调（粗体、斜体、删除线等）</a></li>
+<li><a href="#24-%e5%88%97%e8%a1%a8" >2.4 列表</a></li>
+<li><a href="#25-%e9%93%be%e6%8e%a5" >2.5 链接</a></li>
+<li><a href="#26-%e5%9b%be%e7%89%87" >2.6 图片</a></li>
+<li><a href="#27-%e5%bc%95%e7%94%a8" >2.7 引用</a></li>
+<li><a href="#28-%e4%bb%a3%e7%a0%81" >2.8 代码</a></li>
+<li><a href="#29-%e5%88%86%e9%9a%94%e7%ba%bf" >2.9 分隔线</a></li>
+</ul>
+</li>
+<li><a href="#3-%e6%89%a9%e5%b1%95%e8%af%ad%e6%b3%95gfm--%e5%b8%b8%e7%94%a8%e6%89%a9%e5%b1%95" >扩展语法（GFM / 常用扩展）</a>
+<ul>
+<li><a href="#31-%e8%a1%a8%e6%a0%bc" >3.1 表格</a></li>
+<li><a href="#32-%e4%bb%bb%e5%8a%a1%e5%88%97%e8%a1%a8%e5%be%85%e5%8a%9e%e4%ba%8b%e9%a1%b9" >3.2 任务列表（待办事项）</a></li>
+<li><a href="#33-%e5%88%a0%e9%99%a4%e7%ba%bf" >3.3 删除线</a></li>
+<li><a href="#34-%e8%87%aa%e5%8a%a8%e9%93%be%e6%8e%a5%e4%b8%8e-url" >3.4 自动链接与 URL</a></li>
+<li><a href="#35-%e8%84%9a%e6%b3%a8" >3.5 脚注</a></li>
+<li><a href="#36-%e5%ae%9a%e4%b9%89%e5%88%97%e8%a1%a8" >3.6 定义列表</a></li>
+<li><a href="#37-emoji-%e8%a1%a8%e6%83%85" >3.7 Emoji 表情</a></li>
+<li><a href="#38-%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f" >3.8 数学公式</a></li>
+<li><a href="#39-%e9%ab%98%e4%ba%ae%e4%b8%8e%e6%a0%87%e8%ae%b0" >3.9 高亮与标记</a></li>
+<li><a href="#310-html-%e5%b5%8c%e5%85%a5" >3.10 HTML 嵌入</a></li>
+</ul>
+</li>
+<li><a href="#4-%e8%bf%9b%e9%98%b6%e6%8a%80%e5%b7%a7%e4%b8%8e%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5" >进阶技巧与最佳实践</a></li>
+<li><a href="#5-%e5%b8%b8%e7%94%a8%e5%b7%a5%e5%85%b7%e4%b8%8e%e7%bc%96%e8%be%91%e5%99%a8%e6%8e%a8%e8%8d%90" >常用工具与编辑器推荐</a></li>
+<li><a href="#6-%e5%ae%8c%e6%95%b4%e8%af%ad%e6%b3%95%e9%80%9f%e6%9f%a5%e8%a1%a8" >完整语法速查表</a></li>
+<li><a href="#7-%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98%e4%b8%8e%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9" >常见问题与注意事项</a></li>
+</ol>
+<hr>
+<h2 id="1-什么是-markdown">
+  1. 什么是 Markdown
+  <a class="heading-link" href="#1-%e4%bb%80%e4%b9%88%e6%98%af-markdown">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>Markdown 是一种轻量级标记语言，由 John Gruber 于 2004 年创建。它的目标是：<strong>让文档既易于阅读又易于书写</strong>，同时可以轻松转换为 HTML、PDF 等格式。</p>
+<p>Markdown 文件通常以 <code>.md</code> 或 <code>.markdown</code> 为扩展名。</p>
+<p><strong>核心优势：</strong></p>
+<ul>
+<li>语法简单，学习成本低</li>
+<li>纯文本，跨平台、易版本控制（Git 友好）</li>
+<li>可读性极高（即使不渲染也能看懂）</li>
+<li>广泛支持（GitHub、GitLab、Notion、Typora、VS Code、Obsidian、掘金、知乎等）</li>
+</ul>
+<hr>
+<h2 id="2-基础语法">
+  2. 基础语法
+  <a class="heading-link" href="#2-%e5%9f%ba%e7%a1%80%e8%af%ad%e6%b3%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="21-标题">
+  2.1 标题
+  <a class="heading-link" href="#21-%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>使用 <code>#</code> 号表示标题，一级标题用一个 <code>#</code>，二级用两个，最多支持六级。</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#79c0ff;font-weight:bold"># 一级标题
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff">## 二级标题
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff">### 三级标题
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff">#### 四级标题
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff">##### 五级标题
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff">###### 六级标题
+</span></span></span></code></pre></div><p><strong>渲染效果：</strong></p>
+<h1 id="一级标题">
+  一级标题
+  <a class="heading-link" href="#%e4%b8%80%e7%ba%a7%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h1>
+<h2 id="二级标题">
+  二级标题
+  <a class="heading-link" href="#%e4%ba%8c%e7%ba%a7%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="三级标题">
+  三级标题
+  <a class="heading-link" href="#%e4%b8%89%e7%ba%a7%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="四级标题">
+  四级标题
+  <a class="heading-link" href="#%e5%9b%9b%e7%ba%a7%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<h5 id="五级标题">
+  五级标题
+  <a class="heading-link" href="#%e4%ba%94%e7%ba%a7%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h5>
+<h6 id="六级标题">
+  六级标题
+  <a class="heading-link" href="#%e5%85%ad%e7%ba%a7%e6%a0%87%e9%a2%98">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h6>
+<blockquote>
+<p><strong>注意：</strong> <code>#</code> 与标题文字之间必须有一个空格。</p>
+</blockquote>
+<p>也支持使用 <code>===</code> 和 <code>---</code> 的 Setext 风格（较少使用）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>一级标题
+</span></span><span style="display:flex;"><span>========
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>二级标题
+</span></span><span style="display:flex;"><span>--------
+</span></span></code></pre></div><h3 id="22-段落与换行">
+  2.2 段落与换行
+  <a class="heading-link" href="#22-%e6%ae%b5%e8%90%bd%e4%b8%8e%e6%8d%a2%e8%a1%8c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<ul>
+<li>段落之间用<strong>空行</strong>分隔。</li>
+<li>同一段落内换行：在行尾加<strong>两个空格</strong>再回车，或直接使用 HTML 的 <code>&lt;br&gt;</code>。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>这是第一段。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>这是第二段。
+</span></span><span style="display:flex;"><span>这是第二段的第二行（行尾加了两个空格）。  
+</span></span><span style="display:flex;"><span>这是强制换行后的内容。
+</span></span></code></pre></div><h3 id="23-强调粗体斜体删除线等">
+  2.3 强调（粗体、斜体、删除线等）
+  <a class="heading-link" href="#23-%e5%bc%ba%e8%b0%83%e7%b2%97%e4%bd%93%e6%96%9c%e4%bd%93%e5%88%a0%e9%99%a4%e7%ba%bf%e7%ad%89">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<table>
+	<thead>
+			<tr>
+					<th>效果</th>
+					<th>语法</th>
+					<th>示例代码</th>
+					<th>渲染结果</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>斜体</td>
+					<td><code>*文本*</code> 或 <code>_文本_</code></td>
+					<td><code>*斜体*</code></td>
+					<td><em>斜体</em></td>
+			</tr>
+			<tr>
+					<td>粗体</td>
+					<td><code>**文本**</code> 或 <code>__文本__</code></td>
+					<td><code>**粗体**</code></td>
+					<td><strong>粗体</strong></td>
+			</tr>
+			<tr>
+					<td>粗斜体</td>
+					<td><code>***文本***</code></td>
+					<td><code>***粗斜体***</code></td>
+					<td><em><strong>粗斜体</strong></em></td>
+			</tr>
+			<tr>
+					<td>删除线</td>
+					<td><code>~~文本~~</code></td>
+					<td><code>~~删除线~~</code></td>
+					<td><del>删除线</del></td>
+			</tr>
+			<tr>
+					<td>下划线</td>
+					<td>使用 HTML <code>&lt;u&gt;</code></td>
+					<td><code>&lt;u&gt;下划线&lt;/u&gt;</code></td>
+					<td><u>下划线</u></td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>这是 <span style="font-style:italic">*斜体*</span>，这是 <span style="font-weight:bold">**粗体**</span>，这是 <span style="font-style:italic">**</span>*粗斜体***，这是 <span style="color:#ffa198;background-color:#490202">~~删除线~~</span>。
+</span></span></code></pre></div><h3 id="24-列表">
+  2.4 列表
+  <a class="heading-link" href="#24-%e5%88%97%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="无序列表">
+  无序列表
+  <a class="heading-link" href="#%e6%97%a0%e5%ba%8f%e5%88%97%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>使用 <code>-</code>、<code>*</code> 或 <code>+</code>（推荐统一使用 <code>-</code>）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#ff7b72">-</span> 项目一
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">-</span> 项目二
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">-</span> 子项目 2.1
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">-</span> 子项目 2.2
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">-</span> 项目三
+</span></span></code></pre></div><h4 id="有序列表">
+  有序列表
+  <a class="heading-link" href="#%e6%9c%89%e5%ba%8f%e5%88%97%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>使用数字 + 英文句点。</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#ff7b72">1.</span> 第一项
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">2.</span> 第二项
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">3.</span> 第三项
+</span></span><span style="display:flex;"><span>   <span style="color:#ff7b72">1.</span> 子项 3.1
+</span></span><span style="display:flex;"><span>   <span style="color:#ff7b72">2.</span> 子项 3.2
+</span></span></code></pre></div><blockquote>
+<p>数字不一定要按顺序写，渲染时会自动连续编号，但为了可读性建议按顺序写。</p>
+</blockquote>
+<h4 id="嵌套列表">
+  嵌套列表
+  <a class="heading-link" href="#%e5%b5%8c%e5%a5%97%e5%88%97%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>通过缩进（通常 2 或 4 个空格）实现嵌套。</p>
+<h3 id="25-链接">
+  2.5 链接
+  <a class="heading-link" href="#25-%e9%93%be%e6%8e%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="行内链接">
+  行内链接
+  <a class="heading-link" href="#%e8%a1%8c%e5%86%85%e9%93%be%e6%8e%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>[<span style="color:#7ee787">链接文字</span>](https://www.example.com)
+</span></span><span style="display:flex;"><span>[<span style="color:#7ee787">带标题的链接</span>](https://www.example.com &#34;鼠标悬停显示的标题&#34;)
+</span></span></code></pre></div><h4 id="引用式链接">
+  引用式链接
+  <a class="heading-link" href="#%e5%bc%95%e7%94%a8%e5%bc%8f%e9%93%be%e6%8e%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>[链接文字][id]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[id]: https://www.example.com &#34;可选标题&#34;
+</span></span></code></pre></div><h4 id="自动链接">
+  自动链接
+  <a class="heading-link" href="#%e8%87%aa%e5%8a%a8%e9%93%be%e6%8e%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>直接写 URL 或用尖括号：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>https://www.example.com
+</span></span><span style="display:flex;"><span>&lt;https://www.example.com&gt;
+</span></span></code></pre></div><h4 id="相对路径链接文档内部">
+  相对路径链接（文档内部）
+  <a class="heading-link" href="#%e7%9b%b8%e5%af%b9%e8%b7%af%e5%be%84%e9%93%be%e6%8e%a5%e6%96%87%e6%a1%a3%e5%86%85%e9%83%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>[<span style="color:#7ee787">跳转到目录</span>](#目录)
+</span></span><span style="display:flex;"><span>[<span style="color:#7ee787">打开同目录下的文件</span>](./another.md)
+</span></span></code></pre></div><h3 id="26-图片">
+  2.6 图片
+  <a class="heading-link" href="#26-%e5%9b%be%e7%89%87">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>语法与链接类似，只是前面多一个感叹号 <code>!</code>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>![<span style="color:#7ee787">替代文本</span>](图片地址)
+</span></span><span style="display:flex;"><span>![<span style="color:#7ee787">替代文本</span>](图片地址 &#34;可选标题&#34;)
+</span></span></code></pre></div><p><strong>示例：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>![<span style="color:#7ee787">Markdown Logo</span>](https://markdown-here.com/img/icon256.png &#34;Markdown&#34;)
+</span></span></code></pre></div><p>也可以使用引用式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>![替代文本][logo]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[logo]: https://example.com/logo.png &#34;Logo&#34;
+</span></span></code></pre></div><h3 id="27-引用">
+  2.7 引用
+  <a class="heading-link" href="#27-%e5%bc%95%e7%94%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>使用 <code>&gt;</code> 表示引用块，可嵌套。</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#ff7b72">&gt; </span><span style="font-style:italic">这是一段引用。
+</span></span></span><span style="display:flex;"><span><span style="color:#ff7b72">&gt;
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">&gt; 引用可以有多段。
+</span></span></span><span style="display:flex;"><span><span style="color:#ff7b72">&gt;
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic">&gt; &gt; 这是嵌套引用。
+</span></span></span></code></pre></div><p><strong>渲染效果：</strong></p>
+<blockquote>
+<p>这是一段引用。</p>
+<p>引用可以有多段。</p>
+<blockquote>
+<p>这是嵌套引用。</p>
+</blockquote>
+</blockquote>
+<h3 id="28-代码">
+  2.8 代码
+  <a class="heading-link" href="#28-%e4%bb%a3%e7%a0%81">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<h4 id="行内代码">
+  行内代码
+  <a class="heading-link" href="#%e8%a1%8c%e5%86%85%e4%bb%a3%e7%a0%81">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>使用反引号 <code>`</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>使用 <span style="color:#a5d6ff">`console.log()`</span> 输出信息。
+</span></span></code></pre></div><h4 id="代码块">
+  代码块
+  <a class="heading-link" href="#%e4%bb%a3%e7%a0%81%e5%9d%97">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h4>
+<p>使用三个反引号 ```，并可以指定语言实现语法高亮：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#a5d6ff">```javascript
+</span></span></span><span style="display:flex;"><span><span style="color:#ff7b72">function</span> hello() {
+</span></span><span style="display:flex;"><span>  console.log(<span style="color:#a5d6ff">&#34;Hello, Markdown!&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#a5d6ff">```</span>
+</span></span></code></pre></div><p>也支持用四个空格缩进表示代码块（不推荐，无法指定语言）。</p>
+<h3 id="29-分隔线">
+  2.9 分隔线
+  <a class="heading-link" href="#29-%e5%88%86%e9%9a%94%e7%ba%bf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>使用三个及以上的 <code>-</code>、<code>*</code> 或 <code>_</code>（中间可有空格）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="font-style:italic">**</span>*
+</span></span><span style="display:flex;"><span>___
+</span></span></code></pre></div><hr>
+<h2 id="3-扩展语法gfm--常用扩展">
+  3. 扩展语法（GFM / 常用扩展）
+  <a class="heading-link" href="#3-%e6%89%a9%e5%b1%95%e8%af%ad%e6%b3%95gfm--%e5%b8%b8%e7%94%a8%e6%89%a9%e5%b1%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="31-表格">
+  3.1 表格
+  <a class="heading-link" href="#31-%e8%a1%a8%e6%a0%bc">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>GitHub Flavored Markdown 支持表格。</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>| 左对齐 | 居中对齐 | 右对齐 |
+</span></span><span style="display:flex;"><span>| :----- | :------: | -----: |
+</span></span><span style="display:flex;"><span>| 单元格 |  单元格  | 单元格 |
+</span></span><span style="display:flex;"><span>| 长文本 |   内容   |  数字  |
+</span></span></code></pre></div><p><strong>渲染效果：</strong></p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">左对齐</th>
+					<th style="text-align: center">居中对齐</th>
+					<th style="text-align: right">右对齐</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">单元格</td>
+					<td style="text-align: center">单元格</td>
+					<td style="text-align: right">单元格</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">长文本</td>
+					<td style="text-align: center">内容</td>
+					<td style="text-align: right">数字</td>
+			</tr>
+	</tbody>
+</table>
+<ul>
+<li><code>:---</code> 左对齐</li>
+<li><code>:---:</code> 居中</li>
+<li><code>---:</code> 右对齐</li>
+<li>表头与内容之间必须有分隔行</li>
+</ul>
+<h3 id="32-任务列表待办事项">
+  3.2 任务列表（待办事项）
+  <a class="heading-link" href="#32-%e4%bb%bb%e5%8a%a1%e5%88%97%e8%a1%a8%e5%be%85%e5%8a%9e%e4%ba%8b%e9%a1%b9">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#ff7b72">- [x]</span> 已完成任务
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">- [ ]</span> 未完成任务
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">- [ ]</span> 另一个待办
+</span></span></code></pre></div><p><strong>渲染效果：</strong></p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 已完成任务</li>
+<li><input disabled="" type="checkbox"> 未完成任务</li>
+<li><input disabled="" type="checkbox"> 另一个待办</li>
+</ul>
+<h3 id="33-删除线">
+  3.3 删除线
+  <a class="heading-link" href="#33-%e5%88%a0%e9%99%a4%e7%ba%bf">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>~~这段文字被删除了~~
+</span></span></code></pre></div><h3 id="34-自动链接与-url">
+  3.4 自动链接与 URL
+  <a class="heading-link" href="#34-%e8%87%aa%e5%8a%a8%e9%93%be%e6%8e%a5%e4%b8%8e-url">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>GFM 会自动把符合规则的 URL 和邮箱变成链接：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>访问 https://github.com 或发送邮件到 example<span style="color:#ffa657">@email</span>.com
+</span></span></code></pre></div><h3 id="35-脚注">
+  3.5 脚注
+  <a class="heading-link" href="#35-%e8%84%9a%e6%b3%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>部分解析器支持（如 Pandoc、部分静态站点生成器）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>这里有一个脚注[^1]。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[^1]: 这是脚注的内容。
+</span></span></code></pre></div><h3 id="36-定义列表">
+  3.6 定义列表
+  <a class="heading-link" href="#36-%e5%ae%9a%e4%b9%89%e5%88%97%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>部分扩展支持：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>术语 1
+</span></span><span style="display:flex;"><span>: 定义 1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>术语 2
+</span></span><span style="display:flex;"><span>: 定义 2
+</span></span><span style="display:flex;"><span>: 定义 2 的另一条
+</span></span></code></pre></div><h3 id="37-emoji-表情">
+  3.7 Emoji 表情
+  <a class="heading-link" href="#37-emoji-%e8%a1%a8%e6%83%85">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>GitHub 等平台支持：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>:smile: :heart: :rocket: :warning:
+</span></span></code></pre></div><p>也可以直接复制粘贴 Unicode 表情 😀 ❤️ 🚀</p>
+<h3 id="38-数学公式">
+  3.8 数学公式
+  <a class="heading-link" href="#38-%e6%95%b0%e5%ad%a6%e5%85%ac%e5%bc%8f">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>很多平台（GitHub、Notion、Obsidian、Typora 等）支持 LaTeX 数学公式。</p>
+<p><strong>行内公式：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>质能方程式：$E = mc^2$
+</span></span></code></pre></div><p><strong>块级公式：</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>$$
+</span></span><span style="display:flex;"><span>\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+</span></span><span style="display:flex;"><span>$$
+</span></span></code></pre></div><h3 id="39-高亮与标记">
+  3.9 高亮与标记
+  <a class="heading-link" href="#39-%e9%ab%98%e4%ba%ae%e4%b8%8e%e6%a0%87%e8%ae%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>部分扩展支持 <code>==高亮==</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>这是 ==高亮文本==。
+</span></span></code></pre></div><h3 id="310-html-嵌入">
+  3.10 HTML 嵌入
+  <a class="heading-link" href="#310-html-%e5%b5%8c%e5%85%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>Markdown 支持直接嵌入 HTML 标签：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span>&lt;details&gt;
+</span></span><span style="display:flex;"><span>&lt;summary&gt;点击展开&lt;/summary&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>这里是折叠的内容。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;/details&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt;
+</span></span></code></pre></div><hr>
+<h2 id="4-进阶技巧与最佳实践">
+  4. 进阶技巧与最佳实践
+  <a class="heading-link" href="#4-%e8%bf%9b%e9%98%b6%e6%8a%80%e5%b7%a7%e4%b8%8e%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<ol>
+<li><strong>保持一致性</strong>：统一使用 <code>-</code> 做无序列表，统一标题层级风格。</li>
+<li><strong>空行很重要</strong>：标题前后、列表前后、代码块前后建议留空行，兼容性更好。</li>
+<li><strong>尽量少用 HTML</strong>：除非 Markdown 无法实现（如复杂表格、折叠、居中等）。</li>
+<li><strong>图片建议使用相对路径</strong>或图床，方便迁移。</li>
+<li><strong>长文档使用目录</strong>：像本手册一样，用锚点链接做目录。</li>
+<li><strong>代码块务必指定语言</strong>，方便语法高亮。</li>
+<li><strong>避免过度嵌套</strong>：列表嵌套不要超过 3 层，可读性会下降。</li>
+<li><strong>使用引用式链接</strong>管理大量链接，方便维护。</li>
+<li><strong>文件命名</strong>：推荐使用小写字母、连字符，如 <code>markdown-guide.md</code>。</li>
+<li><strong>版本控制友好</strong>：Markdown 与 Git 绝配，diff 清晰。</li>
+</ol>
+<hr>
+<h2 id="5-常用工具与编辑器推荐">
+  5. 常用工具与编辑器推荐
+  <a class="heading-link" href="#5-%e5%b8%b8%e7%94%a8%e5%b7%a5%e5%85%b7%e4%b8%8e%e7%bc%96%e8%be%91%e5%99%a8%e6%8e%a8%e8%8d%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<table>
+	<thead>
+			<tr>
+					<th>工具 / 平台</th>
+					<th>类型</th>
+					<th>特点</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Typora</strong></td>
+					<td>桌面编辑器</td>
+					<td>所见即所得，极致简洁</td>
+			</tr>
+			<tr>
+					<td><strong>Obsidian</strong></td>
+					<td>知识库</td>
+					<td>双向链接、插件生态强大</td>
+			</tr>
+			<tr>
+					<td><strong>VS Code</strong></td>
+					<td>代码编辑器</td>
+					<td>安装 Markdown 插件后体验优秀</td>
+			</tr>
+			<tr>
+					<td><strong>Mark Text</strong></td>
+					<td>桌面编辑器</td>
+					<td>功能全面，支持多种导出</td>
+			</tr>
+			<tr>
+					<td><strong>Notion</strong></td>
+					<td>在线协作</td>
+					<td>支持 Markdown 粘贴与导出</td>
+			</tr>
+			<tr>
+					<td><strong>GitHub</strong></td>
+					<td>代码托管</td>
+					<td>README、Issue、PR 原生支持</td>
+			</tr>
+			<tr>
+					<td><strong>HackMD / CodiMD</strong></td>
+					<td>在线协作</td>
+					<td>实时多人编辑</td>
+			</tr>
+			<tr>
+					<td><strong>Pandoc</strong></td>
+					<td>命令行工具</td>
+					<td>格式转换神器（MD ↔ PDF/Word/HTML）</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<h2 id="6-完整语法速查表">
+  6. 完整语法速查表
+  <a class="heading-link" href="#6-%e5%ae%8c%e6%95%b4%e8%af%ad%e6%b3%95%e9%80%9f%e6%9f%a5%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#79c0ff;font-weight:bold"># 标题
+</span></span></span><span style="display:flex;"><span><span style="color:#79c0ff">## 二级标题
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**粗体**</span> <span style="font-style:italic">*斜体*</span> <span style="color:#ffa198;background-color:#490202">~~删除线~~</span> <span style="color:#a5d6ff">`行内代码`</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">-</span> 无序列表
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">1.</span> 有序列表
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">- [x]</span> 任务列表
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[<span style="color:#7ee787">链接</span>](url)
+</span></span><span style="display:flex;"><span>![<span style="color:#7ee787">图片</span>](url)
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">
+</span></span></span><span style="display:flex;"><span><span style="color:#ff7b72">&gt; </span><span style="font-style:italic">引用
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```语言
+</span></span><span style="display:flex;"><span>代码块
+</span></span></code></pre></div><table>
+	<thead>
+			<tr>
+					<th>表格</th>
+					<th>语法</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>内容</td>
+					<td>内容</td>
+			</tr>
+	</tbody>
+</table>
+<hr>
+<p>分隔线</p>
+<p>$行内公式$
+$$
+块级公式
+$$</p>
+<pre tabindex="0"><code>
+---
+
+## 7. 常见问题与注意事项
+
+1. **为什么我的表格没渲染？**  
+   检查是否有空行、分隔行是否正确、单元格内是否有未转义的 `|`。
+
+2. **标题锚点怎么生成？**  
+   大多数平台会把标题转成小写、空格变 `-`、去掉特殊字符。中文标题在不同平台规则略有差异。
+
+3. **如何在列表中写代码块？**  
+   代码块需要相对列表项多缩进 4 个空格（或一个 Tab）。
+
+4. **Markdown 能做幻灯片吗？**  
+   可以，使用 Marp、Slidev、reveal.js 等工具。
+
+5. **导出 PDF 推荐工具？**  
+   Typora 自带、Pandoc + XeLaTeX、VS Code 插件、或在线工具。
+
+6. **标准是什么？**  
+   - 最基础：John Gruber 原版  
+   - 现代通用：CommonMark  
+   - 最流行扩展：GitHub Flavored Markdown (GFM)
+
+---
+
+**手册结束**
+
+希望这份详细的 Markdown 使用手册对你有帮助！  
+如果需要针对特定平台（如 GitHub、Obsidian、VuePress 等）的专属语法补充，或需要示例文档模板，随时告诉我。
+</code></pre>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     MUGEE 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+  
+  
+  <script src="/js/vault.js"></script>
+  
+  
+  
+  
+  <script src="/js/back-to-top.js"></script>
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
