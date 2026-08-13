@@ -1,0 +1,40 @@
+.back-link {
+  margin-top: 1.2rem; }
+  .back-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 1.1rem;
+    font-size: 1.3rem;
+    color: var(--alt-fg-color, #666);
+    text-decoration: none;
+    background: transparent;
+    border: 1px solid var(--darker-alt-bg-color, #ccc);
+    border-radius: 2rem;
+    transition: color 0.15s ease, border-color 0.15s ease; }
+    .back-link a i {
+      font-size: 1.1rem; }
+    .back-link a:hover, .back-link a:focus {
+      color: var(--link-color, #1565c0);
+      border-color: var(--link-color, #1565c0); }
+
+.float-container a.back-to-top {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(0.4rem);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease; }
+  .float-container a.back-to-top.is-visible {
+    opacity: 0.5;
+    visibility: visible;
+    transform: translateY(0); }
+
+.float-container a.back-to-top.is-visible:hover,
+.float-container a.back-to-top.is-visible:focus {
+  opacity: 1; }
+
+@media only screen and (max-width: 768px) {
+  .float-container a.back-to-top.is-visible:hover,
+  .float-container a.back-to-top.is-visible:focus {
+    opacity: 0.5; } }
+
+/*# sourceMappingURL=back-nav.css.map */

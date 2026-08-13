@@ -1,0 +1,13 @@
+{{/*
+  返回上一层导航按钮
+  用法：{{ partial "back-link.html" (dict "href" "/posts/" "label" "返回文章列表") }}
+  参数：
+    href  - 跳转目标路径（站内相对路径，如 "/posts/"）
+    label - 按钮文字
+*/}}
+<div class="back-link">
+  <a href="{{ .href | relURL }}">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    {{ .label }}
+  </a>
+</div>
