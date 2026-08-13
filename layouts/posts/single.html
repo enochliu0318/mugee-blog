@@ -5,6 +5,8 @@
   <section class="container post">
     <article>
       <header>
+        {{ partial "back-link.html" (dict "href" "/posts/" "label" "返回文章列表") }}
+
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="{{ .Permalink | safeURL }}">
@@ -29,8 +31,6 @@
           {{ with .GetTerms "categories" }}{{ partial "taxonomy/categories.html" . }}{{ end }}
           {{ with .GetTerms "tags" }}{{ partial "taxonomy/tags.html" . }}{{ end }}
         </div>
-
-        {{ partial "back-link.html" (dict "href" "/posts/" "label" "返回文章列表") }}
       </header>
 
       {{ partial "toc.html" . }}

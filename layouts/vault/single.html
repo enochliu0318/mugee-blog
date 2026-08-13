@@ -6,6 +6,8 @@
   <section class="container post vault-post">
     <article>
       <header>
+        {{ partial "back-link.html" (dict "href" "/vault/" "label" "返回保险箱") }}
+
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="{{ .Permalink | safeURL }}">
@@ -27,8 +29,6 @@
             </span>
           </div>
         </div>
-
-        {{ partial "back-link.html" (dict "href" "/vault/" "label" "返回保险箱") }}
       </header>
 
       {{ partial "toc.html" . }}

@@ -1,5 +1,5 @@
 .back-link {
-  margin-top: 1.2rem; }
+  margin-bottom: 1.2rem; }
   .back-link a {
     display: inline-flex;
     align-items: center;
