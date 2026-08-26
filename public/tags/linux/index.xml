@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Tue, 16 Jun 2026 09:44:38 +0800</lastBuildDate>
+			<lastBuildDate>Sat, 22 Aug 2026 12:39:49 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>slstatus定制：实时年龄、日子计数与蓝牙状态显示</title>
+				<link>http://localhost:1313/posts/slstatus-custom-blog/</link>
+				<pubDate>Sat, 22 Aug 2026 12:39:49 +0800</pubDate>
+				<guid>http://localhost:1313/posts/slstatus-custom-blog/</guid>
+				<description>&lt;p&gt;slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于&lt;strong&gt;自己写组件&lt;/strong&gt;。&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>blog.mugee.uk上线！🎉</title>
 				<link>http://localhost:1313/posts/first-blog/</link>

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  slstatus定制：实时年龄、日子计数与蓝牙状态显示 · MUGEE·首页
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="MUGEE">
+<meta name="description" content="slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于自己写组件。">
+<meta name="keywords" content="blog, developer, personal">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="slstatus定制：实时年龄、日子计数与蓝牙状态显示">
+	<meta name="twitter:description" content="slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于自己写组件。">
+
+<meta property="og:url" content="http://localhost:1313/posts/slstatus-custom-blog/">
+	<meta property="og:site_name" content="MUGEE·首页">
+	<meta property="og:title" content="slstatus定制：实时年龄、日子计数与蓝牙状态显示">
+	<meta property="og:description" content="slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于自己写组件。">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-08-22T12:39:49+08:00">
+		<meta property="article:modified_time" content="2026-08-22T12:39:49+08:00">
+		<meta property="article:tag" content="Linux">
+		<meta property="article:tag" content="Slstatus">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/slstatus-custom-blog/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/home.css" media="screen">
+  
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/vault.css" media="screen">
+  
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/back-nav.css" media="screen">
+  
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  <div class="float-container">
+  <a id="back-to-top" class="back-to-top" title="返回顶部" aria-label="返回顶部">
+    <i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
+  </a>
+  
+  <a id="dark-mode-toggle" class="colorscheme-toggle">
+    <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+  </a>
+  
+</div>
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      MUGEE·首页
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">文章</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/categories/">分类</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/authors/">作者</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/search/">搜索🔎</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/vault/">保险箱</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        
+<div class="back-link">
+  <a href="/posts/">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    返回文章列表
+  </a>
+</div>
+
+
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/slstatus-custom-blog/">
+              slstatus定制：实时年龄、日子计数与蓝牙状态显示
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-08-22T12:39:49&#43;08:00">
+                August 22, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：3 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/mugee/">Mugee</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/coding/">Coding</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/linux/">Linux</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/slstatus/">Slstatus</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+<details class="entry__toc toc" >
+	<summary class="toc__title">Table of Contents</summary>
+	<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-实时年龄显示精确到小数点后-8-位">1. 实时年龄显示（精确到小数点后 8 位）</a></li>
+        <li><a href="#2-重要日子精确天数计数">2. 重要日子精确天数计数</a></li>
+        <li><a href="#3-蓝牙设备名--电量显示">3. 蓝牙设备名 + 电量显示</a></li>
+        <li><a href="#最终状态栏配置片段">最终状态栏配置片段</a></li>
+      </ul>
+    </li>
+    <li><a href="#小结">小结</a></li>
+  </ul>
+</nav>
+</details>
+
+
+      <div class="post-content">
+        
+        <p>slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于<strong>自己写组件</strong>。</p>
+<p>本文重点不谈官方自带的 battery、cpu、wifi 等常规模块，而是分享我添加的三个个人化组件：</p>
+<ol>
+<li><strong>实时年龄计算</strong>（<code>age_cal</code>）</li>
+<li><strong>重要日子精确天数计数</strong>（<code>days_since</code>）</li>
+<li><strong>蓝牙连接设备名 + 电量</strong>（<code>bluetooth_conn</code> / <code>bluetooth_batt</code>）</li>
+</ol>
+<p>这些组件让状态栏变成了真正“属于我”的东西。</p>
+<hr>
+<h3 id="1-实时年龄显示精确到小数点后-8-位">
+  1. 实时年龄显示（精确到小数点后 8 位）
+  <a class="heading-link" href="#1-%e5%ae%9e%e6%97%b6%e5%b9%b4%e9%be%84%e6%98%be%e7%a4%ba%e7%b2%be%e7%a1%ae%e5%88%b0%e5%b0%8f%e6%95%b0%e7%82%b9%e5%90%8e-8-%e4%bd%8d">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>状态栏里最显眼的一项是：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>{ age_cal, <span style="color:#a5d6ff">&#34;me@[%s]  ‖  &#34;</span>, <span style="color:#a5d6ff">&#34;20100318&#34;</span> },
+</span></span></code></pre></div><p>效果类似：<code>me@[16.43210987] ‖</code></p>
+<p>实现非常直接（<code>components/age.c</code>）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-weight:bold;font-style:italic">#define YEAR 31557600.0   </span><span style="color:#8b949e;font-style:italic">/* 平均年长度（考虑闰年） */</span><span style="color:#8b949e;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">const</span> <span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">age_cal</span>(<span style="color:#ff7b72">const</span> <span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>birth)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">static</span> <span style="color:#ff7b72">char</span> age_buf[<span style="color:#a5d6ff">16</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">int</span> year, month, day;
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">sscanf</span>(birth, <span style="color:#a5d6ff">&#34;%4d%2d%2d&#34;</span>, <span style="color:#ff7b72;font-weight:bold">&amp;</span>year, <span style="color:#ff7b72;font-weight:bold">&amp;</span>month, <span style="color:#ff7b72;font-weight:bold">&amp;</span>day);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">struct</span> tm birth_time <span style="color:#ff7b72;font-weight:bold">=</span> {<span style="color:#a5d6ff">0</span>};
+</span></span><span style="display:flex;"><span>    birth_time.tm_year <span style="color:#ff7b72;font-weight:bold">=</span> year <span style="color:#ff7b72;font-weight:bold">-</span> <span style="color:#a5d6ff">1900</span>;
+</span></span><span style="display:flex;"><span>    birth_time.tm_mon  <span style="color:#ff7b72;font-weight:bold">=</span> month <span style="color:#ff7b72;font-weight:bold">-</span> <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    birth_time.tm_mday <span style="color:#ff7b72;font-weight:bold">=</span> day;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">time_t</span> birth_timestamp <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">mktime</span>(<span style="color:#ff7b72;font-weight:bold">&amp;</span>birth_time);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">time_t</span> current_timestamp <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">time</span>(NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">double</span> seconds_difference <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">difftime</span>(current_timestamp, birth_timestamp);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">double</span> super_age <span style="color:#ff7b72;font-weight:bold">=</span> seconds_difference <span style="color:#ff7b72;font-weight:bold">/</span> YEAR;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">snprintf</span>(age_buf, <span style="color:#ff7b72">sizeof</span>(age_buf), <span style="color:#a5d6ff">&#34;%.8lf&#34;</span>, super_age);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> age_buf;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>设计要点：</strong></p>
+<ul>
+<li>使用 <code>31557600.0</code>（365.25 × 86400）作为年平均秒数，能较好地处理闰年。</li>
+<li>输出精度到小数点后 8 位，状态栏每 300ms 刷新一次时，数字会缓慢跳动，有种“生命在流逝”的感觉。</li>
+<li>参数直接写出生日期 <code>YYYYMMDD</code>，无需额外配置文件。</li>
+</ul>
+<hr>
+<h3 id="2-重要日子精确天数计数">
+  2. 重要日子精确天数计数
+  <a class="heading-link" href="#2-%e9%87%8d%e8%a6%81%e6%97%a5%e5%ad%90%e7%b2%be%e7%a1%ae%e5%a4%a9%e6%95%b0%e8%ae%a1%e6%95%b0">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>我最喜欢的组件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>{ days_since, <span style="color:#a5d6ff">&#34;📅 %s  ‖  &#34;</span>, <span style="color:#a5d6ff">&#34;2026-07-01&#34;</span> },
+</span></span></code></pre></div><p>输出类似：<code>📅 51.23456d ‖</code></p>
+<p>对应代码（<code>components/days.c</code>）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">const</span> <span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">days_since</span>(<span style="color:#ff7b72">const</span> <span style="color:#ff7b72">char</span> <span style="color:#ff7b72;font-weight:bold">*</span>date_str)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">struct</span> tm target_tm <span style="color:#ff7b72;font-weight:bold">=</span> { <span style="color:#a5d6ff">0</span> };
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">time_t</span> now, target;
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">double</span> diff_sec, days;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (<span style="color:#d2a8ff;font-weight:bold">sscanf</span>(date_str, <span style="color:#a5d6ff">&#34;%d-%d-%d&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff7b72;font-weight:bold">&amp;</span>target_tm.tm_year, <span style="color:#ff7b72;font-weight:bold">&amp;</span>target_tm.tm_mon, <span style="color:#ff7b72;font-weight:bold">&amp;</span>target_tm.tm_mday) <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#a5d6ff">3</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> NULL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    target_tm.tm_year <span style="color:#ff7b72;font-weight:bold">-=</span> <span style="color:#a5d6ff">1900</span>;
+</span></span><span style="display:flex;"><span>    target_tm.tm_mon  <span style="color:#ff7b72;font-weight:bold">-=</span> <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    target_tm.tm_isdst <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>;   <span style="color:#8b949e;font-style:italic">/* 让 mktime 自动处理夏令时 */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    target <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">mktime</span>(<span style="color:#ff7b72;font-weight:bold">&amp;</span>target_tm);
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">if</span> (target <span style="color:#ff7b72;font-weight:bold">==</span> <span style="color:#ff7b72;font-weight:bold">-</span><span style="color:#a5d6ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#ff7b72">return</span> NULL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#d2a8ff;font-weight:bold">time</span>(<span style="color:#ff7b72;font-weight:bold">&amp;</span>now);
+</span></span><span style="display:flex;"><span>    diff_sec <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">difftime</span>(now, target);
+</span></span><span style="display:flex;"><span>    days <span style="color:#ff7b72;font-weight:bold">=</span> diff_sec <span style="color:#ff7b72;font-weight:bold">/</span> (<span style="color:#a5d6ff">60</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">60</span> <span style="color:#ff7b72;font-weight:bold">*</span> <span style="color:#a5d6ff">24</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ff7b72">return</span> <span style="color:#d2a8ff;font-weight:bold">bprintf</span>(<span style="color:#a5d6ff">&#34;%.5fd&#34;</span>, days);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>亮点：</strong></p>
+<ul>
+<li>支持任意 <code>YYYY-MM-DD</code> 日期，可以轻松换成纪念日、项目启动日、考试日等。</li>
+<li>精确到小数点后 5 位（约 0.86 秒分辨率），配合 300ms 刷新，视觉上是实时跳动的。</li>
+<li>使用 <code>difftime</code> + <code>mktime</code> 正确处理时区和夏令时。</li>
+</ul>
+<p>想换日期只需要改 <code>config.h</code> 里的字符串即可，重新 <code>make</code> 就行。</p>
+<hr>
+<h3 id="3-蓝牙设备名--电量显示">
+  3. 蓝牙设备名 + 电量显示
+  <a class="heading-link" href="#3-%e8%93%9d%e7%89%99%e8%ae%be%e5%a4%87%e5%90%8d--%e7%94%b5%e9%87%8f%e6%98%be%e7%a4%ba">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>蓝牙相关我写了三个函数（目前用了两个）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>{ bluetooth_conn, <span style="color:#a5d6ff">&#34;B[%s]&#34;</span>,           <span style="color:#a5d6ff">&#34;&#34;</span> },
+</span></span><span style="display:flex;"><span>{ bluetooth_batt, <span style="color:#a5d6ff">&#34;[%s]  ‖  &#34;</span>,        <span style="color:#a5d6ff">&#34;&#34;</span> },
+</span></span></code></pre></div><p>典型输出：<code>B[AirPods Pro][87%] ‖</code> 或 <code>B[WH-1000XM5, Keyboard][62%, 100%] ‖</code></p>
+<p>核心实现依赖 <code>bluetoothctl</code>（<code>components/bluetooth.c</code>）：</p>
+<ul>
+<li><strong><code>bluetooth_conn</code></strong>：执行 <code>bluetoothctl devices Connected</code>，解析设备名称，多个设备用 <code>, </code> 分隔。</li>
+<li><strong><code>bluetooth_batt</code></strong>：对每个已连接设备再执行 <code>bluetoothctl info &lt;MAC&gt;</code>，用正则提取 <code>Battery Percentage: 0x?? (NN)</code>，同样用逗号拼接。</li>
+</ul>
+<p>关键解析逻辑示例：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">/* 提取设备名 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (<span style="color:#d2a8ff;font-weight:bold">strncmp</span>(buf, <span style="color:#a5d6ff">&#34;Device &#34;</span>, <span style="color:#a5d6ff">7</span>) <span style="color:#ff7b72;font-weight:bold">!=</span> <span style="color:#a5d6ff">0</span>) <span style="color:#ff7b72">continue</span>;
+</span></span><span style="display:flex;"><span>name <span style="color:#ff7b72;font-weight:bold">=</span> <span style="color:#d2a8ff;font-weight:bold">strchr</span>(buf <span style="color:#ff7b72;font-weight:bold">+</span> <span style="color:#a5d6ff">7</span>, <span style="color:#a5d6ff">&#39; &#39;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#ff7b72">if</span> (<span style="color:#ff7b72;font-weight:bold">!</span>name) <span style="color:#ff7b72">continue</span>;
+</span></span><span style="display:flex;"><span>name<span style="color:#ff7b72;font-weight:bold">++</span>;   <span style="color:#8b949e;font-style:italic">/* 跳过 MAC 后的空格 */</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">/* 提取电量 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">sscanf</span>(buf, <span style="color:#a5d6ff">&#34; Battery Percentage: %*x (%d)&#34;</span>, <span style="color:#ff7b72;font-weight:bold">&amp;</span>perc)
+</span></span></code></pre></div><p><strong>优点：</strong></p>
+<ul>
+<li>无需额外 daemon，直接调用系统自带的 <code>bluetoothctl</code>。</li>
+<li>支持多设备同时显示名称和电量。</li>
+<li>没有连接设备时返回 <code>NULL</code>，状态栏会干净地跳过该项。</li>
+</ul>
+<hr>
+<h3 id="最终状态栏配置片段">
+  最终状态栏配置片段
+  <a class="heading-link" href="#%e6%9c%80%e7%bb%88%e7%8a%b6%e6%80%81%e6%a0%8f%e9%85%8d%e7%bd%ae%e7%89%87%e6%ae%b5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#ff7b72">static</span> <span style="color:#ff7b72">const</span> <span style="color:#ff7b72">struct</span> arg args[] <span style="color:#ff7b72;font-weight:bold">=</span> {
+</span></span><span style="display:flex;"><span>    { hostname,       <span style="color:#a5d6ff">&#34; @%s  ‖  &#34;</span>,           <span style="color:#a5d6ff">&#34;&#34;</span> },
+</span></span><span style="display:flex;"><span>    <span style="color:#8b949e;font-style:italic">/* 音量、亮度、电池等常规项... */</span>
+</span></span><span style="display:flex;"><span>    { bluetooth_conn, <span style="color:#a5d6ff">&#34;B[%s]&#34;</span>,               <span style="color:#a5d6ff">&#34;&#34;</span> },
+</span></span><span style="display:flex;"><span>    { bluetooth_batt, <span style="color:#a5d6ff">&#34;[%s]  ‖  &#34;</span>,           <span style="color:#a5d6ff">&#34;&#34;</span> },
+</span></span><span style="display:flex;"><span>    { wifi_essid,     <span style="color:#a5d6ff">&#34;W[%s]&#34;</span>,               <span style="color:#a5d6ff">&#34;wlp0s20f3&#34;</span> },
+</span></span><span style="display:flex;"><span>    { wifi_perc,      <span style="color:#a5d6ff">&#34;[%s]  ‖  &#34;</span>,           <span style="color:#a5d6ff">&#34;wlp0s20f3&#34;</span> },
+</span></span><span style="display:flex;"><span>    { age_cal,        <span style="color:#a5d6ff">&#34;me@[%s]  ‖  &#34;</span>,        <span style="color:#a5d6ff">&#34;20100318&#34;</span> },
+</span></span><span style="display:flex;"><span>    { days_since,     <span style="color:#a5d6ff">&#34;📅 %s  ‖  &#34;</span>,          <span style="color:#a5d6ff">&#34;2026-07-01&#34;</span> },
+</span></span><span style="display:flex;"><span>    { datetime,       <span style="color:#a5d6ff">&#34;[ %s ] &#34;</span>,             <span style="color:#a5d6ff">&#34;%F %T&#34;</span> },
+</span></span><span style="display:flex;"><span>};
+</span></span></code></pre></div><p>刷新间隔设为 300ms，既保证数字跳动流畅，又不会带来明显的 CPU 开销。</p>
+<hr>
+<h2 id="小结">
+  小结
+  <a class="heading-link" href="#%e5%b0%8f%e7%bb%93">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>通过三个很小的组件，状态栏从“系统信息显示器”变成了<strong>个人时间胶囊</strong>：</p>
+<ul>
+<li>实时年龄让人时刻意识到时间流逝</li>
+<li>日子计数让我感恩和她走过的一路</li>
+<li>蓝牙信息则解决了耳机/键盘电量需要频繁查看手机的痛点</li>
+</ul>
+<p>这正是 suckless 哲学最迷人的地方——代码足够小，你完全可以按照自己的生活节奏去扩展它。</p>
+<p>如果你也想加这些功能，直接把 <code>age.c</code>、<code>days.c</code>、<code>bluetooth.c</code> 丢进 <code>components/</code>，在 <code>slstatus.h</code> 声明函数，改好 <code>config.h</code> 后 <code>make clean install</code> 即可。</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     MUGEE 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+  
+  
+  <script src="/js/vault.js"></script>
+  
+  
+  
+  
+  <script src="/js/vault-updates.js"></script>
+  
+  
+  
+  
+  <script src="/js/back-to-top.js"></script>
+  
+  
+  
+  
+  <script src="/js/gallery-lightbox.js"></script>
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

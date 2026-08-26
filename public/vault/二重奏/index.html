@@ -116,16 +116,15 @@
 
 <body class="preload-transitions colorscheme-auto">
   <div class="float-container">
+  <a id="back-to-top" class="back-to-top" title="返回顶部" aria-label="返回顶部">
+    <i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
+  </a>
   
   <a id="dark-mode-toggle" class="colorscheme-toggle">
     <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
   </a>
   
-  <a id="back-to-top" class="back-to-top" title="返回顶部" aria-label="返回顶部">
-    <i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
-  </a>
 </div>
-
   <main class="wrapper">
     <nav class="navigation">
   <section class="container">
@@ -228,6 +227,15 @@
   <section class="container post vault-post">
     <article>
       <header>
+        
+<div class="back-link">
+  <a href="/vault/">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    返回保险箱
+  </a>
+</div>
+
+
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="http://localhost:1313/vault/%E4%BA%8C%E9%87%8D%E5%A5%8F/">
@@ -249,21 +257,17 @@
             </span>
           </div>
         </div>
-
-        
-<div class="back-link">
-  <a href="/vault/">
-    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-    返回保险箱
-  </a>
-</div>
-
       </header>
 
       
 
 
-      <div class="post-content">
+      <div
+        class="post-content vault-diff-content"
+        data-vault-diff
+        data-vault-path="/vault/%E4%BA%8C%E9%87%8D%E5%A5%8F/"
+        data-vault-hash="b1c5ea024c50c73c5fd4e77965c6eef0880105fa98cada693a6bc3ab1a8467ad"
+      >
         
         <p>一诺你看，有这样一个词——生离死别，里面每个字代表一个意思，跟日复一日周而复始的柴米油盐相比，这个词不常出现，至少我们不喜欢它常常出现。但有时候，和信任的人心情放松地去讨论它们，会帮助我们更了解当下的自己和对方。</p>
 <p>既然说放松，何以要放出这么大一个话题呢？我猜想，因为这几个关键字是把人“逼”到一个退无可退的地步，去拷问自己的人生观、世界观和价值观。</p>
@@ -310,6 +314,11 @@
   
   
   <script src="/js/vault.js"></script>
+  
+  
+  
+  
+  <script src="/js/vault-updates.js"></script>
   
   
   
