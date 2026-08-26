@@ -2,8 +2,11 @@
   "use strict";
 
   // 所有"你上次看到某篇保险箱文章时的样子"都存在这个 key 下面，
-  // 结构：{ "<page-path>": { fullHash, blockHashes: [...], seenAt } }
+  // 结构：{ "<page-path>": { v, fullHash, blockHashes: [...], seenAt } }
+  // v 是快照格式版本：diff 切分粒度变了就 +1，旧快照直接作废，
+  // 避免新旧粒度混着比对导致整篇文章被误判为"全部更新"。
   const STORAGE_KEY = "mugee-vault-seen";
+  const SNAPSHOT_VERSION = 2;
 
   function readSeenMap() {
     try {
@@ -58,30 +61,32 @@
   }
 
   /* ----------------------------------------------------------------
-   * 2. 文章页：按"天"分段做 diff，高亮改动、给出跳转按钮，
+   * 2. 文章页：按"段落"做 diff，高亮改动、给出跳转按钮，
    *    并在离开页面时把这次的样子存为新的"已读基准"。
    * ---------------------------------------------------------------- */
 
-  // 把正文按二级/三级标题（对应日记里的"### 2026年X月X日"）切成若干段，
-  // 没有小标题的文章（比如非日记体的保险箱文章）整体作为一段处理。
-  function splitIntoBlocks(container) {
+  // 把正文切成更细的"段落"单位：每个顶层元素（p / h3 / pre / blockquote 等）
+  // 各算一段，列表则再拆到每一个 <li>。这样改动某一天日记里的某一段话时，
+  // 只有那一段（对应 markdown 源文件里那一行）会被高亮，
+  // 而不是整个 "### 某天" 标题下的内容全部标红。
+  function collectBlocks(container) {
     const blocks = [];
-    let current = null;
 
     Array.from(container.children).forEach((el) => {
-      const isHeading = el.tagName === "H2" || el.tagName === "H3";
-      if (isHeading || !current) {
-        current = { nodes: [] };
-        blocks.push(current);
+      if (el.tagName === "UL" || el.tagName === "OL") {
+        Array.from(el.children).forEach((child) => {
+          if (child.tagName === "LI") blocks.push(child);
+        });
+      } else {
+        blocks.push(el);
       }
-      current.nodes.push(el);
     });
 
     return blocks;
   }
 
   function blockText(block) {
-    return block.nodes.map((n) => n.textContent || "").join("\n").trim();
+    return (block.textContent || "").trim();
   }
 
   // 用 LCS 对比"上次看到的分段哈希序列"和"这次的分段哈希序列"，
@@ -123,17 +128,13 @@
     return changed;
   }
 
-  function wrapBlockAsChanged(block) {
-    const first = block.nodes[0];
-    if (!first || !first.parentNode) return null;
+  // 直接在元素本身上打高亮类，不再包一层 div——
+  // 因为现在的"段"可能是 <li>，包 div 会破坏列表的 DOM 结构。
+  function markBlockAsChanged(block) {
+    if (!block || !block.parentNode) return null;
 
-    const wrapper = document.createElement("div");
-    wrapper.className = "vault-diff-block vault-diff-new";
-
-    first.parentNode.insertBefore(wrapper, first);
-    block.nodes.forEach((node) => wrapper.appendChild(node));
-
-    return wrapper;
+    block.classList.add("vault-diff-block", "vault-diff-new");
+    return block;
   }
 
   function buildJumpButton(container, targets) {
@@ -167,12 +168,17 @@
     const seenMap = readSeenMap();
     const previous = seenMap[path];
 
-    const blocks = splitIntoBlocks(container);
+    const blocks = collectBlocks(container);
     const currentBlockHashes = blocks.map((b) => fnv1aHash(blockText(b)));
 
     // 只有"之前真的访问、留下过快照"的情况下才做 diff 高亮；
     // 第一次打开某篇文章时，全篇对读者来说都是"新的"，没必要整篇标红。
-    if (previous && Array.isArray(previous.blockHashes)) {
+    // 快照版本不匹配（比如切分粒度升级过）时也当作没有基线，跳过本次 diff。
+    if (
+      previous &&
+      previous.v === SNAPSHOT_VERSION &&
+      Array.isArray(previous.blockHashes)
+    ) {
       const changedIndexes = diffBlockHashes(
         previous.blockHashes,
         currentBlockHashes
@@ -180,7 +186,7 @@
 
       if (changedIndexes.length) {
         const targets = changedIndexes
-          .map((idx) => wrapBlockAsChanged(blocks[idx]))
+          .map((idx) => markBlockAsChanged(blocks[idx]))
           .filter(Boolean);
         buildJumpButton(container, targets);
       }
@@ -194,6 +200,7 @@
       saved = true;
       const map = readSeenMap();
       map[path] = {
+        v: SNAPSHOT_VERSION,
         fullHash: fullHash,
         blockHashes: currentBlockHashes,
         seenAt: Date.now(),

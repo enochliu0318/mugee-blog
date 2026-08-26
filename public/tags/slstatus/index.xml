@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Slstatus on MUGEE·首页</title>
-		<link>http://localhost:1313/tags/slstatus/</link>
+		<link>https://blog.mugee.uk/tags/slstatus/</link>
 		<description>Recent content in Slstatus on MUGEE·首页</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Sat, 22 Aug 2026 12:39:49 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/slstatus/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.mugee.uk/tags/slstatus/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>slstatus定制：实时年龄、日子计数与蓝牙状态显示</title>
-				<link>http://localhost:1313/posts/slstatus-custom-blog/</link>
+				<link>https://blog.mugee.uk/posts/slstatus-custom-blog/</link>
 				<pubDate>Sat, 22 Aug 2026 12:39:49 +0800</pubDate>
-				<guid>http://localhost:1313/posts/slstatus-custom-blog/</guid>
+				<guid>https://blog.mugee.uk/posts/slstatus-custom-blog/</guid>
 				<description>&lt;p&gt;slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于&lt;strong&gt;自己写组件&lt;/strong&gt;。&lt;/p&gt;</description>
 			</item>
 	</channel>

@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){var t,n,e=document.getElementById("back-to-top");if(!e)return;n=300,t=function(){window.scrollY>n?e.classList.add("is-visible"):e.classList.remove("is-visible")},t(),window.addEventListener("scroll",t,{passive:!0}),e.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})})})

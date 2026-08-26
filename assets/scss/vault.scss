@@ -180,6 +180,33 @@
   display: none;
 }
 
+/* 呼吸灯：透明度、大小、外圈光晕一起缓慢地"吸-呼"，像设备待机灯一样 */
+.vault-update-dot:not([hidden]) {
+  animation: vault-dot-breathe 2.4s ease-in-out infinite;
+}
+
+@keyframes vault-dot-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0
+      color-mix(in srgb, var(--link-color, #1565c0) 55%, transparent);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0.45rem transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vault-update-dot:not([hidden]) {
+    animation: none;
+  }
+}
+
 /* 文章页：跳转到最新更新的按钮 */
 .vault-jump-btn {
   display: inline-flex;
