@@ -35,7 +35,12 @@
 
       {{ partial "toc.html" . }}
 
-      <div class="post-content">
+      <div
+        class="post-content"
+        data-posts-seen
+        data-posts-path="{{ .RelPermalink }}"
+        data-posts-hash="{{ crypto.SHA256 .Content }}"
+      >
         {{ if .Params.featuredImage }}
           <img src="{{ .Params.featuredImage | relURL }}" alt="Featured image"/>
         {{ end }}

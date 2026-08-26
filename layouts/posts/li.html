@@ -1,0 +1,12 @@
+<li
+  data-posts-path="{{ .RelPermalink }}"
+  data-posts-hash="{{ crypto.SHA256 .Content }}"
+>
+  <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
+  <a class="title" href="{{ .Params.externalLink | default .RelPermalink }}">{{ .Title }}<span
+      class="posts-update-dot"
+      data-posts-update-dot
+      title="自你上次查看后，这篇文章已更新"
+      hidden
+    ></span></a>
+</li>
