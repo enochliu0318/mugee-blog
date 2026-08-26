@@ -24,15 +24,12 @@
           data-vault-hash="{{ crypto.SHA256 .Content }}"
         >
           <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</span>
-          <span class="vault-title-wrap">
-            <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <span
+          <a class="title" href="{{ .RelPermalink }}">{{ .Title }}<span
               class="vault-update-dot"
               data-vault-update-dot
               title="自你上次查看后，这篇文章已更新"
               hidden
-            ></span>
-          </span>
+            ></span></a>
         </li>
       {{- end -}}
     </ul>
