@@ -33,7 +33,12 @@
 
       {{ partial "toc.html" . }}
 
-      <div class="post-content">
+      <div
+        class="post-content vault-diff-content"
+        data-vault-diff
+        data-vault-path="{{ .RelPermalink }}"
+        data-vault-hash="{{ crypto.SHA256 .Content }}"
+      >
         {{ if .Params.featuredImage }}
           <img src="{{ .Params.featuredImage | relURL }}" alt="Featured image"/>
         {{ end }}

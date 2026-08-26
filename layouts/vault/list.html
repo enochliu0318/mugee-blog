@@ -16,11 +16,21 @@
     </header>
   {{- $pages := sort .Pages "Date" "desc" -}}
   {{- if $pages -}}
-    <ul>
+    <ul class="vault-page-list" data-vault-update-list>
       {{- range $pages -}}
-        <li>
+        <li
+          class="vault-page-item"
+          data-vault-path="{{ .RelPermalink }}"
+          data-vault-hash="{{ crypto.SHA256 .Content }}"
+        >
           <span class="date">{{ .Date | time.Format (.Site.Params.dateFormat | default "January 2, 2006") }}</span>
           <a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <span
+            class="vault-update-dot"
+            data-vault-update-dot
+            title="自你上次查看后，这篇文章已更新"
+            hidden
+          ></span>
         </li>
       {{- end -}}
     </ul>
