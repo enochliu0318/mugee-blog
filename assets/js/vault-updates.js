@@ -130,11 +130,6 @@
     const wrapper = document.createElement("div");
     wrapper.className = "vault-diff-block vault-diff-new";
 
-    const marker = document.createElement("span");
-    marker.className = "vault-diff-marker";
-    marker.textContent = "有更新";
-    wrapper.appendChild(marker);
-
     first.parentNode.insertBefore(wrapper, first);
     block.nodes.forEach((node) => wrapper.appendChild(node));
 

@@ -162,6 +162,71 @@
   color: var(--link-color, #1565c0);
 }
 
+/* 列表页：文章有更新时的小圆点提示（贴在标题右上角） */
+.vault-page-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vault-title-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.vault-update-dot {
+  position: absolute;
+  top: -0.2rem;
+  right: -0.7rem;
+  display: inline-block;
+  width: 0.6rem;
+  height: 0.6rem;
+  background: #e53935;
+  border-radius: 50%;
+  cursor: default;
+}
+
+.vault-update-dot[hidden] {
+  display: none;
+}
+
+/* 文章页：跳转到最新更新的按钮 */
+.vault-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.6rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  background: #4a9fb5;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.88;
+  }
+
+  &::before {
+    content: "\2193";
+  }
+}
+
+/* 文章页：改动段落的高亮标注（浅青蓝、更淡） */
+.vault-diff-block {
+  margin: 1.2rem 0;
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+}
+
+.vault-diff-new {
+  background: rgba(120, 190, 200, 0.08);
+  border-left: 3px solid rgba(120, 190, 200, 0.55);
+}
+
 @keyframes vault-fade-in {
   from {
     opacity: 0;
@@ -186,77 +251,4 @@
   .vault-toolbar {
     padding: 0 1rem;
   }
-}
-
-/* 列表页：文章有更新时的小圆点提示 */
-.vault-page-item {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.vault-update-dot {
-  display: inline-block;
-  width: 0.8rem;
-  height: 0.8rem;
-  flex-shrink: 0;
-  background: #e53935;
-  border-radius: 50%;
-  box-shadow: 0 0 0 3px rgba(229, 57, 53, 0.18);
-  cursor: default;
-}
-
-.vault-update-dot[hidden] {
-  display: none;
-}
-
-/* 文章页：跳转到最新更新的按钮 */
-.vault-jump-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin: 0 0 1.6rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: #fff;
-  background: #e53935;
-  border: none;
-  border-radius: 2rem;
-  cursor: pointer;
-  transition: opacity 0.15s ease;
-
-  &:hover {
-    opacity: 0.88;
-  }
-
-  &::before {
-    content: "\2193";
-  }
-}
-
-/* 文章页：改动段落的高亮标注 */
-.vault-diff-block {
-  position: relative;
-  margin: 1.2rem 0;
-  padding: 0.4rem 1.2rem 0.4rem 1.4rem;
-  border-radius: 0.4rem;
-}
-
-.vault-diff-new {
-  background: rgba(255, 214, 51, 0.14);
-  border-left: 3px solid #e5a000;
-}
-
-.vault-diff-marker {
-  position: absolute;
-  top: -0.9rem;
-  left: 1rem;
-  padding: 0.1rem 0.6rem;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #fff;
-  background: #e5a000;
-  border-radius: 1rem;
-  letter-spacing: 0.05rem;
 }
