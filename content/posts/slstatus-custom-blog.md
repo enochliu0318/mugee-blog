@@ -14,6 +14,8 @@ toc = true
 
 slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于**自己写组件**。
 
+test1
+
 本文重点不谈官方自带的 battery、cpu、wifi 等常规模块，而是分享我添加的三个个人化组件：
 
 1. **实时年龄计算**（`age_cal`）
