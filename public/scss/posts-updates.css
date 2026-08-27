@@ -1,0 +1,68 @@
+@charset "UTF-8";
+/* 主文章列表：自上次访问后有更新的文章，标题旁亮起一个黄色的小圆点。
+   样式与保险箱的圆点完全独立，颜色为黄色系的呼吸灯效果。 */
+.posts-update-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.5rem;
+  vertical-align: super;
+  background: #ffc107;
+  border-radius: 50%;
+  cursor: default; }
+
+.posts-update-dot[hidden] {
+  display: none; }
+
+/* 呼吸灯：透明度、大小、外圈光晕一起缓慢地"吸-呼"，像设备待机灯一样 */
+.posts-update-dot:not([hidden]) {
+  animation: posts-dot-breathe 2.4s ease-in-out infinite; }
+
+@keyframes posts-dot-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.55); }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0.45rem transparent; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .posts-update-dot:not([hidden]) {
+    animation: none; } }
+
+/* 文章页：跳转到最新更新的按钮（黄色） */
+.posts-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.6rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #212121;
+  background: #ffc107;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease; }
+  .posts-jump-btn:hover {
+    opacity: 0.88; }
+  .posts-jump-btn::before {
+    content: "\2193"; }
+
+/* 文章页：改动段落的高亮标注（黄色，很淡，深浅色主题下都可读） */
+.posts-diff-block {
+  margin: 1.2rem 0;
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem; }
+
+.posts-diff-new {
+  background: rgba(255, 193, 7, 0.12);
+  background: color-mix(in srgb, #ffc107 12%, transparent);
+  border-left: 3px solid rgba(255, 193, 7, 0.7);
+  border-left-color: color-mix(in srgb, #ffc107 70%, transparent); }
+
+/*# sourceMappingURL=posts-updates.css.map */
