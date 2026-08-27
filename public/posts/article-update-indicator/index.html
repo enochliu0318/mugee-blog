@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  给博客加「更新提示灯」：从呼吸小圆点到段落级 diff · MUGEE·首页
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="MUGEE">
+<meta name="description" content="用 Hugo &#43; 原生 JS 实现内容更新提示：列表页呼吸小圆点、文章页段落级高亮与跳转按钮，以及 libsass 踩坑记">
+<meta name="keywords" content="blog, developer, personal">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="给博客加「更新提示灯」：从呼吸小圆点到段落级 diff">
+	<meta name="twitter:description" content="用 Hugo &#43; 原生 JS 实现内容更新提示：列表页呼吸小圆点、文章页段落级高亮与跳转按钮，以及 libsass 踩坑记">
+
+<meta property="og:url" content="https://blog.mugee.uk/posts/article-update-indicator/">
+	<meta property="og:site_name" content="MUGEE·首页">
+	<meta property="og:title" content="给博客加「更新提示灯」：从呼吸小圆点到段落级 diff">
+	<meta property="og:description" content="用 Hugo &#43; 原生 JS 实现内容更新提示：列表页呼吸小圆点、文章页段落级高亮与跳转按钮，以及 libsass 踩坑记">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-08-27T12:24:04+08:00">
+		<meta property="article:modified_time" content="2026-08-27T12:24:04+08:00">
+		<meta property="article:tag" content="Hugo">
+		<meta property="article:tag" content="JavaScript">
+		<meta property="article:tag" content="CSS">
+		<meta property="article:tag" content="Website">
+
+
+
+
+<link rel="canonical" href="https://blog.mugee.uk/posts/article-update-indicator/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.5e94c1acf7aa2066035cf2764ae3e4fe39db101d68b870f919966100d51fb861.css" integrity="sha256-XpTBrPeqIGYDXPJ2SuPk/jnbEB1ouHD5GZZhANUfuGE=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.ad48f476275974885bdc03d5251e3cdbe1678c54a63ff772376b0ed2adc468dd.css" integrity="sha256-rUj0didZdIhb3APVJR482&#43;FnjFSmP/dyN2sO0q3EaN0=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+  
+  
+    
+    <link rel="stylesheet" href="/scss/home.min.7a921812cf6903767e80e6d2128873bc9fbde29a7bb7ec1d2aeba6a72e7d9dd1.css" integrity="sha256-epIYEs9pA3Z&#43;gObSEohzvJ&#43;94pp7t&#43;wdKuumpy59ndE=" crossorigin="anonymous" media="screen" />
+  
+
+  
+  
+    
+    <link rel="stylesheet" href="/scss/vault.min.7f4125ac65c4d1ae59e0efc5990c5fa18188c081c9f8a9cc1670f393b66a54b7.css" integrity="sha256-f0ElrGXE0a5Z4O/FmQxfoYGIwIHJ&#43;KnMFnDzk7ZqVLc=" crossorigin="anonymous" media="screen" />
+  
+
+  
+  
+    
+    <link rel="stylesheet" href="/scss/posts-updates.min.f5a661b7b86bcc7cafc4b3f056ffc9ccd6440c4d03bd3f6e47d52984f61f5770.css" integrity="sha256-9aZht7hrzHyvxLPwVv/JzNZEDE0DvT9uR9UphPYfV3A=" crossorigin="anonymous" media="screen" />
+  
+
+  
+  
+    
+    <link rel="stylesheet" href="/scss/back-nav.min.5ef4fbffaf4d9d464540b19c63cbfcc1e90adc82ab351eeda4d0a0110b7acc10.css" integrity="sha256-XvT7/69NnUZFQLGcY8v8wekK3IKrNR7tpNCgEQt6zBA=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  <div class="float-container">
+  <a id="back-to-top" class="back-to-top" title="返回顶部" aria-label="返回顶部">
+    <i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
+  </a>
+  
+  <a id="dark-mode-toggle" class="colorscheme-toggle">
+    <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+  </a>
+  
+</div>
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="https://blog.mugee.uk/">
+      MUGEE·首页
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">文章</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/categories/">分类</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/authors/">作者</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/search/">搜索🔎</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/vault/">保险箱</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        
+<div class="back-link">
+  <a href="/posts/">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    返回文章列表
+  </a>
+</div>
+
+
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://blog.mugee.uk/posts/article-update-indicator/">
+              给博客加「更新提示灯」：从呼吸小圆点到段落级 diff
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-08-27T12:24:04&#43;08:00">
+                August 27, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：6 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/mugee/">Mugee</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/coding/">Coding</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/hugo/">Hugo</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/javascript/">JavaScript</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/css/">CSS</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/website/">Website</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+<details class="entry__toc toc" >
+	<summary class="toc__title">Table of Contents</summary>
+	<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#核心思路指纹比对">核心思路：指纹比对</a></li>
+        <li><a href="#第一层呼吸灯小圆点">第一层：呼吸灯小圆点</a></li>
+        <li><a href="#第二层段落级-diff">第二层：段落级 diff</a></li>
+        <li><a href="#几个刻意的设计决策">几个刻意的设计决策</a></li>
+        <li><a href="#复用到主文章列表">复用到主文章列表</a></li>
+        <li><a href="#踩坑本地好好的部署炸了">踩坑：本地好好的，部署炸了</a></li>
+        <li><a href="#怎么验证">怎么验证？</a></li>
+        <li><a href="#结语">结语</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</details>
+
+
+      <div
+        class="post-content"
+        data-posts-seen
+        data-posts-path="/posts/article-update-indicator/"
+        data-posts-hash="bae1bbf85c02e4a64831878a9b4261d2e7baffcd6e9b19523ae8d591bc8cccbb"
+      >
+        
+        <p>这个博客有个「保险箱」（vault）板块和一堆主文章。我经常回头改旧文章——修错别字、补一段新想法——但读者根本不知道哪里变了，只能靠自己重新通读一遍去发现。于是我给整个站加了一套「更新提示系统」，目标是回答一个问题：</p>
+<blockquote>
+<p><strong>&ldquo;自我上次来访之后，这个网站哪里变了？&rdquo;</strong></p>
+</blockquote>
+<p>最终效果分三层，正好对应三个页面场景：</p>
+<table>
+	<thead>
+			<tr>
+					<th>场景</th>
+					<th>效果</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>列表页</td>
+					<td>有更新的文章标题旁亮起一个<strong>呼吸灯小圆点</strong></td>
+			</tr>
+			<tr>
+					<td>文章页</td>
+					<td>改动过的<strong>那几段</strong>被高亮标注（不是整篇文章！）</td>
+			</tr>
+			<tr>
+					<td>文章页顶部</td>
+					<td>一个「跳转到最新更新」按钮，点一下跳一处，循环覆盖所有改动</td>
+			</tr>
+	</tbody>
+</table>
+<p>保险箱里是主题色的蓝色圆点，主文章列表是醒目的黄色圆点，两套配色、两份存储，互不干扰。</p>
+<h3 id="核心思路指纹比对">
+  核心思路：指纹比对
+  <a class="heading-link" href="#%e6%a0%b8%e5%bf%83%e6%80%9d%e8%b7%af%e6%8c%87%e7%ba%b9%e6%af%94%e5%af%b9">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>整套系统的地基只有一个概念——<strong>内容指纹</strong>。</p>
+<p>在 Hugo 模板里，把每篇内容的 SHA256 直接烘进 HTML 属性：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#7ee787">li</span>
+</span></span><span style="display:flex;"><span>  data-posts-path<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;{{ .RelPermalink }}&#34;</span>
+</span></span><span style="display:flex;"><span>  data-posts-hash<span style="color:#ff7b72;font-weight:bold">=</span><span style="color:#a5d6ff">&#34;{{ crypto.SHA256 .Content }}&#34;</span>
+</span></span><span style="display:flex;"><span>&gt;
+</span></span></code></pre></div><p>这样构建产物本身就自带&quot;这篇内容长什么样&quot;的信息，浏览器端只需要做一件事：</p>
+<ol>
+<li>打开文章页时，把 <code>(路径 → 内容指纹 + 各段落哈希)</code> 存进 <code>localStorage</code>；</li>
+<li>下次逛列表页时，逐条比较&quot;存的指纹&quot;和&quot;现在的指纹&quot;，不一致就点亮圆点。</li>
+</ol>
+<p>不需要后端、不需要 API、不需要 RSS 解析，纯静态方案。</p>
+<h3 id="第一层呼吸灯小圆点">
+  第一层：呼吸灯小圆点
+  <a class="heading-link" href="#%e7%ac%ac%e4%b8%80%e5%b1%82%e5%91%bc%e5%90%b8%e7%81%af%e5%b0%8f%e5%9c%86%e7%82%b9">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>圆点本身是个行内 <code>&lt;span&gt;</code>，默认带 <code>hidden</code> 属性——JS 没加载、或者没有更新时，它根本不会出现。只有 JS 判定&quot;确实有更新&quot;才移除 <code>hidden</code>。</p>
+<p>呼吸动画是重点，我想要的效果是像设备上的待机指示灯那样缓慢地「吸-呼」：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#ff7b72">@keyframes</span> <span style="color:#7ee787">posts-dot-breathe</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">0</span><span style="color:#f85149">%</span><span style="color:#ff7b72;font-weight:bold">,</span> <span style="color:#7ee787">100</span><span style="color:#f85149">%</span> {
+</span></span><span style="display:flex;"><span>    opacity<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">0</span><span style="color:#a5d6ff">.45</span>;
+</span></span><span style="display:flex;"><span>    transform<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#d2a8ff;font-weight:bold">scale</span>(<span style="color:#a5d6ff">0</span><span style="color:#a5d6ff">.8</span>);
+</span></span><span style="display:flex;"><span>    box-shadow<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">0</span> <span style="color:#a5d6ff">0</span> <span style="color:#a5d6ff">0</span> <span style="color:#a5d6ff">0</span> <span style="color:#d2a8ff;font-weight:bold">rgba</span>(<span style="color:#a5d6ff">255</span><span style="color:#ff7b72;font-weight:bold">,</span> <span style="color:#a5d6ff">193</span><span style="color:#ff7b72;font-weight:bold">,</span> <span style="color:#a5d6ff">7</span><span style="color:#ff7b72;font-weight:bold">,</span> <span style="color:#a5d6ff">0</span><span style="color:#a5d6ff">.55</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">50</span><span style="color:#f85149">%</span> {
+</span></span><span style="display:flex;"><span>    opacity<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">1</span>;
+</span></span><span style="display:flex;"><span>    transform<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#d2a8ff;font-weight:bold">scale</span>(<span style="color:#a5d6ff">1</span>);
+</span></span><span style="display:flex;"><span>    box-shadow<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">0</span> <span style="color:#a5d6ff">0</span> <span style="color:#a5d6ff">0</span> <span style="color:#a5d6ff">0</span><span style="color:#a5d6ff">.45</span><span style="color:#ff7b72">rem</span> <span style="color:#ffa657">transparent</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>三个属性一起动：透明度起伏管&quot;明暗&quot;、缩放管&quot;大小&quot;、外圈 <code>box-shadow</code> 从实色扩散到透明管&quot;光晕&quot;。周期 2.4 秒无限循环，看着就很安详。</p>
+<p>另外补了一条 <code>prefers-reduced-motion: reduce</code> 时关掉动画——系统开了&quot;减少动态效果&quot;的用户不该被迫看东西一直闪。</p>
+<h3 id="第二层段落级-diff">
+  第二层：段落级 diff
+  <a class="heading-link" href="#%e7%ac%ac%e4%ba%8c%e5%b1%82%e6%ae%b5%e8%90%bd%e7%ba%a7-diff">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>这是整个项目里最有意思的部分。最初的实现是按 H2/H3 标题切块比对，但很快就发现问题：改了某个 <code>###</code> 小节里的<strong>一句话</strong>，整个小节都被高亮，等于没说清楚哪里变了。</p>
+<p>所以切分粒度改成：<strong>每个顶层元素各算一段</strong>——<code>&lt;p&gt;</code>、标题、代码块、引用各自独立，列表再细拆到每一个 <code>&lt;li&gt;</code>。这样改动粒度直接对应到 markdown 源文件里的具体某一行。</p>
+<p>比对算法用的是教科书级的 LCS（最长公共子序列）：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#ff7b72">function</span> diffBlockHashes(oldHashes, newHashes) {
+</span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic">// dp[i][j] = 两序列前 i、j 段的最长公共子序列长度
+</span></span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic">// 回溯时命中的就是&#34;没变&#34;的段落，
+</span></span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic">// 新序列里没被命中的下标 = 新增或改动的段落
+</span></span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>每个段落的哈希用一个轻量的 FNV-1a（只对 <code>textContent</code> 计算），省去引入加密库；整篇文章级别的真伪由 Hugo 烘进去的 SHA256 把关，两层各司其职。</p>
+<p>两个实现细节值得记下来：</p>
+<ul>
+<li><strong>高亮直接打在元素上</strong>，不外包 <code>&lt;div&gt;</code>。因为&quot;段&quot;可能是 <code>&lt;li&gt;</code>，往 <code>&lt;ul&gt;</code> 里塞 div 是非法 DOM，浏览器会把它拆出来，样式全乱。</li>
+<li><strong>改动可能不止一处，也可能位置会漂移</strong>（比如中间插了一段，后面的段落全挪位了）。所以不能存&quot;第 N 段变了&quot;，必须存整份分段哈希序列，每次现算 LCS。</li>
+</ul>
+<p>配套的「跳转到最新更新」按钮插在正文前面，文案区分单复数：「跳转到最新更新」/「跳转到最新更新（共 N 处）」。点击用 <code>scrollIntoView({ behavior: &quot;smooth&quot;, block: &quot;center&quot; })</code> 平滑滚动，索引取模循环，N 处改动点 N+1 次就绕回第一处。</p>
+<h3 id="几个刻意的设计决策">
+  几个刻意的设计决策
+  <a class="heading-link" href="#%e5%87%a0%e4%b8%aa%e5%88%bb%e6%84%8f%e7%9a%84%e8%ae%be%e8%ae%a1%e5%86%b3%e7%ad%96">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p><strong>首次访问不高亮。</strong> 判定条件是&quot;之前读过 &amp;&amp; 内容变了&quot;。第一次打开的文章，全篇对读者来说都是新的，标黄反而是噪音——&ldquo;整篇都是新的&quot;这个信息不值得任何一个视觉提示。</p>
+<p><strong>离开页面时才保存基准。</strong> 监听 <code>visibilitychange</code> 和 <code>pagehide</code>，而不是一进来就写。这样哪怕你扫了一眼马上关掉，这次看到的样子也会成为下次比对的基准；同时在同一页面内重复触发也有 <code>saved</code> 标志位防抖。</p>
+<p><strong>快照带版本号。</strong> 存储结构是 <code>{ v: 1, fullHash, blockHashes, seenAt }</code>。哪天切分粒度又调整了，把版本号 +1，所有旧快照直接作废重录——否则新旧粒度混着比，会把整篇文章误判成&quot;全是新增&rdquo;。</p>
+<h3 id="复用到主文章列表">
+  复用到主文章列表
+  <a class="heading-link" href="#%e5%a4%8d%e7%94%a8%e5%88%b0%e4%b8%bb%e6%96%87%e7%ab%a0%e5%88%97%e8%a1%a8">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>功能跑通后，把它移植到主文章列表只是换个皮肤的工作量，但我坚持了几个原则：</p>
+<ul>
+<li><strong>完全独立的文件</strong>：<code>posts-updates.js</code> / <code>posts-updates.scss</code>，和 vault 那套零共享状态；</li>
+<li><strong>独立命名空间</strong>：类名 <code>posts-*</code>、存储 key <code>mugee-posts-seen</code>，CSS 变量都不沾 vault 的；</li>
+<li><strong>颜色换成黄色</strong> <code>#ffc107</code>，深色底上按钮配深色文字保证对比度，高亮底的透明度压得很低（12%），浅色主题下也不刺眼。</li>
+</ul>
+<p>这样以后想删掉任何一边，都不会误伤另一边。</p>
+<h3 id="踩坑本地好好的部署炸了">
+  踩坑：本地好好的，部署炸了
+  <a class="heading-link" href="#%e8%b8%a9%e5%9d%91%e6%9c%ac%e5%9c%b0%e5%a5%bd%e5%a5%bd%e7%9a%84%e9%83%a8%e7%bd%b2%e7%82%b8%e4%ba%86">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>移植完成、本地构建全绿，push 上去 Netlify 直接报错：</p>
+<blockquote>
+<p>TOCSS: failed to transform &ldquo;scss/vault.scss&rdquo;: wrong number of arguments (4 for 3) for <code>rgb</code></p>
+</blockquote>
+<p>原因是我写了 CSS Level 4 的空格语法 <code>rgb(21 101 192 / 0.7)</code> 以及逗号四参的 <code>rgb(r, g, b, a)</code>——浏览器的现代解析器认，但 <strong>Netlify 构建环境用的 libsass 只认识三参数的 <code>rgb()</code></strong>，透明度必须写成 <code>rgba()</code>。</p>
+<p>更坑的是这个错误<strong>本地完全复现不出来</strong>：Hugo 会把 SCSS 编译结果缓存在 <code>resources/_gen/</code> 里，源文件改错了但缓存还是旧的，构建照样绿。最后是删掉 <code>public/</code> 和 <code>resources/_gen/</code> 做了一次全干净构建，才在本地复现并确认修复。教训很实在：</p>
+<blockquote>
+<p>本地缓存会掩盖编译错误。排查这类问题时，先删缓存再构建，让环境和 CI 一致。</p>
+</blockquote>
+<p>好在 CSS 里的 <code>color-mix()</code> 反而不用处理——libsass 不认识它就原样输出，浏览器端自行解析，而且每处都保留了 <code>rgba</code> 兜底在前、<code>color-mix</code> 在后的顺序，老内核也能安全回退。</p>
+<h3 id="怎么验证">
+  怎么验证？
+  <a class="heading-link" href="#%e6%80%8e%e4%b9%88%e9%aa%8c%e8%af%81">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>纯前端 + 构建期的功能，单元测试不太好写。我的办法是在 Node 里用最小 DOM 桩模拟真实流程：伪造 <code>document.querySelector</code>、<code>classList</code>、<code>localStorage</code>，然后按场景断言行为——首访不亮、无变化不亮、只改一个 <code>&lt;li&gt;</code> 时仅它亮、两处改动按钮显示&quot;共 2 处&quot;、看完之后熄灭……十来个场景一轮跑完，逻辑层面的正确性就有底了。剩下的视觉效果交给真浏览器肉眼看。</p>
+<h3 id="结语">
+  结语
+  <a class="heading-link" href="#%e7%bb%93%e8%af%ad">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>这套东西加起来不过两三百行代码，没有引任何依赖，但它精确回答了&quot;哪里变了&quot;这个问题。回访的读者打开文章，视线直接被带到改动的那一行——这大概就是静态博客也能有的一点&quot;活的&quot;感觉。</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     MUGEE 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+  
+  
+  <script src="/js/vault.min.9b2fa0c3d1db0144d1b08a5b93ae9d7161b44b88befd8050c44d49abdcd5ee77.js" integrity="sha256-my&#43;gw9HbAUTRsIpbk66dcWG0S4i&#43;/YBQxE1Jq9zV7nc="></script>
+  
+  
+  
+  
+  <script src="/js/vault-updates.min.e4e03b6b8605b1b1fe39614b1aac642ceba581919c73650defc10a0c635c14d3.js" integrity="sha256-5OA7a4YFsbH&#43;OWFLGqxkLOulgZGcc2UN78EKDGNcFNM="></script>
+  
+  
+  
+  
+  <script src="/js/posts-updates.min.cf2f91d16532effc8c1af79ca9fe03afc49d0ce065d622b17fecb0b9f6647d0a.js" integrity="sha256-zy&#43;R0WUy7/yMGvecqf4Dr8SdDOBl1iKxf&#43;ywufZkfQo="></script>
+  
+  
+  
+  
+  <script src="/js/back-to-top.min.aa85d1bcf48294dc50539fe00a42f09dbbbce719dc00f763f5849703c6918f85.js" integrity="sha256-qoXRvPSClNxQU5/gCkLwnbu85xncAPdj9YSXA8aRj4U="></script>
+  
+  
+  
+  
+  <script src="/js/gallery-lightbox.min.b491b70c780217edfebd7f9788cf6339318e6afc1fbe5a78f1ca097c81d57bb8.js" integrity="sha256-tJG3DHgCF&#43;3&#43;vX&#43;XiM9jOTGOavwfvlp48coJfIHVe7g="></script>
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

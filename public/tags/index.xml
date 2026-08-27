@@ -10,9 +10,37 @@
 		
 		
 		
-			<lastBuildDate>Sat, 22 Aug 2026 12:39:49 +0800</lastBuildDate>
+			<lastBuildDate>Thu, 27 Aug 2026 12:24:04 +0800</lastBuildDate>
 		
 			<atom:link href="https://blog.mugee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>CSS</title>
+				<link>https://blog.mugee.uk/tags/css/</link>
+				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
+				<guid>https://blog.mugee.uk/tags/css/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Hugo</title>
+				<link>https://blog.mugee.uk/tags/hugo/</link>
+				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
+				<guid>https://blog.mugee.uk/tags/hugo/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>JavaScript</title>
+				<link>https://blog.mugee.uk/tags/javascript/</link>
+				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
+				<guid>https://blog.mugee.uk/tags/javascript/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Website</title>
+				<link>https://blog.mugee.uk/tags/website/</link>
+				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
+				<guid>https://blog.mugee.uk/tags/website/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Linux</title>
 				<link>https://blog.mugee.uk/tags/linux/</link>
@@ -28,13 +56,6 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Hugo</title>
-				<link>https://blog.mugee.uk/tags/hugo/</link>
-				<pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
-				<guid>https://blog.mugee.uk/tags/hugo/</guid>
-				<description></description>
-			</item>
-			<item>
 				<title>Markdown</title>
 				<link>https://blog.mugee.uk/tags/markdown/</link>
 				<pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
@@ -46,13 +67,6 @@
 				<link>https://blog.mugee.uk/tags/nextwave/</link>
 				<pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
 				<guid>https://blog.mugee.uk/tags/nextwave/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Website</title>
-				<link>https://blog.mugee.uk/tags/website/</link>
-				<pubDate>Tue, 04 Aug 2026 17:00:00 +0800</pubDate>
-				<guid>https://blog.mugee.uk/tags/website/</guid>
 				<description></description>
 			</item>
 			<item>
