@@ -89,7 +89,7 @@
   
   
     
-    <link rel="stylesheet" href="/scss/posts-updates.min.d1f870568bd21e754819fe91aab88f33f5abf0ff067b9f64be0812ade1dd50a6.css" integrity="sha256-0fhwVovSHnVIGf6RqriPM/Wr8P8Ge59kvggSreHdUKY=" crossorigin="anonymous" media="screen" />
+    <link rel="stylesheet" href="/scss/posts-updates.min.f5a661b7b86bcc7cafc4b3f056ffc9ccd6440c4d03bd3f6e47d52984f61f5770.css" integrity="sha256-9aZht7hrzHyvxLPwVv/JzNZEDE0DvT9uR9UphPYfV3A=" crossorigin="anonymous" media="screen" />
   
 
   
@@ -292,6 +292,7 @@
     <li><a href="#4-进阶技巧与最佳实践">4. 进阶技巧与最佳实践</a></li>
     <li><a href="#5-常用工具与编辑器推荐">5. 常用工具与编辑器推荐</a></li>
     <li><a href="#6-完整语法速查表">6. 完整语法速查表</a></li>
+    <li><a href="#7-常见问题与注意事项">7. 常见问题与注意事项</a></li>
   </ul>
 </nav>
 </details>
@@ -301,7 +302,7 @@
         class="post-content"
         data-posts-seen
         data-posts-path="/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"
-        data-posts-hash="bf71c8482d45bde8fe480a70c36932b66e1001b8ac885937c03587a31d53bb92"
+        data-posts-hash="38ffc16c8616d04dafed5ff88c096446ae44006cc83ad7cb98a4eaf27384bc15"
       >
         
         <h1 id="markdown-详细使用手册">
@@ -893,61 +894,62 @@
 </span></span><span style="display:flex;"><span>![<span style="color:#7ee787">图片</span>](url)
 </span></span><span style="display:flex;"><span><span style="color:#ff7b72">
 </span></span></span><span style="display:flex;"><span><span style="color:#ff7b72">&gt; </span><span style="font-style:italic">引用
-</span></span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>```语言
-</span></span><span style="display:flex;"><span>代码块
-</span></span></code></pre></div><table>
-	<thead>
-			<tr>
-					<th>表格</th>
-					<th>语法</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td>内容</td>
-					<td>内容</td>
-			</tr>
-	</tbody>
-</table>
-<hr>
-<p>分隔线</p>
-<p>$行内公式$
+</span></span></span></code></pre></div><p>代码块</p>
+<pre tabindex="0"><code>
+| 表格 | 语法 |
+|------|------|
+| 内容 | 内容 |
+
+---
+分隔线
+
+$行内公式$
 $$
 块级公式
-$$</p>
-<pre tabindex="0"><code>
----
+$$
+</code></pre><hr>
+<h2 id="7-常见问题与注意事项">
+  7. 常见问题与注意事项
+  <a class="heading-link" href="#7-%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98%e4%b8%8e%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<ol>
+<li>
+<p><strong>为什么我的表格没渲染？</strong><br>
+检查是否有空行、分隔行是否正确、单元格内是否有未转义的 <code>|</code>。</p>
+</li>
+<li>
+<p><strong>标题锚点怎么生成？</strong><br>
+大多数平台会把标题转成小写、空格变 <code>-</code>、去掉特殊字符。中文标题在不同平台规则略有差异。</p>
+</li>
+<li>
+<p><strong>如何在列表中写代码块？</strong><br>
+代码块需要相对列表项多缩进 4 个空格（或一个 Tab）。</p>
+</li>
+<li>
+<p><strong>Markdown 能做幻灯片吗？</strong><br>
+可以，使用 Marp、Slidev、reveal.js 等工具。</p>
+</li>
+<li>
+<p><strong>导出 PDF 推荐工具？</strong><br>
+Typora 自带、Pandoc + XeLaTeX、VS Code 插件、或在线工具。</p>
+</li>
+<li>
+<p><strong>标准是什么？</strong></p>
+<ul>
+<li>最基础：John Gruber 原版</li>
+<li>现代通用：CommonMark</li>
+<li>最流行扩展：GitHub Flavored Markdown (GFM)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong>手册结束</strong></p>
+<p>希望这份详细的 Markdown 使用手册对你有帮助！<br>
+如果需要针对特定平台（如 GitHub、Obsidian、VuePress 等）的专属语法补充，或需要示例文档模板，随时告诉我。</p>
 
-## 7. 常见问题与注意事项
-
-1. **为什么我的表格没渲染？**  
-   检查是否有空行、分隔行是否正确、单元格内是否有未转义的 `|`。
-
-2. **标题锚点怎么生成？**  
-   大多数平台会把标题转成小写、空格变 `-`、去掉特殊字符。中文标题在不同平台规则略有差异。
-
-3. **如何在列表中写代码块？**  
-   代码块需要相对列表项多缩进 4 个空格（或一个 Tab）。
-
-4. **Markdown 能做幻灯片吗？**  
-   可以，使用 Marp、Slidev、reveal.js 等工具。
-
-5. **导出 PDF 推荐工具？**  
-   Typora 自带、Pandoc + XeLaTeX、VS Code 插件、或在线工具。
-
-6. **标准是什么？**  
-   - 最基础：John Gruber 原版  
-   - 现代通用：CommonMark  
-   - 最流行扩展：GitHub Flavored Markdown (GFM)
-
----
-
-**手册结束**
-
-希望这份详细的 Markdown 使用手册对你有帮助！  
-如果需要针对特定平台（如 GitHub、Obsidian、VuePress 等）的专属语法补充，或需要示例文档模板，随时告诉我。
-</code></pre>
       </div>
 
 
@@ -1005,7 +1007,7 @@ $$</p>
   
   
   
-  <script src="/js/posts-updates.min.fca7b3b74837fe2f7026918546564076ed5d3c8023d87e78787708a2e4504c02.js" integrity="sha256-/Kezt0g3/i9wJpGFRlZAdu1dPIAj2H54eHcIouRQTAI="></script>
+  <script src="/js/posts-updates.min.cf2f91d16532effc8c1af79ca9fe03afc49d0ce065d622b17fecb0b9f6647d0a.js" integrity="sha256-zy&#43;R0WUy7/yMGvecqf4Dr8SdDOBl1iKxf&#43;ywufZkfQo="></script>
   
   
   

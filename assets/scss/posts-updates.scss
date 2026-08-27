@@ -40,3 +40,42 @@
     animation: none;
   }
 }
+
+/* 文章页：跳转到最新更新的按钮（黄色） */
+.posts-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.6rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #212121;
+  background: #ffc107;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.88;
+  }
+
+  &::before {
+    content: "\2193";
+  }
+}
+
+/* 文章页：改动段落的高亮标注（黄色，很淡，深浅色主题下都可读） */
+.posts-diff-block {
+  margin: 1.2rem 0;
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem;
+}
+
+.posts-diff-new {
+  background: rgba(255, 193, 7, 0.12);
+  background: color-mix(in srgb, #ffc107 12%, transparent);
+  border-left: 3px solid rgba(255, 193, 7, 0.7);
+  border-left-color: color-mix(in srgb, #ffc107 70%, transparent);
+}
