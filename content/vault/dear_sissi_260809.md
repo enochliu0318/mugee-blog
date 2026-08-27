@@ -1,7 +1,7 @@
 +++
 date = '2026-08-09T20:20:28+08:00'
 draft = false
-title = 'Dear Sissi'
+title = 'Dear Sissi | I'
 outputs = ["HTML"]
 sitemap = { disable = true }
 +++

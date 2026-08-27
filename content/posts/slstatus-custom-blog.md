@@ -12,7 +12,7 @@ series = []
 toc = true
 +++
 
-slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于**自己写组件**。纯 C 没有 obj，anw这个功能还是用纯 c 写的。
+slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于**自己写组件**。虽然纯 C 没有 obj，anw这个功能还是用纯 c 写的。
 
 本文重点不谈官方自带的 battery、cpu、wifi 等常规模块，而是分享我添加的三个个人化组件：
 
@@ -116,7 +116,7 @@ days_since(const char *date_str)
 - 精确到小数点后 5 位（约 0.86 秒分辨率），配合 300ms 刷新，视觉上是实时跳动的。
 - 使用 `difftime` + `mktime` 正确处理时区和夏令时。
 
-想换日期只需要改 `config.h` 里的字符串即可，重新 `make` 就行。
+想换日期只需要改 `config.h` 里的字符串，重新 `make` 就行。
 
 ---
 
