@@ -240,9 +240,9 @@
 }
 
 .vault-diff-new {
-  background: rgb(21, 101, 192);
+  background: rgba(21, 101, 192, 0.12);
   background: color-mix(in srgb, var(--link-color, #1565c0) 6%, transparent);
-  border-left: 3px solid rgb(21, 101, 192);
+  border-left: 3px solid rgb(21, 101, 192, 0.7);
   border-left-color: color-mix(in srgb, var(--link-color, #1565c0) 35%, transparent);
 }
 
