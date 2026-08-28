@@ -1,0 +1,193 @@
+// ------------------------------------------------------------------
+// 日记小日历目录：右下角悬浮按钮 + 月历面板
+// 颜色全部使用 colors.scss 定义的 CSS 变量，深浅色模式自动适配。
+// ------------------------------------------------------------------
+
+.float-container .diary-calendar-btn {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0.2rem;
+  font-size: 2rem;
+  color: var(--alt-fg-color, #666666);
+  background-color: var(--alt-bg-color, #e0e0e0);
+  border: none;
+  border-radius: 0.2rem;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.25s ease-in;
+
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover,
+  &:focus-visible,
+  &[aria-expanded="true"] {
+    color: var(--link-color, #1565c0);
+    opacity: 1;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.diary-calendar-panel {
+  position: fixed;
+  right: 2rem;
+  bottom: 13rem; // 悬浮在右下角三个按钮的上方
+  z-index: 110;
+  width: 26rem;
+  max-width: calc(100vw - 2rem);
+  padding: 1.2rem;
+  background: var(--bg-color, #fafafa);
+  border: 1px solid var(--darker-alt-bg-color, #cccccc);
+  border-radius: 1rem;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  animation: diary-panel-in 0.18s ease;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+@keyframes diary-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diary-cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+
+  .diary-cal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--fg-color, #212121);
+  }
+}
+
+.diary-cal-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1.2rem;
+  color: var(--alt-fg-color, #666666);
+  background: transparent;
+  border: 1px solid var(--darker-alt-bg-color, #cccccc);
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    color: var(--link-color, #1565c0);
+    border-color: var(--link-color, #1565c0);
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+
+.diary-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.25rem;
+}
+
+.diary-cal-weekdays {
+  margin-bottom: 0.3rem;
+
+  span {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--alt-fg-color, #666666);
+  }
+}
+
+.diary-cal-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  font-size: 1.3rem;
+  color: var(--alt-fg-color, #666666);
+  border: none;
+  border-radius: 0.6rem;
+
+  // 普通日期（不可点，均为 span）
+  &[aria-disabled="true"] {
+    cursor: default;
+  }
+
+  // 今天：内圈描边
+  &.is-today {
+    box-shadow: inset 0 0 0 2px var(--link-color, #1565c0);
+  }
+
+  // 有日记的日期：主题色实底，可点击
+  &.has-entry {
+    color: #ffffff;
+    font-weight: 600;
+    background: var(--link-color, #1565c0);
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.82;
+    }
+
+    // 今天恰好也有日记：在外圈加一道前景色描边以示区别
+    &.is-today {
+      box-shadow: inset 0 0 0 2px var(--fg-color, #212121);
+    }
+  }
+}
+
+// 点击日期跳转后，目标日记标题短暂闪烁提示位置
+@keyframes diary-heading-flash {
+  0% {
+    background: color-mix(in srgb, var(--link-color, #1565c0) 25%, transparent);
+  }
+
+  100% {
+    background: transparent;
+  }
+}
+
+.diary-heading-flash {
+  animation: diary-heading-flash 2s ease-out;
+  border-radius: 0.4rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .diary-calendar-panel {
+    right: 1rem;
+    bottom: 12rem;
+    width: auto;
+    left: 1rem;
+  }
+
+  .diary-cal-day {
+    min-height: 3.4rem;
+  }
+}

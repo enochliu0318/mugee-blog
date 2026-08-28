@@ -30,8 +30,8 @@ summaryLength = 50
 
   enableSearch = true
 
-  customSCSS = ["scss/home.scss", "scss/vault.scss", "scss/posts-updates.scss", "scss/back-nav.scss"]
-  customJS = ["js/vault.js", "js/vault-updates.js", "js/posts-updates.js", "js/back-to-top.js", "js/gallery-lightbox.js"]
+  customSCSS = ["scss/colors.scss", "scss/home.scss", "scss/vault.scss", "scss/posts-updates.scss", "scss/back-nav.scss", "scss/diary-calendar.scss"]
+  customJS = ["js/vault.js", "js/vault-updates.js", "js/posts-updates.js", "js/back-to-top.js", "js/gallery-lightbox.js", "js/diary-calendar.js"]
 
 [params.vault]
   title = "保险箱"

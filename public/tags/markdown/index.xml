@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Markdown on MUGEE·首页</title>
-		<link>http://localhost:1313/tags/markdown/</link>
+		<link>http://localhost:1391/tags/markdown/</link>
 		<description>Recent content in Markdown on MUGEE·首页</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Tue, 11 Aug 2026 18:16:51 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1391/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>markdown使用手册</title>
-				<link>http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
+				<link>http://localhost:1391/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
 				<pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
-				<guid>http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
+				<guid>http://localhost:1391/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
 				<description>&lt;h1 id=&#34;markdown-详细使用手册&#34;&gt;&#xA;  Markdown 详细使用手册&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#markdown-%e8%af%a6%e7%bb%86%e4%bd%bf%e7%94%a8%e6%89%8b%e5%86%8c&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;本手册全面覆盖 Markdown 的基础语法、扩展语法（以 GitHub Flavored Markdown / CommonMark 为主）、最佳实践与常用技巧，适合初学者系统学习，也适合作为速查手册使用。&lt;/p&gt;</description>
 			</item>
 	</channel>

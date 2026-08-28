@@ -7,6 +7,13 @@
   justify-content: center;
   padding: 3rem 1.5rem 4rem; }
 
+/* JS 解锁后会给门加上 hidden 属性，但上面的 display:flex
+   会覆盖浏览器默认的 [hidden] { display: none }，
+   导致解锁后密码框仍然显示，这里显式补回。 */
+.vault-gate[hidden],
+.vault-body[hidden] {
+  display: none; }
+
 .vault-gate-card {
   width: 100%;
   max-width: 420px;
@@ -76,7 +83,7 @@
 .vault-gate-error {
   margin: 0;
   font-size: 1.3rem;
-  color: #c62828; }
+  color: var(--error-color, #c62828); }
 
 .vault-gate-submit {
   display: inline-flex;

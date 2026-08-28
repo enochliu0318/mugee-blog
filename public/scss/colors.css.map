@@ -1,0 +1,13 @@
+{
+	"version": 3,
+	"file": "colors.css",
+	"sourceRoot": "/home/mugee/Documents/Coding/mugee-blog",
+	"sources": [
+		"assets/scss/colors.scss"
+	],
+	"sourcesContent": [
+		"// ------------------------------------------------------------------\n// 站点配色 CSS 变量(供自定义 SCSS 中的 var(--xxx, fallback) 使用)\n//\n// hugo-coder 主题本身用 SCSS 变量配色,并不存在这些 CSS 变量;\n// 这里负责定义它们,并跟随主题的切换机制(body 上的\n// colorscheme-light / colorscheme-dark / colorscheme-auto 类)换肤。\n// 浅色取值与各处 fallback 保持一致,保证浅色模式外观不变。\n// ------------------------------------------------------------------\n\n:root,\nbody.colorscheme-light {\n  --bg-color: #fafafa;\n  --fg-color: #212121;\n  --alt-bg-color: #e0e0e0;\n  --alt-fg-color: #666666;\n  --darker-alt-bg-color: #cccccc;\n  --link-color: #1565c0;\n  --error-color: #c62828;\n}\n\n// 深色取值对应主题 _variables.scss 中的 *-dark 系列\n@mixin dark-palette {\n  --bg-color: #212121;\n  --fg-color: #dadada;\n  --alt-bg-color: #424242;\n  --alt-fg-color: #b3b3b3;\n  --darker-alt-bg-color: #555555;\n  --link-color: #42a5f5;\n  --error-color: #ef5350;\n}\n\nbody.colorscheme-dark {\n  @include dark-palette;\n}\n\n// auto 模式:跟随系统的深色偏好\nbody.colorscheme-auto {\n  @media (prefers-color-scheme: dark) {\n    @include dark-palette;\n  }\n}\n"
+	],
+	"names": [],
+	"mappings": "CASC,AAAD,IAAK;AACL,IAAI,AAAA,kBAAkB,CAAC;EACrB,UAAU,CAAA,QAAC;EACX,UAAU,CAAA,QAAC;EACX,cAAc,CAAA,QAAC;EACf,cAAc,CAAA,QAAC;EACf,qBAAqB,CAAA,QAAC;EACtB,YAAY,CAAA,QAAC;EACb,aAAa,CAAA,QAAC,GACf;;AAaD,AAAA,IAAI,AAAA,iBAAiB,CAAC;EATpB,UAAU,CAAA,QAAC;EACX,UAAU,CAAA,QAAC;EACX,cAAc,CAAA,QAAC;EACf,cAAc,CAAA,QAAC;EACf,qBAAqB,CAAA,QAAC;EACtB,YAAY,CAAA,QAAC;EACb,aAAa,CAAA,QAAC,GAKf;;AAIC,MAAM,6BADR;EAAA,AAAA,IAAI,AAAA,iBAAiB,CAAC;IAdpB,UAAU,CAAA,QAAC;IACX,UAAU,CAAA,QAAC;IACX,cAAc,CAAA,QAAC;IACf,cAAc,CAAA,QAAC;IACf,qBAAqB,CAAA,QAAC;IACtB,YAAY,CAAA,QAAC;IACb,aAAa,CAAA,QAAC,GAYf,EAAA"
+}

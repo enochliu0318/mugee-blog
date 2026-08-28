@@ -1,0 +1,41 @@
+// ------------------------------------------------------------------
+// 站点配色 CSS 变量(供自定义 SCSS 中的 var(--xxx, fallback) 使用)
+//
+// hugo-coder 主题本身用 SCSS 变量配色,并不存在这些 CSS 变量;
+// 这里负责定义它们,并跟随主题的切换机制(body 上的
+// colorscheme-light / colorscheme-dark / colorscheme-auto 类)换肤。
+// 浅色取值与各处 fallback 保持一致,保证浅色模式外观不变。
+// ------------------------------------------------------------------
+
+:root,
+body.colorscheme-light {
+  --bg-color: #fafafa;
+  --fg-color: #212121;
+  --alt-bg-color: #e0e0e0;
+  --alt-fg-color: #666666;
+  --darker-alt-bg-color: #cccccc;
+  --link-color: #1565c0;
+  --error-color: #c62828;
+}
+
+// 深色取值对应主题 _variables.scss 中的 *-dark 系列
+@mixin dark-palette {
+  --bg-color: #212121;
+  --fg-color: #dadada;
+  --alt-bg-color: #424242;
+  --alt-fg-color: #b3b3b3;
+  --darker-alt-bg-color: #555555;
+  --link-color: #42a5f5;
+  --error-color: #ef5350;
+}
+
+body.colorscheme-dark {
+  @include dark-palette;
+}
+
+// auto 模式:跟随系统的深色偏好
+body.colorscheme-auto {
+  @media (prefers-color-scheme: dark) {
+    @include dark-palette;
+  }
+}
