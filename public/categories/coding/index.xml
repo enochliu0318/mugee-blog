@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Coding on MUGEE·首页</title>
-		<link>http://localhost:1391/categories/coding/</link>
+		<link>https://blog.mugee.uk/categories/coding/</link>
 		<description>Recent content in Coding on MUGEE·首页</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
@@ -12,47 +12,47 @@
 		
 			<lastBuildDate>Thu, 27 Aug 2026 12:24:04 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1391/categories/coding/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.mugee.uk/categories/coding/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>给博客加「更新提示灯」：从呼吸小圆点到段落级 diff</title>
-				<link>http://localhost:1391/posts/article-update-indicator/</link>
+				<link>https://blog.mugee.uk/posts/article-update-indicator/</link>
 				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
-				<guid>http://localhost:1391/posts/article-update-indicator/</guid>
+				<guid>https://blog.mugee.uk/posts/article-update-indicator/</guid>
 				<description>&lt;p&gt;这个博客有个「保险箱」（vault）板块和一堆主文章。我经常回头改旧文章——修错别字、补一段新想法——但读者根本不知道哪里变了，只能靠自己重新通读一遍去发现。于是我给整个站加了一套「更新提示系统」，目标是回答一个问题：&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>slstatus定制：实时年龄、日子计数与蓝牙状态显示</title>
-				<link>http://localhost:1391/posts/slstatus-custom-blog/</link>
+				<link>https://blog.mugee.uk/posts/slstatus-custom-blog/</link>
 				<pubDate>Sat, 22 Aug 2026 12:39:49 +0800</pubDate>
-				<guid>http://localhost:1391/posts/slstatus-custom-blog/</guid>
+				<guid>https://blog.mugee.uk/posts/slstatus-custom-blog/</guid>
 				<description>&lt;p&gt;slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于&lt;strong&gt;自己写组件&lt;/strong&gt;。虽然纯 C 没有 obj，anw这个功能还是用纯 c 写的。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>markdown使用手册</title>
-				<link>http://localhost:1391/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
+				<link>https://blog.mugee.uk/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
 				<pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
-				<guid>http://localhost:1391/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
+				<guid>https://blog.mugee.uk/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
 				<description>&lt;h1 id=&#34;markdown-详细使用手册&#34;&gt;&#xA;  Markdown 详细使用手册&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#markdown-%e8%af%a6%e7%bb%86%e4%bd%bf%e7%94%a8%e6%89%8b%e5%86%8c&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;本手册全面覆盖 Markdown 的基础语法、扩展语法（以 GitHub Flavored Markdown / CommonMark 为主）、最佳实践与常用技巧，适合初学者系统学习，也适合作为速查手册使用。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>后浪 NextWave 网站简介与维运指南</title>
-				<link>http://localhost:1391/posts/nextwave-blog/</link>
+				<link>https://blog.mugee.uk/posts/nextwave-blog/</link>
 				<pubDate>Tue, 04 Aug 2026 17:00:00 +0800</pubDate>
-				<guid>http://localhost:1391/posts/nextwave-blog/</guid>
+				<guid>https://blog.mugee.uk/posts/nextwave-blog/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;信仰的后浪，青春的发声。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://nextwave.mugee.uk&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;后浪NextWave&lt;/strong&gt;&lt;/a&gt;（https://nextwave.mugee.uk）是一个专为青少年打造的文学阅读与创作表达平台。它没有复杂的后台、没有数据库，用 Markdown 写文章、Git 管理内容、Hugo 生成静态页面、Cloudflare Pages 自动部署。&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Java入门（持续更新）</title>
-				<link>http://localhost:1391/posts/java/</link>
+				<link>https://blog.mugee.uk/posts/java/</link>
 				<pubDate>Sat, 20 Jun 2026 05:40:47 +0800</pubDate>
-				<guid>http://localhost:1391/posts/java/</guid>
+				<guid>https://blog.mugee.uk/posts/java/</guid>
 				<description>&lt;h2 id=&#34;第一章-java概述&#34;&gt;&#xA;  第一章 Java概述&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%ac%ac%e4%b8%80%e7%ab%a0-java%e6%a6%82%e8%bf%b0&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;Java——最常用的编程语言，1995年由 SUN 公司（2009 年被 Oracle 公司收购）开发。显著特性——&lt;strong&gt;跨平台运行：&amp;ldquo;一次编写，到处运行&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>blog.mugee.uk上线！🎉</title>
-				<link>http://localhost:1391/posts/first-blog/</link>
+				<link>https://blog.mugee.uk/posts/first-blog/</link>
 				<pubDate>Tue, 16 Jun 2026 09:44:38 +0800</pubDate>
-				<guid>http://localhost:1391/posts/first-blog/</guid>
+				<guid>https://blog.mugee.uk/posts/first-blog/</guid>
 				<description>&lt;h3 id=&#34;hello-world&#34;&gt;&#xA;  hello, world!&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#hello-world&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;成功使用 &lt;strong&gt;Hugo&lt;/strong&gt; + &lt;strong&gt;GitHub&lt;/strong&gt; + &lt;strong&gt;Cloudflare Pages&lt;/strong&gt; 搭建个人博客 &lt;a href=&#34;http://blog.mugee.uk&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;blog.mugee.uk&lt;/a&gt;。&lt;/p&gt;&#xA;&lt;p&gt;当你看到这篇blog的时候，说明mugee的个人网站已经搭建成功了！&lt;/p&gt;</description>
 			</item>
 	</channel>

@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Categories on MUGEE·首页</title>
-		<link>http://localhost:1391/categories/</link>
+		<link>https://blog.mugee.uk/categories/</link>
 		<description>Recent content in Categories on MUGEE·首页</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
@@ -12,26 +12,26 @@
 		
 			<lastBuildDate>Thu, 27 Aug 2026 12:24:04 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1391/categories/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.mugee.uk/categories/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Coding</title>
-				<link>http://localhost:1391/categories/coding/</link>
+				<link>https://blog.mugee.uk/categories/coding/</link>
 				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
-				<guid>http://localhost:1391/categories/coding/</guid>
+				<guid>https://blog.mugee.uk/categories/coding/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Learning</title>
-				<link>http://localhost:1391/categories/learning/</link>
+				<link>https://blog.mugee.uk/categories/learning/</link>
 				<pubDate>Fri, 19 Jun 2026 11:12:19 +0800</pubDate>
-				<guid>http://localhost:1391/categories/learning/</guid>
+				<guid>https://blog.mugee.uk/categories/learning/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Thinking</title>
-				<link>http://localhost:1391/categories/thinking/</link>
+				<link>https://blog.mugee.uk/categories/thinking/</link>
 				<pubDate>Wed, 17 Jun 2026 11:26:47 +0800</pubDate>
-				<guid>http://localhost:1391/categories/thinking/</guid>
+				<guid>https://blog.mugee.uk/categories/thinking/</guid>
 				<description></description>
 			</item>
 	</channel>

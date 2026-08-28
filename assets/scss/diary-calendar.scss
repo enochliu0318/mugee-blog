@@ -1,62 +1,111 @@
 // ------------------------------------------------------------------
-// 日记小日历目录：右下角悬浮按钮 + 月历面板
+// 日记悬浮日期导航：底部居中"📅 | 年 | 月 | 日"胶囊
+// - 📅 弹出带高亮的迷你月历
+// - 年/月/日各自弹出单独一列的选择列表
 // 颜色全部使用 colors.scss 定义的 CSS 变量，深浅色模式自动适配。
 // ------------------------------------------------------------------
 
-.float-container .diary-calendar-btn {
-  position: relative;
-  display: inline-block;
-  width: 3rem;
-  height: 3rem;
-  margin: 0 0.2rem;
-  font-size: 2rem;
-  color: var(--alt-fg-color, #666666);
-  background-color: var(--alt-bg-color, #e0e0e0);
-  border: none;
-  border-radius: 0.2rem;
-  opacity: 0.5;
-  cursor: pointer;
-  transition: all 0.25s ease-in;
+.diary-dock {
+  position: fixed;
+  left: 50%;
+  bottom: 1.6rem;
+  transform: translateX(-50%);
+  z-index: 110;
+  display: inline-flex;
+  align-items: stretch;
+  padding: 0.3rem;
+  background: var(--alt-bg-color, #e0e0e0);
+  border: 1px solid var(--darker-alt-bg-color, #cccccc);
+  border-radius: 999px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.28);
 
-  i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  &[hidden] {
+    display: none;
   }
+}
+
+// 📅 迷你日历按钮（方形图标）
+.diary-dock-cal {
+  appearance: none;
+  border: none;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.2rem;
+  font-size: 1.6rem;
+  color: var(--fg-color, #212121);
+  background: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
 
   &:hover,
-  &:focus-visible,
-  &[aria-expanded="true"] {
+  &:focus-visible {
     color: var(--link-color, #1565c0);
-    opacity: 1;
   }
 
-  &[hidden] {
-    display: none;
+  &[aria-expanded="true"] {
+    background: var(--link-color, #1565c0);
+    color: #ffffff;
   }
 }
 
-.diary-calendar-panel {
+.diary-dock-seg {
+  appearance: none;
+  border: none;
+  font: inherit;
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  color: var(--fg-color, #212121);
+  background: transparent;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--link-color, #1565c0);
+  }
+
+  // 面板打开时，当前按下的一段高亮
+  &[aria-expanded="true"] {
+    background: var(--link-color, #1565c0);
+    color: #ffffff;
+  }
+}
+
+.diary-popover {
   position: fixed;
-  right: 2rem;
-  bottom: 13rem; // 悬浮在右下角三个按钮的上方
+  bottom: 6.4rem;
   z-index: 110;
-  width: 26rem;
-  max-width: calc(100vw - 2rem);
-  padding: 1.2rem;
+  padding: 0.9rem;
   background: var(--bg-color, #fafafa);
   border: 1px solid var(--darker-alt-bg-color, #cccccc);
-  border-radius: 1rem;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
-  animation: diary-panel-in 0.18s ease;
+  border-radius: 1.2rem;
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.22);
+  animation: diary-pop-in 0.16s ease;
+  max-width: 92vw;
+
+  // 年/月/日单列列表：窄
+  &.is-list {
+    width: 13rem;
+  }
+
+  // 迷你月历：宽
+  &.is-grid {
+    width: 27rem;
+  }
 
   &[hidden] {
     display: none;
   }
 }
 
-@keyframes diary-panel-in {
+@keyframes diary-pop-in {
   from {
     opacity: 0;
     transform: translateY(0.6rem);
@@ -67,6 +116,49 @@
     transform: translateY(0);
   }
 }
+
+.diary-pop-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-height: 40vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.diary-pop-item {
+  appearance: none;
+  border: none;
+  font: inherit;
+  font-size: 1.4rem;
+  font-variant-numeric: tabular-nums;
+  padding: 0.55rem 0.5rem;
+  border-radius: 0.6rem;
+  color: var(--fg-color, #212121);
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+
+  &:hover:not(:disabled),
+  &:focus-visible:not(:disabled) {
+    background: var(--darker-alt-bg-color, #cccccc);
+  }
+
+  &.is-active {
+    background: var(--link-color, #1565c0);
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  &:disabled {
+    color: var(--alt-fg-color, #666666);
+    opacity: 0.4;
+    cursor: default;
+  }
+}
+
+// ---------- 迷你月历 ----------
 
 .diary-cal-head {
   display: flex;
@@ -82,6 +174,7 @@
 }
 
 .diary-cal-nav {
+  appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -124,16 +217,19 @@
 }
 
 .diary-cal-day {
+  appearance: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 3rem;
+  font: inherit;
   font-size: 1.3rem;
+  font-variant-numeric: tabular-nums;
   color: var(--alt-fg-color, #666666);
+  background: transparent;
   border: none;
   border-radius: 0.6rem;
 
-  // 普通日期（不可点，均为 span）
   &[aria-disabled="true"] {
     cursor: default;
   }
@@ -156,14 +252,14 @@
       opacity: 0.82;
     }
 
-    // 今天恰好也有日记：在外圈加一道前景色描边以示区别
+    // 今天恰好也有日记：外圈改用前景色以示区别
     &.is-today {
       box-shadow: inset 0 0 0 2px var(--fg-color, #212121);
     }
   }
 }
 
-// 点击日期跳转后，目标日记标题短暂闪烁提示位置
+// 跳转后，目标日记标题短暂闪烁提示位置
 @keyframes diary-heading-flash {
   0% {
     background: color-mix(in srgb, var(--link-color, #1565c0) 25%, transparent);
@@ -179,15 +275,26 @@
   border-radius: 0.4rem;
 }
 
+// 跳转时标题对齐视口顶端，留一点呼吸空间
+.vault-post .post-content h3 {
+  scroll-margin-top: 1rem;
+}
+
 @media only screen and (max-width: 768px) {
-  .diary-calendar-panel {
-    right: 1rem;
-    bottom: 12rem;
-    width: auto;
-    left: 1rem;
+  .diary-dock-seg {
+    font-size: 1.4rem;
+    padding: 0.7rem 1rem;
+  }
+
+  .diary-popover {
+    bottom: 5.8rem;
+  }
+
+  .diary-pop-col {
+    max-height: 34vh;
   }
 
   .diary-cal-day {
-    min-height: 3.4rem;
+    min-height: 3.2rem;
   }
 }

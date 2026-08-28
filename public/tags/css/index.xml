@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>CSS on MUGEE·首页</title>
-		<link>http://localhost:1391/tags/css/</link>
+		<link>https://blog.mugee.uk/tags/css/</link>
 		<description>Recent content in CSS on MUGEE·首页</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
@@ -12,12 +12,12 @@
 		
 			<lastBuildDate>Thu, 27 Aug 2026 12:24:04 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1391/tags/css/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.mugee.uk/tags/css/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>给博客加「更新提示灯」：从呼吸小圆点到段落级 diff</title>
-				<link>http://localhost:1391/posts/article-update-indicator/</link>
+				<link>https://blog.mugee.uk/posts/article-update-indicator/</link>
 				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
-				<guid>http://localhost:1391/posts/article-update-indicator/</guid>
+				<guid>https://blog.mugee.uk/posts/article-update-indicator/</guid>
 				<description>&lt;p&gt;这个博客有个「保险箱」（vault）板块和一堆主文章。我经常回头改旧文章——修错别字、补一段新想法——但读者根本不知道哪里变了，只能靠自己重新通读一遍去发现。于是我给整个站加了一套「更新提示系统」，目标是回答一个问题：&lt;/p&gt;</description>
 			</item>
 	</channel>
