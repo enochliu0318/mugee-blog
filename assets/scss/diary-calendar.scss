@@ -13,6 +13,8 @@
   z-index: 110;
   display: inline-flex;
   align-items: stretch;
+  flex-wrap: nowrap;
+  max-width: calc(100vw - 2rem);
   padding: 0.3rem;
   background: var(--alt-bg-color, #e0e0e0);
   border: 1px solid var(--darker-alt-bg-color, #cccccc);
@@ -32,6 +34,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   width: 3.2rem;
   font-size: 1.6rem;
   color: var(--fg-color, #212121);
@@ -59,6 +62,8 @@
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   line-height: 1;
+  white-space: nowrap; // "2026年"这类文本绝不在数字与汉字之间折行
+  flex: 0 0 auto; // 不被压缩，宁可整条胶囊缩小
   color: var(--fg-color, #212121);
   background: transparent;
   padding: 0.8rem 1.2rem;
@@ -259,10 +264,15 @@
   }
 }
 
-// 跳转后，目标日记标题短暂闪烁提示位置
+// 跳转后，目标日记标题短暂闪烁提示位置：
+// 先保持较醒目的颜色约一半时间，再缓慢淡出
 @keyframes diary-heading-flash {
   0% {
-    background: color-mix(in srgb, var(--link-color, #1565c0) 25%, transparent);
+    background: color-mix(in srgb, var(--link-color, #1565c0) 30%, transparent);
+  }
+
+  40% {
+    background: color-mix(in srgb, var(--link-color, #1565c0) 22%, transparent);
   }
 
   100% {
@@ -271,8 +281,8 @@
 }
 
 .diary-heading-flash {
-  animation: diary-heading-flash 2s ease-out;
-  border-radius: 0.4rem;
+  animation: diary-heading-flash 4s ease-out;
+  border-radius: 1.3rem;
 }
 
 // 跳转时标题对齐视口顶端，留一点呼吸空间
@@ -281,13 +291,23 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .diary-dock-seg {
+  .diary-dock {
+    bottom: 1rem;
+  }
+
+  .diary-dock-cal {
+    width: 2.8rem;
     font-size: 1.4rem;
-    padding: 0.7rem 1rem;
+  }
+
+  // 字号随屏宽收缩，保证窄屏（如 320px）也放得下整条胶囊
+  .diary-dock-seg {
+    font-size: clamp(1.1rem, 3.8vw, 1.4rem);
+    padding: 0.6rem 0.8rem;
   }
 
   .diary-popover {
-    bottom: 5.8rem;
+    bottom: 5.4rem;
   }
 
   .diary-pop-col {

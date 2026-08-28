@@ -11,7 +11,7 @@
    * ---------------------------------------------------------------- */
 
   const DATE_RE = /^\s*(\d{4})年(\d{1,2})月(\d{1,2})日/;
-  const FLASH_MS = 2000;
+  const FLASH_MS = 4000; // 与 diary-heading-flash 动画时长保持一致
   const SPY_PROBE = 0.85; // 标题越过视口 85% 线即认为"读到了"这篇日记
 
   function pad2(n) {

@@ -6,6 +6,8 @@
   z-index: 110;
   display: inline-flex;
   align-items: stretch;
+  flex-wrap: nowrap;
+  max-width: calc(100vw - 2rem);
   padding: 0.3rem;
   background: var(--alt-bg-color, #e0e0e0);
   border: 1px solid var(--darker-alt-bg-color, #cccccc);
@@ -21,6 +23,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   width: 3.2rem;
   font-size: 1.6rem;
   color: var(--fg-color, #212121);
@@ -42,6 +45,8 @@
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   line-height: 1;
+  white-space: nowrap;
+  flex: 0 0 auto;
   color: var(--fg-color, #212121);
   background: transparent;
   padding: 0.8rem 1.2rem;
@@ -185,23 +190,30 @@
 
 @keyframes diary-heading-flash {
   0% {
-    background: color-mix(in srgb, var(--link-color, #1565c0) 25%, transparent); }
+    background: color-mix(in srgb, var(--link-color, #1565c0) 30%, transparent); }
+  40% {
+    background: color-mix(in srgb, var(--link-color, #1565c0) 22%, transparent); }
   100% {
     background: transparent; } }
 
 .diary-heading-flash {
-  animation: diary-heading-flash 2s ease-out;
-  border-radius: 0.4rem; }
+  animation: diary-heading-flash 4s ease-out;
+  border-radius: 1.3rem; }
 
 .vault-post .post-content h3 {
   scroll-margin-top: 1rem; }
 
 @media only screen and (max-width: 768px) {
+  .diary-dock {
+    bottom: 1rem; }
+  .diary-dock-cal {
+    width: 2.8rem;
+    font-size: 1.4rem; }
   .diary-dock-seg {
-    font-size: 1.4rem;
-    padding: 0.7rem 1rem; }
+    font-size: clamp(1.1rem, 3.8vw, 1.4rem);
+    padding: 0.6rem 0.8rem; }
   .diary-popover {
-    bottom: 5.8rem; }
+    bottom: 5.4rem; }
   .diary-pop-col {
     max-height: 34vh; }
   .diary-cal-day {
