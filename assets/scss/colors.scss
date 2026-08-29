@@ -16,6 +16,8 @@ body.colorscheme-light {
   --darker-alt-bg-color: #cccccc;
   --link-color: #1565c0;
   --error-color: #c62828;
+  // 跳转高亮的背景色（老 Safari 不支持 color-mix，改用预混好的 rgba）
+  --flash-bg: rgba(21, 101, 192, 0.28);
 }
 
 // 深色取值对应主题 _variables.scss 中的 *-dark 系列
@@ -27,6 +29,7 @@ body.colorscheme-light {
   --darker-alt-bg-color: #555555;
   --link-color: #42a5f5;
   --error-color: #ef5350;
+  --flash-bg: rgba(66, 165, 245, 0.3);
 }
 
 body.colorscheme-dark {

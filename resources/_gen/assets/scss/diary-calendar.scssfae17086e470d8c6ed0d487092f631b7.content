@@ -74,9 +74,8 @@
     width: 13rem; }
   .diary-popover.is-grid {
     width: 27rem;
-    width: max-content;
-    min-width: 27rem;
-    max-width: 92vw;
+    width: clamp(25rem, 30vw, 34rem);
+    max-width: calc(100vw - 10rem);
     max-height: calc(100vh - 13rem);
     overflow-y: auto; }
   .diary-popover[hidden] {
@@ -128,7 +127,7 @@
   justify-content: space-between;
   margin-bottom: 0.8rem; }
   .diary-cal-head .diary-cal-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.3vw, 1.7rem);
     font-weight: 600;
     color: var(--fg-color, #212121); }
 
@@ -163,7 +162,7 @@
   margin-bottom: 0.3rem; }
   .diary-cal-weekdays span {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 1vw, 1.35rem);
     color: var(--alt-fg-color, #666666); }
 
 .diary-cal-day {
@@ -171,10 +170,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
+  min-height: clamp(3rem, 3.2vw, 3.8rem);
   padding: 0;
   font: inherit;
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 1.1vw, 1.5rem);
   font-variant-numeric: tabular-nums;
   color: var(--alt-fg-color, #666666);
   background: transparent;
@@ -196,16 +195,15 @@
       box-shadow: inset 0 0 0 2px var(--fg-color, #212121); }
 
 @keyframes diary-heading-flash {
-  0% {
-    background: color-mix(in srgb, var(--link-color, #1565c0) 30%, transparent); }
+  0%,
   40% {
-    background: color-mix(in srgb, var(--link-color, #1565c0) 22%, transparent); }
+    background: var(--flash-bg, rgba(21, 101, 192, 0.28)); }
   100% {
     background: transparent; } }
 
 .diary-heading-flash {
   animation: diary-heading-flash 4s ease-out;
-  border-radius: 1.3rem; }
+  border-radius: 0.8rem; }
 
 .vault-post .post-content h3 {
   scroll-margin-top: 1rem; }
@@ -221,11 +219,9 @@
     padding: 0.6rem 0.8rem; }
   .diary-popover {
     bottom: 5.4rem; }
-  .diary-popover.is-grid {
-    min-width: 25rem; }
   .diary-pop-col {
     max-height: 34vh; }
-  .diary-cal-day {
+  .diary-popover .diary-cal-day {
     min-height: 3.2rem; } }
 
 /*# sourceMappingURL=diary-calendar.css.map */

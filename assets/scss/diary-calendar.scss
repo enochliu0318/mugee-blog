@@ -100,14 +100,13 @@
     width: 13rem;
   }
 
-  // 迷你月历：宽。
-  // 宽度随内容自适应（max-content），并限制在屏幕内；
+  // 迷你月历：宽度随屏幕缩放——屏大更大、屏小更小；
+  // max-width 上限保证面板永不压到右下角的返回顶部/深浅色悬浮按钮；
   // 旧浏览器回退到固定宽度。
   &.is-grid {
     width: 27rem;
-    width: max-content;
-    min-width: 27rem;
-    max-width: 92vw;
+    width: clamp(25rem, 30vw, 34rem);
+    max-width: calc(100vw - 10rem);
     max-height: calc(100vh - 13rem);
     overflow-y: auto;
   }
@@ -179,7 +178,7 @@
   margin-bottom: 0.8rem;
 
   .diary-cal-title {
-    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.3vw, 1.7rem);
     font-weight: 600;
     color: var(--fg-color, #212121);
   }
@@ -226,7 +225,7 @@
 
   span {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 1vw, 1.35rem);
     color: var(--alt-fg-color, #666666);
   }
 }
@@ -236,10 +235,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
+  min-height: clamp(3rem, 3.2vw, 3.8rem);
   padding: 0; // 重置 iOS Safari 按钮默认内边距，避免撑大列宽
   font: inherit;
-  font-size: 1.3rem;
+  font-size: clamp(1.3rem, 1.1vw, 1.5rem);
   font-variant-numeric: tabular-nums;
   color: var(--alt-fg-color, #666666);
   background: transparent;
@@ -276,14 +275,13 @@
 }
 
 // 跳转后，目标日记标题短暂闪烁提示位置：
-// 先保持较醒目的颜色约一半时间，再缓慢淡出
+// 前 40% 保持较醒目的颜色，再缓慢淡出。
+// 背景色走 colors.scss 预混好的 rgba 变量——
+// color-mix() 需要较新浏览器，iPhone 7 等老设备上会整条失效导致看不到高亮。
 @keyframes diary-heading-flash {
-  0% {
-    background: color-mix(in srgb, var(--link-color, #1565c0) 30%, transparent);
-  }
-
+  0%,
   40% {
-    background: color-mix(in srgb, var(--link-color, #1565c0) 22%, transparent);
+    background: var(--flash-bg, rgba(21, 101, 192, 0.28));
   }
 
   100% {
@@ -293,7 +291,7 @@
 
 .diary-heading-flash {
   animation: diary-heading-flash 4s ease-out;
-  border-radius: 1.3rem;
+  border-radius: 0.8rem;
 }
 
 // 跳转时标题对齐视口顶端，留一点呼吸空间
@@ -321,16 +319,12 @@
     bottom: 5.4rem;
   }
 
-  // 移动端月历面板略窄，保证小屏放得下
-  .diary-popover.is-grid {
-    min-width: 25rem;
-  }
-
   .diary-pop-col {
     max-height: 34vh;
   }
 
-  .diary-cal-day {
+  // 移动端日期格略高，方便点按
+  .diary-popover .diary-cal-day {
     min-height: 3.2rem;
   }
 }

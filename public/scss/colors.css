@@ -6,7 +6,8 @@ body.colorscheme-light {
   --alt-fg-color: #666666;
   --darker-alt-bg-color: #cccccc;
   --link-color: #1565c0;
-  --error-color: #c62828; }
+  --error-color: #c62828;
+  --flash-bg: rgba(21, 101, 192, 0.28); }
 
 body.colorscheme-dark {
   --bg-color: #212121;
@@ -15,7 +16,8 @@ body.colorscheme-dark {
   --alt-fg-color: #b3b3b3;
   --darker-alt-bg-color: #555555;
   --link-color: #42a5f5;
-  --error-color: #ef5350; }
+  --error-color: #ef5350;
+  --flash-bg: rgba(66, 165, 245, 0.3); }
 
 @media (prefers-color-scheme: dark) {
   body.colorscheme-auto {
@@ -25,6 +27,7 @@ body.colorscheme-dark {
     --alt-fg-color: #b3b3b3;
     --darker-alt-bg-color: #555555;
     --link-color: #42a5f5;
-    --error-color: #ef5350; } }
+    --error-color: #ef5350;
+    --flash-bg: rgba(66, 165, 245, 0.3); } }
 
 /*# sourceMappingURL=colors.css.map */
