@@ -205,7 +205,7 @@
 
 @media only screen and (max-width: 768px) {
   .diary-dock {
-    bottom: 1rem; }
+    bottom: 2rem; }
   .diary-dock-cal {
     width: 2.8rem;
     font-size: 1.4rem; }
