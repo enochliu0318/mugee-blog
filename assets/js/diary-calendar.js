@@ -261,15 +261,21 @@
       positionPopover();
     }
 
-    // 面板定位：迷你月历居中显示；年/月/日单列列表吸附在对应按钮正上方
-    // （靠边时自动往回收）
+    // 面板定位：迷你月历与胶囊中心对齐（按胶囊实际位置计算，
+    // 而非屏幕居中，避免滚动条/页面缩放等导致两者中心不一致）；
+    // 年/月/日单列列表吸附在对应按钮正上方。靠边时自动往回收。
     function positionPopover() {
       if (!open || !activeBtn) return;
       const margin = 10;
       const width = popover.offsetWidth;
       let left;
       if (mode === "grid") {
-        left = (window.innerWidth - width) / 2;
+        const dockRect = dock.getBoundingClientRect();
+        left = dockRect.left + dockRect.width / 2 - width / 2;
+        left = Math.max(
+          margin,
+          Math.min(left, window.innerWidth - width - margin)
+        );
       } else {
         const rect = activeBtn.getBoundingClientRect();
         left = rect.left + rect.width / 2 - width / 2;
