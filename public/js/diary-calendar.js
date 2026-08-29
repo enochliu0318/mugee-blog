@@ -110,8 +110,8 @@
 
     const calBtn = el("button", "diary-dock-cal");
     calBtn.type = "button";
-    calBtn.title = "迷你日历";
-    calBtn.setAttribute("aria-label", "打开迷你日历");
+    calBtn.title = "日历";
+    calBtn.setAttribute("aria-label", "打开日历");
     calBtn.innerHTML =
       '<i class="fa-regular fa-calendar" aria-hidden="true"></i>';
 
