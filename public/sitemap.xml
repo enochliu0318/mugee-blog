@@ -2,38 +2,41 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.mugee.uk/</loc>
-    <lastmod>2026-08-28T00:00:00+08:00</lastmod>
-  </url><url>
     <loc>https://blog.mugee.uk/authors/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/categories/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/categories/coding/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/tags/css/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/tags/hugo/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/tags/javascript/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/authors/mugee/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.mugee.uk/</loc>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/posts/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/tags/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/tags/website/</loc>
-    <lastmod>2026-08-27T12:24:04+08:00</lastmod>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.mugee.uk/posts/diary-calendar/</loc>
+    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/posts/article-update-indicator/</loc>
     <lastmod>2026-08-27T12:24:04+08:00</lastmod>

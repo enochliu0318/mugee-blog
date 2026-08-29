@@ -6,8 +6,18 @@
     <description>Mugee&#39;s personal website</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 27 Aug 2026 12:24:04 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2026 14:30:00 +0800</lastBuildDate>
     <atom:link href="https://blog.mugee.uk/index.xml" rel="self" type="application/rss&#43;xml" />
+    <item>
+      <title>日记日历导航：功能介绍与实现复盘</title>
+      <link>https://blog.mugee.uk/posts/diary-calendar/</link>
+      <pubDate>Sat, 29 Aug 2026 14:30:00 +0800</pubDate>
+      <guid>https://blog.mugee.uk/posts/diary-calendar/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;把日记装进日历，把目录变成地图。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;保险箱里的那篇日记我基本上每天都会更新，内容自然越来越多。最开始它只有一个普通的目录（TOC），几十篇日记堆在一起之后，想找&amp;quot;上周三写了什么&amp;quot;基本靠肉眼滚动——这不可接受。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>给博客加「更新提示灯」：从呼吸小圆点到段落级 diff</title>
       <link>https://blog.mugee.uk/posts/article-update-indicator/</link>

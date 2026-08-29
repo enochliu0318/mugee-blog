@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  日记日历导航：功能介绍与实现复盘 · MUGEE·首页
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="MUGEE">
+<meta name="description" content="一个随屏幕缩放的年/月/日胶囊 &#43; 迷你月历，让日记式长文随时可跳转：功能介绍 &#43; 使用方法 &#43; 实现复盘">
+<meta name="keywords" content="blog, developer, personal">
+
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="日记日历导航：功能介绍与实现复盘">
+	<meta name="twitter:description" content="一个随屏幕缩放的年/月/日胶囊 &#43; 迷你月历，让日记式长文随时可跳转：功能介绍 &#43; 使用方法 &#43; 实现复盘">
+
+<meta property="og:url" content="http://localhost:1313/posts/diary-calendar/">
+	<meta property="og:site_name" content="MUGEE·首页">
+	<meta property="og:title" content="日记日历导航：功能介绍与实现复盘">
+	<meta property="og:description" content="一个随屏幕缩放的年/月/日胶囊 &#43; 迷你月历，让日记式长文随时可跳转：功能介绍 &#43; 使用方法 &#43; 实现复盘">
+	<meta property="og:locale" content="zh_cn">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-08-29T14:30:00+08:00">
+		<meta property="article:modified_time" content="2026-08-29T14:30:00+08:00">
+		<meta property="article:tag" content="Hugo">
+		<meta property="article:tag" content="JavaScript">
+		<meta property="article:tag" content="CSS">
+		<meta property="article:tag" content="Website">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/diary-calendar/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/colors.css" media="screen">
+  
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/home.css" media="screen">
+  
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/vault.css" media="screen">
+  
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/posts-updates.css" media="screen">
+  
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/back-nav.css" media="screen">
+  
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/diary-calendar.css" media="screen">
+  
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  <div class="float-container">
+  <a id="back-to-top" class="back-to-top" title="返回顶部" aria-label="返回顶部">
+    <i class="fa-solid fa-arrow-up fa-fw" aria-hidden="true"></i>
+  </a>
+  
+  <a id="dark-mode-toggle" class="colorscheme-toggle">
+    <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+  </a>
+  
+</div>
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      MUGEE·首页
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">文章</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/tags/">标签</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/categories/">分类</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/authors/">作者</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">关于</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/search/">搜索🔎</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/vault/">保险箱</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        
+<div class="back-link">
+  <a href="/posts/">
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+    返回文章列表
+  </a>
+</div>
+
+
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/diary-calendar/">
+              日记日历导航：功能介绍与实现复盘
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2026-08-29T14:30:00&#43;08:00">
+                August 29, 2026
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              阅读时间：6 分钟
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/mugee/">Mugee</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/coding/">Coding</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/hugo/">Hugo</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/javascript/">JavaScript</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/css/">CSS</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/website/">Website</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      
+<details class="entry__toc toc" >
+	<summary class="toc__title">Table of Contents</summary>
+	<nav id="TableOfContents">
+  <ul>
+    <li><a href="#一功能总览">一、功能总览</a></li>
+    <li><a href="#二使用方法">二、使用方法</a>
+      <ul>
+        <li><a href="#21-怎么让它出现在文章里">2.1 怎么让它出现在文章里</a></li>
+        <li><a href="#22-怎么单独关闭">2.2 怎么单独关闭</a></li>
+      </ul>
+    </li>
+    <li><a href="#三实现原理">三、实现原理</a>
+      <ul>
+        <li><a href="#31-核心思路">3.1 核心思路</a></li>
+        <li><a href="#32-与主题深浅色模式的打通">3.2 与主题深浅色模式的打通</a></li>
+        <li><a href="#33-尺寸自适应策略">3.3 尺寸自适应策略</a></li>
+      </ul>
+    </li>
+    <li><a href="#四踩坑记录">四、踩坑记录</a></li>
+    <li><a href="#五文件清单">五、文件清单</a></li>
+    <li><a href="#六真实案例本页就是活例子">六、真实案例：本页就是活例子</a>
+      <ul>
+        <li><a href="#2026年8月27日">2026年8月27日</a></li>
+        <li><a href="#2026年8月28日">2026年8月28日</a></li>
+        <li><a href="#2026年8月29日">2026年8月29日</a></li>
+      </ul>
+    </li>
+    <li><a href="#写在最后">写在最后</a></li>
+  </ul>
+</nav>
+</details>
+
+
+      <div
+        class="post-content"
+        data-posts-seen
+        data-posts-path="/posts/diary-calendar/"
+        data-posts-hash="1c79bba9aa53bfcc2d34b55ef9ff2069f535a54d6268ff467bdf29e9a1fba150"
+      >
+        
+        <blockquote>
+<p>把日记装进日历，把目录变成地图。</p>
+</blockquote>
+<p>保险箱里的日记我基本上每天都会更新，内容自然越来越多。最开始它只有一个普通的目录（TOC），几十篇日记堆在一起之后，想找&quot;上周三写了什么&quot;基本靠肉眼滚动——这不可接受。</p>
+<p>所以我做了一个<strong>日记日历导航</strong>：一个悬浮在屏幕底部居中的胶囊，把整篇日记的日期结构装进去，随时呼出、随时跳转。它只依赖一个 JS 文件和一个 SCSS 文件，零外部依赖，支持深浅色模式。</p>
+<p>今天把这个功能的完整设计、使用方法和踩过的坑记录下来，方便以后复盘，也给想做类似功能的朋友一点参考。</p>
+<p>本文同时作为<strong>功能介绍</strong>和<strong>实现复盘</strong>。只想知道自己怎么用的话，重点读「二、使用方法」；想抄一份到自己博客的，请重点阅读「三、实现原理」和「四、踩坑记录」。</p>
+<h2 id="一功能总览">
+  一、功能总览
+  <a class="heading-link" href="#%e4%b8%80%e5%8a%9f%e8%83%bd%e6%80%bb%e8%a7%88">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>打开带日记的文章后，屏幕底部居中会出现一条胶囊：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[ 📅 ] [ 2026年 ] [ 8月 ] [ 28日 ]
+</span></span></code></pre></div><table>
+	<thead>
+			<tr>
+					<th>部件</th>
+					<th>功能</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>📅 日历按钮</td>
+					<td>弹出迷你月历：有日记的日期用主题色点亮，今天有一圈描边，<code>‹ ›</code> 按月翻页（范围自动限定在有日记的月份）</td>
+			</tr>
+			<tr>
+					<td>年 / 月 / 日 分段</td>
+					<td>各自弹出一列单独的列表，按级联方式筛选；选了年，没有日记的月份自动变灰</td>
+			</tr>
+			<tr>
+					<td>胶囊上的日期</td>
+					<td>实时跟随阅读位置：往下滚，它显示你正在读的那一天的日期</td>
+			</tr>
+			<tr>
+					<td>点击日期</td>
+					<td>平滑滚动到那天的日记，标题对齐到视口最顶端，并有一段 4 秒的彩色高亮慢慢淡出</td>
+			</tr>
+	</tbody>
+</table>
+<p>几个设计上的细节：</p>
+<ul>
+<li>面板打开时，<strong>只有被点的那一段高亮</strong>，并且面板吸附在对应按钮的正上方（迷你月历则与胶囊中心对齐）</li>
+<li>点击面板外部或按 <code>Esc</code> 关闭；跳转后面板自动收起</li>
+<li>保险箱文章在锁定状态下胶囊自动隐藏，解锁后出现</li>
+<li>只在<strong>存在日记日期标题的页面</strong>上启用，其他页面完全无感</li>
+</ul>
+<hr>
+<h2 id="二使用方法">
+  二、使用方法
+  <a class="heading-link" href="#%e4%ba%8c%e4%bd%bf%e7%94%a8%e6%96%b9%e6%b3%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="21-怎么让它出现在文章里">
+  2.1 怎么让它出现在文章里
+  <a class="heading-link" href="#21-%e6%80%8e%e4%b9%88%e8%ae%a9%e5%ae%83%e5%87%ba%e7%8e%b0%e5%9c%a8%e6%96%87%e7%ab%a0%e9%87%8c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>不用配置。在任意文章（posts 或保险箱都行）的正文里写日期标题：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-markdown" data-lang="markdown"><span style="display:flex;"><span><span style="color:#79c0ff">### 2026年8月28日
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>今天的内容……
+</span></span></code></pre></div><p>页面加载时脚本会自动扫描正文里所有 <code>X年X月X日</code> 格式的三级标题，动态生成年/月/日索引。以后每天追加一篇，日历自动点亮新日期，翻页范围自动扩展——<strong>写日记的人不需要做任何额外操作</strong>。</p>
+<p>注意标题格式：<code>X年X月X日</code> 要连写开头、半角数字。<code>### 2026年9月</code> 或 <code>### 2026-09-15</code> 这类写法是识别不到的。</p>
+<h3 id="22-怎么单独关闭">
+  2.2 怎么单独关闭
+  <a class="heading-link" href="#22-%e6%80%8e%e4%b9%88%e5%8d%95%e7%8b%ac%e5%85%b3%e9%97%ad">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>如果某篇文章碰巧有长得像日期的标题、但你不想要这个功能，在 front matter 里加一行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span><span style="color:#f85149">+++</span>
+</span></span><span style="display:flex;"><span>calendar = <span style="color:#79c0ff">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#f85149">+++</span>
+</span></span></code></pre></div><p>实现方式是布局输出一个 <code>&lt;meta name=&quot;diary-calendar&quot; content=&quot;off&quot;&gt;</code>，脚本检测到就跳过初始化。</p>
+<hr>
+<h2 id="三实现原理">
+  三、实现原理
+  <a class="heading-link" href="#%e4%b8%89%e5%ae%9e%e7%8e%b0%e5%8e%9f%e7%90%86">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<h3 id="31-核心思路">
+  3.1 核心思路
+  <a class="heading-link" href="#31-%e6%a0%b8%e5%bf%83%e6%80%9d%e8%b7%af">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>整个功能一个 JS 文件（<code>assets/js/diary-calendar.js</code>）加一个 SCSS 文件（<code>assets/scss/diary-calendar.scss</code>），核心思路三句话：</p>
+<ol>
+<li><strong>扫描</strong>：页面加载时扫描正文里匹配日期格式的 <code>h3</code> 标题，建立&quot;日期 → 标题元素&quot;的索引</li>
+<li><strong>渲染</strong>：根据索引生成底部胶囊和三种弹出面板（迷你月历 / 年列表 / 月列表 / 日列表）</li>
+<li><strong>跳转</strong>：点日期 <code>scrollIntoView</code> 过去，加一个 CSS 动画类做高亮</li>
+</ol>
+<p>没有任何构建期依赖——因为 Hugo 是静态生成器，文章内容在运行时才能被 JS 完整感知，所以&quot;扫描&quot;放在浏览器端做，写多少日记都不需要重新配置。</p>
+<h3 id="32-与主题深浅色模式的打通">
+  3.2 与主题深浅色模式的打通
+  <a class="heading-link" href="#32-%e4%b8%8e%e4%b8%bb%e9%a2%98%e6%b7%b1%e6%b5%85%e8%89%b2%e6%a8%a1%e5%bc%8f%e7%9a%84%e6%89%93%e9%80%9a">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>hugo-coder 主题用 SCSS 变量 + <code>body</code> 上的 <code>colorscheme-dark/auto</code> 类来换肤，并不存在 CSS 变量。所以先建了一个 <code>colors.scss</code>，把组件用到的颜色定义为 CSS 变量，并在两套主题类下分别赋值：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-scss" data-lang="scss"><span style="display:flex;"><span><span style="color:#7ee787">body</span><span style="color:#f0883e;font-weight:bold">.colorscheme-dark</span> {
+</span></span><span style="display:flex;"><span>  --bg-color<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">#212121</span>;
+</span></span><span style="display:flex;"><span>  --link-color<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">#42a5f5</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#8b949e;font-style:italic">/* ... */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#7ee787">body</span><span style="color:#f0883e;font-weight:bold">.colorscheme-auto</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#ff7b72">@media</span> (prefers-color-scheme<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#ffa657">dark</span>) { <span style="color:#8b949e;font-style:italic">/* 同上 */</span> }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>组件里所有颜色一律 <code>var(--xxx, fallback)</code> 写法，深浅色切换就自动生效了。</p>
+<h3 id="33-尺寸自适应策略">
+  3.3 尺寸自适应策略
+  <a class="heading-link" href="#33-%e5%b0%ba%e5%af%b8%e8%87%aa%e9%80%82%e5%ba%94%e7%ad%96%e7%95%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>组件尺寸全部走 <code>clamp(下限, vw理想值, 上限)</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#7ee787">width</span><span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#7ee787">clamp</span><span style="color:#ff7b72;font-weight:bold">(</span><span style="color:#7ee787">25rem</span><span style="color:#ff7b72;font-weight:bold">,</span> <span style="color:#7ee787">30vw</span><span style="color:#ff7b72;font-weight:bold">,</span> <span style="color:#7ee787">34rem</span><span style="color:#ff7b72;font-weight:bold">);</span>   <span style="color:#8b949e;font-style:italic">/* 月历面板：屏大更大、屏小更小 */</span>
+</span></span><span style="display:flex;"><span><span style="color:#7ee787">font-size</span><span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#7ee787">clamp</span><span style="color:#ff7b72;font-weight:bold">(</span><span style="color:#7ee787">1</span>.<span style="color:#f0883e;font-weight:bold">4rem</span><span style="color:#ff7b72;font-weight:bold">,</span> <span style="color:#7ee787">1</span>.<span style="color:#f0883e;font-weight:bold">5vw</span><span style="color:#ff7b72;font-weight:bold">,</span> <span style="color:#7ee787">1</span>.<span style="color:#f0883e;font-weight:bold">7rem</span><span style="color:#ff7b72;font-weight:bold">);</span> <span style="color:#8b949e;font-style:italic">/* 胶囊字号同理 */</span>
+</span></span></code></pre></div><p>连续缩放：窗口拖动时逐像素变化，没有断点跳变；手机上另有媒体查询覆盖成手工调优过的紧凑值。面板的移动范围也做了约束（<code>max-width: calc(100vw - 10rem)</code>），永远不会盖住右下角的&quot;返回顶部&quot;按钮。</p>
+<hr>
+<h2 id="四踩坑记录">
+  四、踩坑记录
+  <a class="heading-link" href="#%e5%9b%9b%e8%b8%a9%e5%9d%91%e8%ae%b0%e5%bd%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>功能不大，坑一个接一个，记录几个印象最深的：</p>
+<p><strong>1. 翻月面板&quot;闪退&quot;</strong>。点击 <code>‹</code> 翻月时面板会重渲染 DOM，此时点击事件还在向上冒泡——等它冒到 <code>document</code> 上的&quot;点击外部关闭&quot;监听器时，原来的按钮已经脱离文档，<code>contains()</code> 误判为&quot;点了外部&quot;，面板当场关闭。解决：判断 <code>event.target.isConnected</code>，目标已被移出文档时跳过关闭逻辑。</p>
+<p><strong>2. 手机上高亮不显示</strong>。高亮动画的背景色用了 <code>color-mix()</code>，这个函数需要 Safari 16.2+，而 iPhone 7 最高只能跑 iOS 15——无效语法整条被丢弃，动画只剩&quot;从透明到透明&quot;。解决：改用 CSS 变量 + 预混好的 rgba 颜色，新旧浏览器通吃。</p>
+<p><strong>3. 星期和数字对不齐</strong>。星期行和日期网格是两个独立的 7 列网格，列宽写 <code>1fr</code> 时它实际是 <code>minmax(auto, 1fr)</code>——iOS 给 <code>&lt;button&gt;</code> 的默认内边距会把单元格最小宽度撑大，日期网格于是比星期行宽，横向溢出。解决：<code>repeat(7, minmax(0, 1fr))</code> 强制等分 + 重置按钮默认内边距。</p>
+<p><strong>4. 胶囊折行</strong>。窄屏上 Flex 把按钮压缩，&ldquo;2026年&quot;被拆成&quot;2026&quot;和&quot;年&quot;两行。解决：<code>white-space: nowrap</code> + <code>flex: 0 0 auto</code>，再配合 <code>clamp()</code> 让字号随屏宽收缩。</p>
+<p><strong>5. 隐藏属性失效</strong>。解锁面板用的 <code>hidden</code> 属性会被组件自己的 <code>display: flex</code> 覆盖（作者样式优先级高于浏览器对 <code>[hidden]</code> 的默认规则）。解决：显式补一条 <code>[hidden] { display: none }</code>。</p>
+<p><strong>6. libSass 不认现代 CSS</strong>。Hugo 内置的 SCSS 编译器会把 <code>min(92vw, 34rem)</code> 当成自己的函数求值，遇到混合单位直接报错；<code>span&amp;</code> 这类后缀父选择器也不支持。解法都简单：改用等价的老写法。</p>
+<hr>
+<h2 id="五文件清单">
+  五、文件清单
+  <a class="heading-link" href="#%e4%ba%94%e6%96%87%e4%bb%b6%e6%b8%85%e5%8d%95">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<table>
+	<thead>
+			<tr>
+					<th>文件</th>
+					<th>作用</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>assets/js/diary-calendar.js</code></td>
+					<td>扫描日期标题、渲染胶囊与面板、跳转与滚动跟随</td>
+			</tr>
+			<tr>
+					<td><code>assets/scss/diary-calendar.scss</code></td>
+					<td>胶囊、面板、月历的全部样式</td>
+			</tr>
+			<tr>
+					<td><code>assets/scss/colors.scss</code></td>
+					<td>站点配色 CSS 变量（深浅色两套）</td>
+			</tr>
+			<tr>
+					<td><code>hugo.toml</code></td>
+					<td>在 <code>customJS</code> / <code>customSCSS</code> 中注册以上两个文件</td>
+			</tr>
+	</tbody>
+</table>
+<p>文章侧唯一需要关心的就是「二、使用方法」里的日期标题格式。</p>
+<hr>
+<h2 id="六真实案例本页就是活例子">
+  六、真实案例：本页就是活例子
+  <a class="heading-link" href="#%e5%85%ad%e7%9c%9f%e5%ae%9e%e6%a1%88%e4%be%8b%e6%9c%ac%e9%a1%b5%e5%b0%b1%e6%98%af%e6%b4%bb%e4%be%8b%e5%ad%90">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>下面的日期标题就是 <code>### X年X月X日</code>——所以你应该已经注意到，屏幕底部出现了胶囊。点开 📅 或者日期列表测试跳转。</p>
+<h3 id="2026年8月27日">
+  2026年8月27日
+  <a class="heading-link" href="#2026%e5%b9%b48%e6%9c%8827%e6%97%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>这一段用来演示&quot;选中日期后跳转&rdquo;：标题会对齐到视口最顶端，然后有一段 4 秒的蓝色高亮缓缓淡出。</p>
+<h3 id="2026年8月28日">
+  2026年8月28日
+  <a class="heading-link" href="#2026%e5%b9%b48%e6%9c%8828%e6%97%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>每多写一个日期标题，日历里就自动多一个点亮的日子。不需要注册、不需要配置，日期索引是页面加载时实时扫描出来的。</p>
+<h3 id="2026年8月29日">
+  2026年8月29日
+  <a class="heading-link" href="#2026%e5%b9%b48%e6%9c%8829%e6%97%a5">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h3>
+<p>胶囊上的日期会跟随你的滚动位置变化——往上滚回「一、功能总览」，它会切回更早的日期；再滚回这里，它又显示今天。</p>
+<hr>
+<h2 id="写在最后">
+  写在最后
+  <a class="heading-link" href="#%e5%86%99%e5%9c%a8%e6%9c%80%e5%90%8e">
+    <i class="fa-solid fa-link" aria-hidden="true" title="链接到标题"></i>
+    <span class="sr-only">链接到标题</span>
+  </a>
+</h2>
+<p>现在日记是&quot;写进日历&quot;而不是&quot;堆进目录&quot;：每天一格，一目了然，随手可跳。</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2026
+     MUGEE 
+    ·
+    
+    技术支持 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+  
+  
+  <script src="/js/vault.js"></script>
+  
+  
+  
+  
+  <script src="/js/vault-updates.js"></script>
+  
+  
+  
+  
+  <script src="/js/posts-updates.js"></script>
+  
+  
+  
+  
+  <script src="/js/back-to-top.js"></script>
+  
+  
+  
+  
+  <script src="/js/gallery-lightbox.js"></script>
+  
+  
+  
+  
+  <script src="/js/diary-calendar.js"></script>
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

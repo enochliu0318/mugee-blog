@@ -1,3 +1,9 @@
 {{ if eq .Section "vault" }}
 <meta name="robots" content="noindex, nofollow">
 {{ end }}
+{{/* 文章 front matter 里设置 calendar = false 可关闭该页的日记日历 */}}
+{{ if isset .Params "calendar" }}
+{{ if not .Params.calendar }}
+<meta name="diary-calendar" content="off">
+{{ end }}
+{{ end }}

@@ -8,6 +8,10 @@
    * - 年/月/日：各自弹出单独一列的列表供选择
    * - 胶囊实时显示当前读到的日记日期（滚动跟随）
    * - 选中日期后跳转，标题对齐到视口顶端
+   *
+   * 适用范围：任何文章页（保险箱或普通 posts）的正文里，
+   * 只要存在 "### 2026年7月27日" 这类日期标题就会自动启用。
+   * 单独关闭：在该文章的 front matter 里加一行 calendar = false。
    * ---------------------------------------------------------------- */
 
   const DATE_RE = /^\s*(\d{4})年(\d{1,2})月(\d{1,2})日/;
@@ -19,7 +23,10 @@
   }
 
   function collectEntries() {
-    const content = document.querySelector(".vault-post .post-content");
+    // 保险箱文章页和普通文章页都用 .post-content 承载正文
+    const content =
+      document.querySelector(".vault-post .post-content") ||
+      document.querySelector(".post-content");
     if (!content) return null;
 
     const byDate = new Map();
@@ -47,6 +54,11 @@
   }
 
   function init() {
+    // 文章 front matter 里设置 calendar = false 可单独关闭
+    if (document.querySelector('meta[name="diary-calendar"][content="off"]')) {
+      return;
+    }
+
     const byDate = collectEntries();
     if (!byDate) return;
 
