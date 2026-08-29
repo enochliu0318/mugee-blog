@@ -26,7 +26,7 @@
   }
 }
 
-// 📅 迷你日历按钮（方形图标）
+// 📅 日历按钮（方形图标，随屏幕轻微缩放）
 .diary-dock-cal {
   appearance: none;
   border: none;
@@ -35,8 +35,8 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  width: 3.2rem;
-  font-size: 1.6rem;
+  width: clamp(2.8rem, 3.4vw, 3.6rem);
+  font-size: clamp(1.4rem, 1.7vw, 1.8rem);
   color: var(--fg-color, #212121);
   background: transparent;
   border-radius: 999px;
@@ -58,7 +58,7 @@
   appearance: none;
   border: none;
   font: inherit;
-  font-size: 1.5rem;
+  font-size: clamp(1.4rem, 1.5vw, 1.7rem);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   line-height: 1;
@@ -66,7 +66,7 @@
   flex: 0 0 auto; // 不被压缩，宁可整条胶囊缩小
   color: var(--fg-color, #212121);
   background: transparent;
-  padding: 0.8rem 1.2rem;
+  padding: clamp(0.7rem, 0.9vw, 1rem) clamp(1rem, 1.3vw, 1.4rem);
   border-radius: 999px;
   cursor: pointer;
   transition: background 0.15s ease, color 0.15s ease;
