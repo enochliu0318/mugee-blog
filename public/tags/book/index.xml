@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Book on MUGEE·首页</title>
-		<link>https://blog.mugee.uk/tags/book/</link>
+		<link>http://localhost:1313/tags/book/</link>
 		<description>Recent content in Book on MUGEE·首页</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
@@ -12,13 +12,13 @@
 		
 			<lastBuildDate>Thu, 19 Jun 2025 00:24:57 +0800</lastBuildDate>
 		
-			<atom:link href="https://blog.mugee.uk/tags/book/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/book/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>浪漫爱情还是愚蠢冲动</title>
-				<link>https://blog.mugee.uk/posts/romeoandjuliet/</link>
+				<link>http://localhost:1313/posts/romeoandjuliet/</link>
 				<pubDate>Thu, 19 Jun 2025 00:24:57 +0800</pubDate>
-				<guid>https://blog.mugee.uk/posts/romeoandjuliet/</guid>
-				<description>&lt;h4 id=&#34;罗密欧与朱丽叶个人感悟&#34;&gt;&#xA;  &lt;em&gt;&lt;em&gt;——《罗密欧与朱丽叶》个人感悟&lt;/em&gt;&lt;/em&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%bd%97%e5%af%86%e6%ac%a7%e4%b8%8e%e6%9c%b1%e4%b8%bd%e5%8f%b6%e4%b8%aa%e4%ba%ba%e6%84%9f%e6%82%9f&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://blog.mugee.uk/images/post_img/romeo_and_juliet.jpg&#34; alt=&#34;romeo_and_juliet.jpg&#34;&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;引言&#34;&gt;&#xA;  引言&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e5%bc%95%e8%a8%80&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;初读本剧时，笔者仿佛与罗密欧一同深陷爱情，日日夜夜渴望见到与其一见钟情的朱丽叶。月光下的阳台私语、神父见证的秘密婚礼、以死明志的决绝殉情。但是回头仔细咀嚼时，种种疑问涌上心头：罗密欧与朱丽叶的爱情，究竟是忠贞不渝的永恒誓言，还是未经时间淬炼的冲动幻梦？这样的爱情能否在现实中扎根生长？作者笔下这份爱，又是否契合笔者作为基督徒应当秉持的价值观？同时作为青少年，希望能跳出感性的理解，带着这些思考重新审视这部经典。&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/romeoandjuliet/</guid>
+				<description>&lt;h4 id=&#34;罗密欧与朱丽叶个人感悟&#34;&gt;&#xA;  &lt;em&gt;&lt;em&gt;——《罗密欧与朱丽叶》个人感悟&lt;/em&gt;&lt;/em&gt;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%bd%97%e5%af%86%e6%ac%a7%e4%b8%8e%e6%9c%b1%e4%b8%bd%e5%8f%b6%e4%b8%aa%e4%ba%ba%e6%84%9f%e6%82%9f&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h4&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/post_img/romeo_and_juliet.jpg&#34; alt=&#34;romeo_and_juliet.jpg&#34;&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;引言&#34;&gt;&#xA;  引言&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e5%bc%95%e8%a8%80&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;初读本剧时，笔者仿佛与罗密欧一同深陷爱情，日日夜夜渴望见到与其一见钟情的朱丽叶。月光下的阳台私语、神父见证的秘密婚礼、以死明志的决绝殉情。但是回头仔细咀嚼时，种种疑问涌上心头：罗密欧与朱丽叶的爱情，究竟是忠贞不渝的永恒誓言，还是未经时间淬炼的冲动幻梦？这样的爱情能否在现实中扎根生长？作者笔下这份爱，又是否契合笔者作为基督徒应当秉持的价值观？同时作为青少年，希望能跳出感性的理解，带着这些思考重新审视这部经典。&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>
