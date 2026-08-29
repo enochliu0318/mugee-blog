@@ -2,41 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MUGEE·首页</title>
-    <link>https://blog.mugee.uk/</link>
+    <link>http://localhost:1313/</link>
     <description>Mugee&#39;s personal website</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 29 Aug 2026 14:30:00 +0800</lastBuildDate>
-    <atom:link href="https://blog.mugee.uk/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
     <item>
       <title>日记日历导航：功能介绍与实现复盘</title>
-      <link>https://blog.mugee.uk/posts/diary-calendar/</link>
+      <link>http://localhost:1313/posts/diary-calendar/</link>
       <pubDate>Sat, 29 Aug 2026 14:30:00 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/diary-calendar/</guid>
+      <guid>http://localhost:1313/posts/diary-calendar/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;把日记装进日历，把目录变成地图。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;保险箱里的那篇日记我基本上每天都会更新，内容自然越来越多。最开始它只有一个普通的目录（TOC），几十篇日记堆在一起之后，想找&amp;quot;上周三写了什么&amp;quot;基本靠肉眼滚动——这不可接受。&lt;/p&gt;</description>
+&lt;p&gt;保险箱里的日记我基本上每天都会更新，内容自然越来越多。最开始它只有一个普通的目录（TOC），几十篇日记堆在一起之后，想找&amp;quot;上周三写了什么&amp;quot;基本靠肉眼滚动——这不可接受。&lt;/p&gt;</description>
     </item>
     <item>
       <title>给博客加「更新提示灯」：从呼吸小圆点到段落级 diff</title>
-      <link>https://blog.mugee.uk/posts/article-update-indicator/</link>
+      <link>http://localhost:1313/posts/article-update-indicator/</link>
       <pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/article-update-indicator/</guid>
+      <guid>http://localhost:1313/posts/article-update-indicator/</guid>
       <description>&lt;p&gt;这个博客有个「保险箱」（vault）板块和一堆主文章。我经常回头改旧文章——修错别字、补一段新想法——但读者根本不知道哪里变了，只能靠自己重新通读一遍去发现。于是我给整个站加了一套「更新提示系统」，目标是回答一个问题：&lt;/p&gt;</description>
     </item>
     <item>
       <title>slstatus定制：实时年龄、日子计数与蓝牙状态显示</title>
-      <link>https://blog.mugee.uk/posts/slstatus-custom-blog/</link>
+      <link>http://localhost:1313/posts/slstatus-custom-blog/</link>
       <pubDate>Sat, 22 Aug 2026 12:39:49 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/slstatus-custom-blog/</guid>
+      <guid>http://localhost:1313/posts/slstatus-custom-blog/</guid>
       <description>&lt;p&gt;slstatus 是 suckless 风格的轻量状态栏工具，默认通过 EWMH 属性或 stdout 输出系统信息，常配合 dwm 使用。它本身已经很精简高效，但真正好玩的地方在于&lt;strong&gt;自己写组件&lt;/strong&gt;。虽然纯 C 没有 obj，anw这个功能还是用纯 c 写的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>markdown使用手册</title>
-      <link>https://blog.mugee.uk/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
+      <link>http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</link>
       <pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
+      <guid>http://localhost:1313/posts/markdown%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</guid>
       <description>&lt;h1 id=&#34;markdown-详细使用手册&#34;&gt;
   Markdown 详细使用手册
   &lt;a class=&#34;heading-link&#34; href=&#34;#markdown-%e8%af%a6%e7%bb%86%e4%bd%bf%e7%94%a8%e6%89%8b%e5%86%8c&#34;&gt;
@@ -49,19 +49,26 @@
     </item>
     <item>
       <title>后浪 NextWave 网站简介与维运指南</title>
-      <link>https://blog.mugee.uk/posts/nextwave-blog/</link>
+      <link>http://localhost:1313/posts/nextwave-blog/</link>
       <pubDate>Tue, 04 Aug 2026 17:00:00 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/nextwave-blog/</guid>
+      <guid>http://localhost:1313/posts/nextwave-blog/</guid>
       <description>&lt;blockquote&gt;
 &lt;p&gt;信仰的后浪，青春的发声。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://nextwave.mugee.uk&#34;  class=&#34;external-link&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;后浪NextWave&lt;/strong&gt;&lt;/a&gt;（https://nextwave.mugee.uk）是一个专为青少年打造的文学阅读与创作表达平台。它没有复杂的后台、没有数据库，用 Markdown 写文章、Git 管理内容、Hugo 生成静态页面、Cloudflare Pages 自动部署。&lt;/p&gt;</description>
     </item>
     <item>
+      <title>爱和恩典</title>
+      <link>http://localhost:1313/posts/communityserviceblog/</link>
+      <pubDate>Thu, 25 Jun 2026 13:13:44 +0800</pubDate>
+      <guid>http://localhost:1313/posts/communityserviceblog/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Java入门（持续更新）</title>
-      <link>https://blog.mugee.uk/posts/java/</link>
+      <link>http://localhost:1313/posts/java/</link>
       <pubDate>Sat, 20 Jun 2026 05:40:47 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/java/</guid>
+      <guid>http://localhost:1313/posts/java/</guid>
       <description>&lt;h2 id=&#34;第一章-java概述&#34;&gt;
   第一章 Java概述
   &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%ac%ac%e4%b8%80%e7%ab%a0-java%e6%a6%82%e8%bf%b0&#34;&gt;
@@ -73,9 +80,9 @@
     </item>
     <item>
       <title>面部表情编码（FACS）与基础微表情识别系统研究总结报告</title>
-      <link>https://blog.mugee.uk/posts/facs/</link>
+      <link>http://localhost:1313/posts/facs/</link>
       <pubDate>Fri, 19 Jun 2026 11:12:19 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/facs/</guid>
+      <guid>http://localhost:1313/posts/facs/</guid>
       <description>&lt;hr&gt;
 &lt;h3 id=&#34;引言&#34;&gt;
   引言
@@ -88,9 +95,9 @@
     </item>
     <item>
       <title>领袖</title>
-      <link>https://blog.mugee.uk/posts/messi/</link>
+      <link>http://localhost:1313/posts/messi/</link>
       <pubDate>Wed, 17 Jun 2026 11:26:47 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/messi/</guid>
+      <guid>http://localhost:1313/posts/messi/</guid>
       <description>&lt;h3 id=&#34;从梅西看真正的领袖&#34;&gt;
   &lt;em&gt;&lt;em&gt;——从梅西看真正的领袖&lt;/em&gt;&lt;/em&gt;
   &lt;a class=&#34;heading-link&#34; href=&#34;#%e4%bb%8e%e6%a2%85%e8%a5%bf%e7%9c%8b%e7%9c%9f%e6%ad%a3%e7%9a%84%e9%a2%86%e8%a2%96&#34;&gt;
@@ -99,7 +106,7 @@
   &lt;/a&gt;
 &lt;/h3&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.mugee.uk/images/post_img/messi.jpg&#34; alt=&#34;messi&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/post_img/messi.jpg&#34; alt=&#34;messi&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;——2026世界杯小组赛阿根廷对战阿尔及利亚&lt;/em&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;引言&#34;&gt;
@@ -113,9 +120,9 @@
     </item>
     <item>
       <title>我是谁</title>
-      <link>https://blog.mugee.uk/posts/whoami/</link>
+      <link>http://localhost:1313/posts/whoami/</link>
       <pubDate>Tue, 16 Jun 2026 16:35:34 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/whoami/</guid>
+      <guid>http://localhost:1313/posts/whoami/</guid>
       <description>&lt;h3 id=&#34;篇章一我的底色&#34;&gt;
   篇章一：“我”的底色
   &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%af%87%e7%ab%a0%e4%b8%80%e6%88%91%e7%9a%84%e5%ba%95%e8%89%b2&#34;&gt;
@@ -127,9 +134,9 @@
     </item>
     <item>
       <title>blog.mugee.uk上线！🎉</title>
-      <link>https://blog.mugee.uk/posts/first-blog/</link>
+      <link>http://localhost:1313/posts/first-blog/</link>
       <pubDate>Tue, 16 Jun 2026 09:44:38 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/first-blog/</guid>
+      <guid>http://localhost:1313/posts/first-blog/</guid>
       <description>&lt;h3 id=&#34;hello-world&#34;&gt;
   hello, world!
   &lt;a class=&#34;heading-link&#34; href=&#34;#hello-world&#34;&gt;
@@ -142,9 +149,9 @@
     </item>
     <item>
       <title>算法汪洋中有温度的舵手</title>
-      <link>https://blog.mugee.uk/posts/a_warm-headed_helmsman_in_the_cast_ocean_of_algorithms/</link>
+      <link>http://localhost:1313/posts/a_warm-headed_helmsman_in_the_cast_ocean_of_algorithms/</link>
       <pubDate>Wed, 01 Apr 2026 18:21:24 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/a_warm-headed_helmsman_in_the_cast_ocean_of_algorithms/</guid>
+      <guid>http://localhost:1313/posts/a_warm-headed_helmsman_in_the_cast_ocean_of_algorithms/</guid>
       <description>&lt;h4 id=&#34;ai的未来与人类的主体性&#34;&gt;
   &lt;em&gt;&lt;em&gt;———AI的未来与人类的主体性&lt;/em&gt;&lt;/em&gt;
   &lt;a class=&#34;heading-link&#34; href=&#34;#ai%e7%9a%84%e6%9c%aa%e6%9d%a5%e4%b8%8e%e4%ba%ba%e7%b1%bb%e7%9a%84%e4%b8%bb%e4%bd%93%e6%80%a7&#34;&gt;
@@ -164,9 +171,9 @@
     </item>
     <item>
       <title>浪漫爱情还是愚蠢冲动</title>
-      <link>https://blog.mugee.uk/posts/romeoandjuliet/</link>
+      <link>http://localhost:1313/posts/romeoandjuliet/</link>
       <pubDate>Thu, 19 Jun 2025 00:24:57 +0800</pubDate>
-      <guid>https://blog.mugee.uk/posts/romeoandjuliet/</guid>
+      <guid>http://localhost:1313/posts/romeoandjuliet/</guid>
       <description>&lt;h4 id=&#34;罗密欧与朱丽叶个人感悟&#34;&gt;
   &lt;em&gt;&lt;em&gt;——《罗密欧与朱丽叶》个人感悟&lt;/em&gt;&lt;/em&gt;
   &lt;a class=&#34;heading-link&#34; href=&#34;#%e7%bd%97%e5%af%86%e6%ac%a7%e4%b8%8e%e6%9c%b1%e4%b8%bd%e5%8f%b6%e4%b8%aa%e4%ba%ba%e6%84%9f%e6%82%9f&#34;&gt;
@@ -175,7 +182,7 @@
   &lt;/a&gt;
 &lt;/h4&gt;
 &lt;hr&gt;
-&lt;p&gt;&lt;img src=&#34;https://blog.mugee.uk/images/post_img/romeo_and_juliet.jpg&#34; alt=&#34;romeo_and_juliet.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/post_img/romeo_and_juliet.jpg&#34; alt=&#34;romeo_and_juliet.jpg&#34;&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;引言&#34;&gt;
   引言

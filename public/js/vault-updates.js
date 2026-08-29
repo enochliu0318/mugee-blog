@@ -43,6 +43,34 @@
     const list = document.querySelector("[data-vault-update-list]");
     if (!list) return;
 
+    // 浏览器第一次到访（localStorage 里还没有任何记录）时，静默把当前
+    // 所有内容记为基线、全部不亮灯——整个保险箱对新读者都是新的，逐篇
+    // 提示只是噪音。此后列表里再出现"没有基线"的条目，就一定是新写的，
+    // 和内容有更新的旧条目一样亮灯。
+    let firstVisit = false;
+    try {
+      firstVisit = localStorage.getItem(STORAGE_KEY) === null;
+    } catch {
+      firstVisit = true;
+    }
+
+    if (firstVisit) {
+      const seed = {};
+      list.querySelectorAll("[data-vault-path]").forEach((item) => {
+        const path = item.dataset.vaultPath;
+        const hash = item.dataset.vaultHash;
+        if (path && hash) {
+          seed[path] = {
+            v: SNAPSHOT_VERSION,
+            fullHash: hash,
+            seenAt: Date.now(),
+          };
+        }
+      });
+      writeSeenMap(seed);
+      return;
+    }
+
     const seenMap = readSeenMap();
 
     list.querySelectorAll("[data-vault-path]").forEach((item) => {
@@ -52,10 +80,12 @@
       if (!path || !currentHash || !dot) return;
 
       const seen = seenMap[path];
-      // 只有"之前访问过、且指纹变了"才提示；从未打开过的文章不算"更新"，
-      // 只是"还没读"而已，不需要额外提示。
-      if (seen && seen.fullHash && seen.fullHash !== currentHash) {
+      // !seen = 新条目；seen.fullHash 与当前不一致 = 内容有更新
+      if (!seen || !seen.fullHash || seen.fullHash !== currentHash) {
         dot.hidden = false;
+        dot.title = seen
+          ? "自你上次查看后，这篇内容已更新"
+          : "这是一篇你还没看过的新内容";
       }
     });
   }
