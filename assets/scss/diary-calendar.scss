@@ -100,9 +100,14 @@
     width: 13rem;
   }
 
-  // 迷你月历：宽
+  // 迷你月历：宽。
+  // 8 月这类"前置空位多 + 31 天"的月份会排到 6 行，比 7 月(5 行)高一整行；
+  // iPhone 等小屏上（Safari 工具栏 + 缩放会进一步压缩可视高度），
+  // 面板可能顶出屏幕外，这里限制最大高度并允许内部滚动。
   &.is-grid {
     width: 27rem;
+    max-height: calc(100vh - 13rem);
+    overflow-y: auto;
   }
 
   &[hidden] {

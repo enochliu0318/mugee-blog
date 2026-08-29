@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>Tags on MUGEE·首页</title>
-		<link>http://localhost:1313/tags/</link>
+		<link>https://blog.mugee.uk/tags/</link>
 		<description>Recent content in Tags on MUGEE·首页</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
@@ -12,96 +12,96 @@
 		
 			<lastBuildDate>Thu, 27 Aug 2026 12:24:04 +0800</lastBuildDate>
 		
-			<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="https://blog.mugee.uk/tags/index.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>CSS</title>
-				<link>http://localhost:1313/tags/css/</link>
+				<link>https://blog.mugee.uk/tags/css/</link>
 				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
-				<guid>http://localhost:1313/tags/css/</guid>
+				<guid>https://blog.mugee.uk/tags/css/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Hugo</title>
-				<link>http://localhost:1313/tags/hugo/</link>
+				<link>https://blog.mugee.uk/tags/hugo/</link>
 				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
-				<guid>http://localhost:1313/tags/hugo/</guid>
+				<guid>https://blog.mugee.uk/tags/hugo/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>JavaScript</title>
-				<link>http://localhost:1313/tags/javascript/</link>
+				<link>https://blog.mugee.uk/tags/javascript/</link>
 				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
-				<guid>http://localhost:1313/tags/javascript/</guid>
+				<guid>https://blog.mugee.uk/tags/javascript/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Website</title>
-				<link>http://localhost:1313/tags/website/</link>
+				<link>https://blog.mugee.uk/tags/website/</link>
 				<pubDate>Thu, 27 Aug 2026 12:24:04 +0800</pubDate>
-				<guid>http://localhost:1313/tags/website/</guid>
+				<guid>https://blog.mugee.uk/tags/website/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Linux</title>
-				<link>http://localhost:1313/tags/linux/</link>
+				<link>https://blog.mugee.uk/tags/linux/</link>
 				<pubDate>Sat, 22 Aug 2026 12:39:49 +0800</pubDate>
-				<guid>http://localhost:1313/tags/linux/</guid>
+				<guid>https://blog.mugee.uk/tags/linux/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Slstatus</title>
-				<link>http://localhost:1313/tags/slstatus/</link>
+				<link>https://blog.mugee.uk/tags/slstatus/</link>
 				<pubDate>Sat, 22 Aug 2026 12:39:49 +0800</pubDate>
-				<guid>http://localhost:1313/tags/slstatus/</guid>
+				<guid>https://blog.mugee.uk/tags/slstatus/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Markdown</title>
-				<link>http://localhost:1313/tags/markdown/</link>
+				<link>https://blog.mugee.uk/tags/markdown/</link>
 				<pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
-				<guid>http://localhost:1313/tags/markdown/</guid>
+				<guid>https://blog.mugee.uk/tags/markdown/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>NextWave</title>
-				<link>http://localhost:1313/tags/nextwave/</link>
+				<link>https://blog.mugee.uk/tags/nextwave/</link>
 				<pubDate>Tue, 11 Aug 2026 18:16:51 +0800</pubDate>
-				<guid>http://localhost:1313/tags/nextwave/</guid>
+				<guid>https://blog.mugee.uk/tags/nextwave/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Java</title>
-				<link>http://localhost:1313/tags/java/</link>
+				<link>https://blog.mugee.uk/tags/java/</link>
 				<pubDate>Sat, 20 Jun 2026 05:40:47 +0800</pubDate>
-				<guid>http://localhost:1313/tags/java/</guid>
+				<guid>https://blog.mugee.uk/tags/java/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>FACS</title>
-				<link>http://localhost:1313/tags/facs/</link>
+				<link>https://blog.mugee.uk/tags/facs/</link>
 				<pubDate>Fri, 19 Jun 2026 11:12:19 +0800</pubDate>
-				<guid>http://localhost:1313/tags/facs/</guid>
+				<guid>https://blog.mugee.uk/tags/facs/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>World Cup</title>
-				<link>http://localhost:1313/tags/world-cup/</link>
+				<link>https://blog.mugee.uk/tags/world-cup/</link>
 				<pubDate>Wed, 17 Jun 2026 11:26:47 +0800</pubDate>
-				<guid>http://localhost:1313/tags/world-cup/</guid>
+				<guid>https://blog.mugee.uk/tags/world-cup/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>AI</title>
-				<link>http://localhost:1313/tags/ai/</link>
+				<link>https://blog.mugee.uk/tags/ai/</link>
 				<pubDate>Wed, 01 Apr 2026 18:21:24 +0800</pubDate>
-				<guid>http://localhost:1313/tags/ai/</guid>
+				<guid>https://blog.mugee.uk/tags/ai/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Book</title>
-				<link>http://localhost:1313/tags/book/</link>
+				<link>https://blog.mugee.uk/tags/book/</link>
 				<pubDate>Thu, 19 Jun 2025 00:24:57 +0800</pubDate>
-				<guid>http://localhost:1313/tags/book/</guid>
+				<guid>https://blog.mugee.uk/tags/book/</guid>
 				<description></description>
 			</item>
 	</channel>

@@ -73,7 +73,9 @@
   .diary-popover.is-list {
     width: 13rem; }
   .diary-popover.is-grid {
-    width: 27rem; }
+    width: 27rem;
+    max-height: calc(100vh - 13rem);
+    overflow-y: auto; }
   .diary-popover[hidden] {
     display: none; }
 
