@@ -101,11 +101,13 @@
   }
 
   // 迷你月历：宽。
-  // 8 月这类"前置空位多 + 31 天"的月份会排到 6 行，比 7 月(5 行)高一整行；
-  // iPhone 等小屏上（Safari 工具栏 + 缩放会进一步压缩可视高度），
-  // 面板可能顶出屏幕外，这里限制最大高度并允许内部滚动。
+  // 宽度随内容自适应（max-content），并限制在屏幕内；
+  // 旧浏览器回退到固定宽度。
   &.is-grid {
     width: 27rem;
+    width: max-content;
+    min-width: 21rem;
+    max-width: 92vw;
     max-height: calc(100vh - 13rem);
     overflow-y: auto;
   }
@@ -190,6 +192,7 @@
   justify-content: center;
   width: 2.4rem;
   height: 2.4rem;
+  padding: 0; // 重置 iOS Safari 按钮默认内边距
   font-size: 1.2rem;
   color: var(--alt-fg-color, #666666);
   background: transparent;
@@ -211,8 +214,10 @@
 }
 
 .diary-cal-grid {
+  // minmax(0,1fr)：列宽强制等分、不受内容最小宽度撑大，
+  // 保证星期行和日期网格两套独立网格的列严格对齐
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.25rem;
 }
 
@@ -232,6 +237,7 @@
   align-items: center;
   justify-content: center;
   min-height: 3rem;
+  padding: 0; // 重置 iOS Safari 按钮默认内边距，避免撑大列宽
   font: inherit;
   font-size: 1.3rem;
   font-variant-numeric: tabular-nums;

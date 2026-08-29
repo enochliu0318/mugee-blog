@@ -74,6 +74,9 @@
     width: 13rem; }
   .diary-popover.is-grid {
     width: 27rem;
+    width: max-content;
+    min-width: 21rem;
+    max-width: 92vw;
     max-height: calc(100vh - 13rem);
     overflow-y: auto; }
   .diary-popover[hidden] {
@@ -136,6 +139,7 @@
   justify-content: center;
   width: 2.4rem;
   height: 2.4rem;
+  padding: 0;
   font-size: 1.2rem;
   color: var(--alt-fg-color, #666666);
   background: transparent;
@@ -152,7 +156,7 @@
 
 .diary-cal-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 0.25rem; }
 
 .diary-cal-weekdays {
@@ -168,6 +172,7 @@
   align-items: center;
   justify-content: center;
   min-height: 3rem;
+  padding: 0;
   font: inherit;
   font-size: 1.3rem;
   font-variant-numeric: tabular-nums;
