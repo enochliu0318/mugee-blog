@@ -285,7 +285,7 @@
         class="post-content"
         data-posts-seen
         data-posts-path="/posts/article-update-indicator/"
-        data-posts-hash="a1e24c6d43798c92ded8862f53d85aae554f988a83db0c4994cf35cfc07236b4"
+        data-posts-hash="bba582473bd8894d264875f871cd02f6214825ed8c976315078e6b2f7859c0a1"
       >
         
         <p>这个博客有个「保险箱」（vault）板块和一堆主文章。我经常回头改旧文章——修错别字、补一段新想法——但读者根本不知道哪里变了，只能靠自己重新通读一遍去发现。于是我给整个站加了一套「更新提示系统」，目标是回答一个问题：</p>
@@ -303,7 +303,7 @@
 	<tbody>
 			<tr>
 					<td>列表页</td>
-					<td>有更新或<strong>新发布</strong>的文章标题旁亮起<strong>呼吸灯小圆点</strong></td>
+					<td>有更新的文章标题旁亮起<strong>呼吸灯小圆点</strong>（保险箱里<strong>新日记</strong>也会亮）</td>
 			</tr>
 			<tr>
 					<td>文章页</td>
@@ -387,9 +387,9 @@
     <span class="sr-only">链接到标题</span>
   </a>
 </h3>
-<p><strong>首次访问不高亮，但新文章会亮。</strong> 判定条件其实是&quot;没见过 || 内容变了&quot;：浏览器第一次到访列表页时，会静默把当前所有文章记为基线——整站对第一次来的读者都是新的，逐篇提示只是噪音；此后列表里再出现&quot;没有基线&quot;的文章，就一定是新发布的，它和&quot;指纹变了&quot;的旧文章一样亮灯，悬停提示也会区分&quot;新文章&quot;和&quot;已更新&quot;。</p>
+<p><strong>新文章要不要亮，两边策略刻意不同。</strong> 保险箱的判定是&quot;没见过 || 内容变了&quot;——日记本里出现一篇新日记，正是读者最该被提示的事，所以首次解锁时会静默把当前内容记为基线，此后冒出来的新日记就会亮灯。公共文章库则保守得多：&ldquo;之前读过 &amp;&amp; 内容变了&quot;才亮，新文章一律不亮——这个列表对所有人生效，新文章也亮的话，第一次来的访客会满屏圆点，提示就彻底失去意义了。</p>
 <p><strong>离开页面时才保存基准。</strong> 监听 <code>visibilitychange</code> 和 <code>pagehide</code>，而不是一进来就写。这样哪怕你扫了一眼马上关掉，这次看到的样子也会成为下次比对的基准；同时在同一页面内重复触发也有 <code>saved</code> 标志位防抖。</p>
-<p><strong>快照带版本号。</strong> 存储结构是 <code>{ v: 1, fullHash, blockHashes, seenAt }</code>。哪天切分粒度又调整了，把版本号 +1，所有旧快照直接作废重录——否则新旧粒度混着比，会把整篇文章误判成&quot;全是新增&quot;。</p>
+<p><strong>快照带版本号。</strong> 存储结构是 <code>{ v: 1, fullHash, blockHashes, seenAt }</code>。哪天切分粒度又调整了，把版本号 +1，所有旧快照直接作废重录——否则新旧粒度混着比，会把整篇文章误判成&quot;全是新增&rdquo;。</p>
 <p><strong>保险箱用独特的蓝色</strong> 主文章列表里使用和网站框架一样的主体黄色，但是为了突出保险箱内的独特，保险箱内全部使用蓝色。</p>
 <h3 id="复用到主文章列表">
   复用到主文章列表
@@ -496,7 +496,7 @@
   
   
   
-  <script src="/js/posts-updates.min.33b389c9f0ea03bc928c7386a2937eb16052babc14ddbf7a12a25e10456bb8fe.js" integrity="sha256-M7OJyfDqA7ySjHOGopN&#43;sWBSurwU3b96EqJeEEVruP4="></script>
+  <script src="/js/posts-updates.min.cf2f91d16532effc8c1af79ca9fe03afc49d0ce065d622b17fecb0b9f6647d0a.js" integrity="sha256-zy&#43;R0WUy7/yMGvecqf4Dr8SdDOBl1iKxf&#43;ywufZkfQo="></script>
   
   
   

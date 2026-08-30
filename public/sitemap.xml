@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.mugee.uk/</loc>
+    <lastmod>2026-08-30T08:00:00+08:00</lastmod>
+  </url><url>
     <loc>https://blog.mugee.uk/authors/</loc>
     <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
@@ -21,9 +24,6 @@
     <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/authors/mugee/</loc>
-    <lastmod>2026-08-29T14:30:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.mugee.uk/</loc>
     <lastmod>2026-08-29T14:30:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.mugee.uk/posts/</loc>
