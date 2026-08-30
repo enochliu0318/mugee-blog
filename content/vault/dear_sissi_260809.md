@@ -4,6 +4,7 @@ draft = false
 title = 'Dear Sissi | I'
 outputs = ["HTML"]
 sitemap = { disable = true }
+authors = ["Enoch"]
 +++
 
 亲爱的诚诚姐姐：
