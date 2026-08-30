@@ -10,15 +10,6 @@
 		
 		
 		
-			<lastBuildDate>Sun, 30 Aug 2026 08:00:00 +0800</lastBuildDate>
-		
 			<atom:link href="http://localhost:1313/authors/enoch/index.xml" rel="self" type="application/rss+xml" />
-			<item>
-				<title>PRESENT</title>
-				<link>http://localhost:1313/vault/%E6%9B%BE%E7%BB%8F/</link>
-				<pubDate>Sun, 30 Aug 2026 08:00:00 +0800</pubDate>
-				<guid>http://localhost:1313/vault/%E6%9B%BE%E7%BB%8F/</guid>
-				<description>&lt;h2 id=&#34;前言&#34;&gt;&#xA;  前言&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#%e5%89%8d%e8%a8%80&#34;&gt;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;链接到标题&#34;&gt;&lt;/i&gt;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;链接到标题&lt;/span&gt;&#xA;  &lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;我今年 16 岁。虽然自省下来觉得心智比同龄人稍显成熟，但这绝非值得骄傲的资本，反倒成了一种负担——它常让我因缺乏“同频”的同伴而感到孤独。在我的视角里，身边的同龄人大多显得有些幼稚。&lt;/p&gt;</description>
-			</item>
 	</channel>
 </rss>
