@@ -1,0 +1,230 @@
+@charset "UTF-8";
+.vault-shell {
+  width: 100%; }
+
+.vault-gate {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1.5rem 4rem; }
+
+/* JS 解锁后会给门加上 hidden 属性，但上面的 display:flex
+   会覆盖浏览器默认的 [hidden] { display: none }，
+   导致解锁后密码框仍然显示，这里显式补回。 */
+.vault-gate[hidden],
+.vault-body[hidden] {
+  display: none; }
+
+.vault-gate-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2.4rem 2rem;
+  text-align: center;
+  background: var(--alt-bg-color, #e0e0e0);
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+
+.vault-gate-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.8rem;
+  height: 4.8rem;
+  margin-bottom: 1.2rem;
+  border-radius: 50%;
+  background: var(--bg-color, #fafafa);
+  color: var(--link-color, #1565c0);
+  font-size: 2rem; }
+
+.vault-gate-title {
+  margin: 0 0 0.6rem;
+  font-size: 2.2rem;
+  font-weight: 700; }
+
+.vault-gate-desc {
+  margin: 0 0 1.8rem;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--alt-fg-color, #666); }
+
+.vault-gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left; }
+
+.vault-gate-label {
+  font-size: 1.3rem;
+  font-weight: 600; }
+
+.vault-gate-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1.5rem;
+  color: var(--fg-color, #212121);
+  background: var(--bg-color, #fafafa);
+  border: 1px solid var(--darker-alt-bg-color, #ccc);
+  border-radius: 0.6rem;
+  outline: none;
+  transition: border-color 0.15s ease; }
+  .vault-gate-input:focus {
+    border-color: var(--link-color, #1565c0); }
+
+.vault-gate-remember {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.2rem;
+  font-size: 1.3rem;
+  color: var(--alt-fg-color, #666);
+  cursor: pointer; }
+  .vault-gate-remember input {
+    margin: 0; }
+
+.vault-gate-error {
+  margin: 0;
+  font-size: 1.3rem;
+  color: var(--error-color, #c62828); }
+
+.vault-gate-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--link-color, #1565c0);
+  border: none;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease; }
+  .vault-gate-submit:hover {
+    opacity: 0.9; }
+
+.vault-body {
+  animation: vault-fade-in 0.25s ease; }
+
+.vault-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 76rem;
+  margin: 0 auto 2rem;
+  padding: 0 1.5rem; }
+
+.vault-lock-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  color: var(--alt-fg-color, #666);
+  background: transparent;
+  border: 1px solid var(--darker-alt-bg-color, #ccc);
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease; }
+  .vault-lock-btn:hover {
+    color: var(--link-color, #1565c0);
+    border-color: var(--link-color, #1565c0); }
+
+.vault-intro {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: var(--alt-fg-color, #666); }
+
+.vault-empty {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: var(--alt-fg-color, #666); }
+
+.vault-list .title-link i {
+  margin-right: 0.4rem;
+  color: var(--link-color, #1565c0); }
+
+/* 列表页：文章有更新时，标题旁的小圆点提示。
+   不改变 .date / .title 原有的两栏 flex 布局，
+   只作为标题文字内的行内小圆点，紧贴文字右上角。 */
+.vault-update-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.5rem;
+  vertical-align: super;
+  background: var(--link-color, #1565c0);
+  border-radius: 50%;
+  cursor: default; }
+
+.vault-update-dot[hidden] {
+  display: none; }
+
+/* 呼吸灯：透明度、大小、外圈光晕一起缓慢地"吸-呼"，像设备待机灯一样 */
+.vault-update-dot:not([hidden]) {
+  animation: vault-dot-breathe 2.4s ease-in-out infinite; }
+
+@keyframes vault-dot-breathe {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.8);
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--link-color, #1565c0) 55%, transparent); }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0.45rem transparent; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .vault-update-dot:not([hidden]) {
+    animation: none; } }
+
+/* 文章页：跳转到最新更新的按钮 */
+.vault-jump-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0 0 1.6rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--link-color, #1565c0);
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: opacity 0.15s ease; }
+  .vault-jump-btn:hover {
+    opacity: 0.88; }
+  .vault-jump-btn::before {
+    content: "\2193"; }
+
+/* 文章页：改动段落的高亮标注（保险箱主题色，很淡） */
+.vault-diff-block {
+  margin: 1.2rem 0;
+  padding: 0.4rem 1rem;
+  border-radius: 0.4rem; }
+
+.vault-diff-new {
+  background: rgba(21, 101, 192, 0.12);
+  background: color-mix(in srgb, var(--link-color, #1565c0) 6%, transparent);
+  border-left: 3px solid rgba(21, 101, 192, 0.7);
+  border-left-color: color-mix(in srgb, var(--link-color, #1565c0) 35%, transparent); }
+
+@keyframes vault-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.4rem); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+@media only screen and (max-width: 768px) {
+  .vault-gate {
+    padding: 2rem 1rem 3rem; }
+  .vault-gate-card {
+    padding: 2rem 1.4rem; }
+  .vault-toolbar {
+    padding: 0 1rem; } }
+
+/*# sourceMappingURL=vault.css.map */
