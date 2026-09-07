@@ -10,9 +10,16 @@
 		
 		
 		
-			<lastBuildDate>Sat, 29 Aug 2026 14:30:00 +0800</lastBuildDate>
+			<lastBuildDate>Tue, 08 Sep 2026 01:00:00 +0800</lastBuildDate>
 		
 			<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Arduino Nano 桌面小组件：麦金塔时钟</title>
+				<link>http://localhost:1313/posts/arduino-deskscreen/</link>
+				<pubDate>Tue, 08 Sep 2026 01:00:00 +0800</pubDate>
+				<guid>http://localhost:1313/posts/arduino-deskscreen/</guid>
+				<description>&lt;p&gt;起因很简单：想做一个放在桌面上、一抬眼就能看到的小东西。于是就有了这台「迷你麦金塔」——用 Arduino Nano + 0.96 寸 OLED + DS3231 时钟 + DHT11 温湿度，套上 3D 打印的经典 Macintosh 外壳，开机有麦金塔风格的启动动画，桌面上显示时间和一句分时段的问候语。&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>日记日历导航：功能介绍与实现复盘</title>
 				<link>http://localhost:1313/posts/diary-calendar/</link>
