@@ -67,7 +67,7 @@ U8G2_SSD1306_128X64_NONAME_1_SW_I2C display(U8G2_R0, A3, A2, U8X8_PIN_NONE);
 
 **空气页**：顶部小时间 + "Room Air" 标题，下面是温度和湿度读数。
 
-{{< figure src="/images/post_img/deskscreen/IMG_0328.JPG" title="硬件软件测试阶段" >}}
+{{< figure src="/images/post_img/deskscreen/IMG_0328.JPG" title="第二版ui" >}}
 
 **性能上有个重要优化**：软件 I2C 刷一整帧大约要 200ms，如果每圈 loop 都全屏重绘，触摸切页的响应会很慢。解决办法是做了 `renderKey`——把当前页面上所有会变的内容（秒、页码、温湿度读数）拼成一个 key，**只有 key 变化时才真正刷屏**。秒变化时刷新时间，其余时候 loop 空转，触摸立刻就能响应。
 

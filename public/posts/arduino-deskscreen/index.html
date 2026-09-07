@@ -108,6 +108,13 @@
     <link rel="stylesheet" href="/scss/diary-calendar.css" media="screen">
   
 
+  
+  
+    
+    
+    <link rel="stylesheet" href="/scss/figure.css" media="screen">
+  
+
 
 
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
@@ -287,7 +294,7 @@
         class="post-content"
         data-posts-seen
         data-posts-path="/posts/arduino-deskscreen/"
-        data-posts-hash="afe9ad6457db8d4fb9c48502c143c78de072a6988cb9fbd3f14f49afa6639c9a"
+        data-posts-hash="2242498caccd7dab8601b56526753a43b684420826083abc55663bfe0e19e8c7"
       >
         
         <p>起因很简单：想做一个放在桌面上、一抬眼就能看到的小东西。于是就有了这台「迷你麦金塔」——用 Arduino Nano + 0.96 寸 OLED + DS3231 时钟 + DHT11 温湿度，套上 3D 打印的经典 Macintosh 外壳，开机有麦金塔风格的启动动画，桌面上显示时间和一句分时段的问候语。</p>
@@ -353,7 +360,12 @@
 <p>第二个坑更隐蔽：一开始用 U8g2 的全帧缓冲构造函数，直接把 Nano 仅有的 2KB RAM 吃爆，又是白线又是花屏。最后换成<strong>分页 buffer</strong> 的构造函数，每次只传一页数据，RAM 立刻宽裕了：</p>
 <div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span>U8G2_SSD1306_128X64_NONAME_1_SW_I2C <span style="color:#d2a8ff;font-weight:bold">display</span>(U8G2_R0, A3, A2, U8X8_PIN_NONE);
 </span></span><span style="display:flex;"><span><span style="color:#8b949e;font-style:italic">//                       ^ &#34;1&#34; = 分页 buffer，省 RAM
-</span></span></span></code></pre></div><p>如果不确定手上的屏是什么驱动、什么地址，先烧一个软件 I2C 扫描器扫一遍最稳妥。</p>
+</span></span></span></code></pre></div><figure><img src="/images/post_img/deskscreen/IMG_0322.JPG"><figcaption>
+			<h4>硬件软件测试阶段</h4>
+		</figcaption>
+</figure>
+
+<p>如果不确定手上的屏是什么驱动、什么地址，先烧一个软件 I2C 扫描器扫一遍最稳妥。</p>
 <hr>
 <h3 id="双页-ui时间页--空气页">
   双页 UI：时间页 + 空气页
@@ -365,8 +377,8 @@
 <p>主界面分两页，触摸 D2 切换：</p>
 <p><strong>时钟页</strong>：顶部小时间（冒号每秒闪烁）、右上角一个手绘的星空小钟表、日期 + 星期、Day 计数，还有分时段问候语。</p>
 <p><strong>空气页</strong>：顶部小时间 + &ldquo;Room Air&rdquo; 标题，下面是温度和湿度读数。</p>
-<figure><img src="/images/post_img/deskscreen/IMG_0322.JPG"><figcaption>
-			<h4>面包板阶段</h4>
+<figure><img src="/images/post_img/deskscreen/IMG_0328.JPG"><figcaption>
+			<h4>第二版ui</h4>
 		</figcaption>
 </figure>
 
@@ -396,7 +408,7 @@
   </a>
 </h3>
 <p>开机时屏幕会播放一段经典 Mac 风格的启动动画：一台麦金塔的轮廓逐步浮现，配上 &ldquo;Welcome to Macintosh&rdquo;，然后才进入主界面。外壳是照着初代 Macintosh 的造型设计的：正面挖出屏幕窗口，下巴做了软盘驱动的装饰细节，背面留了 Type-C 和传感器开孔，底座还配了个可拆卸的小键盘装饰件。</p>
-<figure><img src="/images/post_img/deskscreen/Screenshot%202026-09-08%20at%2012.48.08%20AM.png"><figcaption>
+<figure><img src="/images/post_img/deskscreen/Screenshot%20.png"><figcaption>
 			<h4>外壳设计草图</h4>
 		</figcaption>
 </figure>
@@ -420,7 +432,7 @@
 		</figcaption>
 </figure>
 
-<p>切了 17 次单盘……主要还是因为有些地方设计的太细，好多次需要推翻重新设计。包括小小的背板，都打印了两次，第一次没有做内部卡扣，粘都粘不紧，于是又设计了一版。</p>
+<p>切了 17 次单盘……主要还是因为有些地方设计的太细，A1打印不出来，好多次需要推翻重新设计。包括小小的背板，都打印了两次，第一次没有做内部卡扣，粘都粘不紧，于是又设计了一版。</p>
 <hr>
 <h3 id="功耗">
   功耗
@@ -458,7 +470,7 @@
     <span class="sr-only">链接到标题</span>
   </a>
 </h3>
-<p>这个项目技术含量不算高，Nano 的性能也简陋得可怜，但它可能是我在这个夏天写过的最喜欢的一段代码。它不做什么了不起的事，只是安安静静立在桌面上，走着正确的时间，数着我们一起走过的天数，在深夜屏幕亮起来的时候轻声说一句晚安。</p>
+<p>这个项目技术含量不算高，Nano 的性能也简陋得可怜，但它可能是我在这个夏天写过的最喜欢的一段代码，做过最开心的一个项目。它不做什么了不起的事，只是安安静静立在桌面上，走着正确的时间，数着我们一起走过的天数，在深夜屏幕亮起来的时候轻声说一句晚安。</p>
 
       </div>
 

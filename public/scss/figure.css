@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* 文章插图：图片圆角，标题缩小、去粗、贴近图片，做成"说明文字"的感觉。
+   Hugo 内置 figure shortcode 会把 title 包成 <h4>，主题只样式化了 figcaption p，
+   这里补上 h4 的情况。 */
+.content figure {
+  margin: 2.5rem auto; }
+  .content figure img {
+    border-radius: 0.4rem; }
+  .content figure figcaption {
+    margin-top: 0.3rem; }
+    .content figure figcaption h4 {
+      margin: 0;
+      font-size: 1.3rem;
+      font-weight: normal;
+      font-style: italic;
+      color: var(--alt-fg-color, #666666); }
+
+/*# sourceMappingURL=figure.css.map */

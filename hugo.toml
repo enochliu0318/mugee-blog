@@ -30,7 +30,7 @@ summaryLength = 50
 
   enableSearch = true
 
-  customSCSS = ["scss/colors.scss", "scss/home.scss", "scss/vault.scss", "scss/posts-updates.scss", "scss/back-nav.scss", "scss/diary-calendar.scss"]
+  customSCSS = ["scss/colors.scss", "scss/home.scss", "scss/vault.scss", "scss/posts-updates.scss", "scss/back-nav.scss", "scss/diary-calendar.scss", "scss/figure.scss"]
   customJS = ["js/vault.js", "js/vault-updates.js", "js/posts-updates.js", "js/back-to-top.js", "js/gallery-lightbox.js", "js/diary-calendar.js"]
 
 [params.vault]

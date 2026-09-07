@@ -1,0 +1,1 @@
+@charset "UTF-8";.content figure{margin:2.5rem auto}.content figure img{border-radius:.4rem}.content figure figcaption{margin-top:.3rem}.content figure figcaption h4{margin:0;font-size:1.3rem;font-weight:400;font-style:italic;color:var(--alt-fg-color,#666666)}

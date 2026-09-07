@@ -1,0 +1,13 @@
+{
+	"version": 3,
+	"file": "figure.css",
+	"sourceRoot": "/home/mugee/Documents/Coding/mugee-blog",
+	"sources": [
+		"assets/scss/figure.scss"
+	],
+	"sourcesContent": [
+		"/* 文章插图：图片圆角，标题缩小、去粗、贴近图片，做成\"说明文字\"的感觉。\n   Hugo 内置 figure shortcode 会把 title 包成 <h4>，主题只样式化了 figcaption p，\n   这里补上 h4 的情况。 */\n.content figure {\n  margin: 2.5rem auto;\n\n  img {\n    border-radius: 0.4rem;\n  }\n\n  figcaption {\n    margin-top: 0.3rem;\n\n    h4 {\n      margin: 0;\n      font-size: 1.3rem;\n      font-weight: normal;\n      font-style: italic;\n      color: var(--alt-fg-color, #666666);\n    }\n  }\n}\n"
+	],
+	"names": [],
+	"mappings": ";AAAA;;kBAEkB;AAClB,AAAA,QAAQ,CAAC,MAAM,CAAC;EACd,MAAM,EAAE,WAAW,GAiBpB;EAlBD,AAGE,QAHM,CAAC,MAAM,CAGb,GAAG,CAAC;IACF,aAAa,EAAE,MAAM,GACtB;EALH,AAOE,QAPM,CAAC,MAAM,CAOb,UAAU,CAAC;IACT,UAAU,EAAE,MAAM,GASnB;IAjBH,AAUI,QAVI,CAAC,MAAM,CAOb,UAAU,CAGR,EAAE,CAAC;MACD,MAAM,EAAE,CAAC;MACT,SAAS,EAAE,MAAM;MACjB,WAAW,EAAE,MAAM;MACnB,UAAU,EAAE,MAAM;MAClB,KAAK,EAAE,4BAA4B,GACpC"
+}

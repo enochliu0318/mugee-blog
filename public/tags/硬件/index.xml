@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
 		<title>硬件 on MUGEE·首页</title>
-		<link>https://blog.mugee.uk/tags/%E7%A1%AC%E4%BB%B6/</link>
+		<link>http://localhost:1313/tags/%E7%A1%AC%E4%BB%B6/</link>
 		<description>Recent content in 硬件 on MUGEE·首页</description>
 		<generator>Hugo</generator>
 		<language>zh-cn</language>
@@ -12,13 +12,13 @@
 		
 			<lastBuildDate>Tue, 08 Sep 2026 01:00:00 +0800</lastBuildDate>
 		
-			<atom:link href="https://blog.mugee.uk/tags/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
+			<atom:link href="http://localhost:1313/tags/%E7%A1%AC%E4%BB%B6/index.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>Arduino Nano 桌面小组件：给女朋友的麦金塔时钟</title>
-				<link>https://blog.mugee.uk/posts/arduino-deskscreen/</link>
+				<title>Arduino Nano 桌面小组件：麦金塔时钟</title>
+				<link>http://localhost:1313/posts/arduino-deskscreen/</link>
 				<pubDate>Tue, 08 Sep 2026 01:00:00 +0800</pubDate>
-				<guid>https://blog.mugee.uk/posts/arduino-deskscreen/</guid>
-				<description>&lt;p&gt;起因很简单：想给她做一个放在桌面上、一抬眼就能看到的小东西。于是就有了这台「迷你麦金塔」——用 Arduino Nano + 0.96 寸 OLED + DS3231 时钟 + DHT11 温湿度，套上 3D 打印的经典 Macintosh 外壳，开机有麦金塔风格的启动动画，桌面上显示时间和一句分时段的问候语。&lt;/p&gt;</description>
+				<guid>http://localhost:1313/posts/arduino-deskscreen/</guid>
+				<description>&lt;p&gt;起因很简单：想做一个放在桌面上、一抬眼就能看到的小东西。于是就有了这台「迷你麦金塔」——用 Arduino Nano + 0.96 寸 OLED + DS3231 时钟 + DHT11 温湿度，套上 3D 打印的经典 Macintosh 外壳，开机有麦金塔风格的启动动画，桌面上显示时间和一句分时段的问候语。&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>
