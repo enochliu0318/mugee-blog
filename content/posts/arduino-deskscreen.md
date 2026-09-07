@@ -53,6 +53,8 @@ U8G2_SSD1306_128X64_NONAME_1_SW_I2C display(U8G2_R0, A3, A2, U8X8_PIN_NONE);
 //                       ^ "1" = 分页 buffer，省 RAM
 ```
 
+{{< figure src="/images/post_img/deskscreen/IMG_0322.JPG" title="硬件软件测试阶段" >}}
+
 如果不确定手上的屏是什么驱动、什么地址，先烧一个软件 I2C 扫描器扫一遍最稳妥。
 
 ---
@@ -65,7 +67,7 @@ U8G2_SSD1306_128X64_NONAME_1_SW_I2C display(U8G2_R0, A3, A2, U8X8_PIN_NONE);
 
 **空气页**：顶部小时间 + "Room Air" 标题，下面是温度和湿度读数。
 
-{{< figure src="/images/post_img/deskscreen/IMG_0322.JPG" title="面包板阶段" >}}
+{{< figure src="/images/post_img/deskscreen/IMG_0328.JPG" title="硬件软件测试阶段" >}}
 
 **性能上有个重要优化**：软件 I2C 刷一整帧大约要 200ms，如果每圈 loop 都全屏重绘，触摸切页的响应会很慢。解决办法是做了 `renderKey`——把当前页面上所有会变的内容（秒、页码、温湿度读数）拼成一个 key，**只有 key 变化时才真正刷屏**。秒变化时刷新时间，其余时候 loop 空转，触摸立刻就能响应。
 
@@ -88,7 +90,7 @@ DS3231 一度读出乱码时间，排查了很久，最后发现根因是**杜�
 
 开机时屏幕会播放一段经典 Mac 风格的启动动画：一台麦金塔的轮廓逐步浮现，配上 "Welcome to Macintosh"，然后才进入主界面。外壳是照着初代 Macintosh 的造型设计的：正面挖出屏幕窗口，下巴做了软盘驱动的装饰细节，背面留了 Type-C 和传感器开孔，底座还配了个可拆卸的小键盘装饰件。
 
-{{< figure src="/images/post_img/deskscreen/Screenshot%202026-09-08%20at%2012.48.08%20AM.png" title="外壳设计草图" >}}
+{{< figure src="/images/post_img/deskscreen/Screenshot .png" title="外壳设计草图" >}}
 
 ---
 
@@ -100,7 +102,7 @@ DS3231 一度读出乱码时间，排查了很久，最后发现根因是**杜�
 
 {{< figure src="/images/post_img/deskscreen/IMG_0366.JPG" title="3D 打印外壳" >}}
 
-切了 17 次单盘……主要还是因为有些地方设计的太细，好多次需要推翻重新设计。包括小小的背板，都打印了两次，第一次没有做内部卡扣，粘都粘不紧，于是又设计了一版。
+切了 17 次单盘……主要还是因为有些地方设计的太细，A1打印不出来，好多次需要推翻重新设计。包括小小的背板，都打印了两次，第一次没有做内部卡扣，粘都粘不紧，于是又设计了一版。
 
 ---
 
@@ -135,4 +137,4 @@ arduino-cli compile --fqbn arduino:avr:nano:cpu=atmega328old ./deskscreen -u -p 
 
 ### 小结
 
-这个项目技术含量不算高，Nano 的性能也简陋得可怜，但它可能是我在这个夏天写过的最喜欢的一段代码。它不做什么了不起的事，只是安安静静立在桌面上，走着正确的时间，数着我们一起走过的天数，在深夜屏幕亮起来的时候轻声说一句晚安。
+这个项目技术含量不算高，Nano 的性能也简陋得可怜，但它可能是我在这个夏天写过的最喜欢的一段代码，做过最开心的一个项目。它不做什么了不起的事，只是安安静静立在桌面上，走着正确的时间，数着我们一起走过的天数，在深夜屏幕亮起来的时候轻声说一句晚安。
