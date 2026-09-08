@@ -2,17 +2,12 @@
 draft = false
 date = 2026-09-08T01:00:00+08:00
 title = "Arduino Nano 桌面小组件：麦金塔时钟"
-description = ""
-slug = ""
-authors = ["Mugee"]
-tags = ["Arduino"]
-categories = ["Coding"]
-externalLink = ""
-series = []
+outputs = ["HTML"]
+sitemap = { disable = true }
 toc = true
 +++
 
-起因很简单：想做一个放在桌面上、一抬眼就能看到的小东西。于是就有了这台「迷你麦金塔」——用 Arduino Nano + 0.96 寸 OLED + DS3231 时钟 + DHT11 温湿度，套上 3D 打印的经典 Macintosh 外壳，开机有麦金塔风格的启动动画，桌面上显示时间和一句分时段的问候语。
+起因很简单：想做一个放在桌面上、让她一抬眼就能看到的小东西。于是就有了这台「迷你麦金塔」——用Arduino Nano + 0.96寸OLED + DS3231时钟 + DHT11温湿度，套上3D打印的经典Macintosh外壳，开机有麦金塔风格的启动动画，桌面上显示时间和一句分时段的问候语。
 
 {{< figure src="/images/post_img/deskscreen/188.png" title="成品">}}
 
@@ -137,4 +132,4 @@ arduino-cli compile --fqbn arduino:avr:nano:cpu=atmega328old ./deskscreen -u -p 
 
 ### 小结
 
-这个项目技术含量不算高，Nano 的性能也简陋得可怜，但它可能是我在这个夏天写过的最喜欢的一段代码，做过最开心的一个项目。它不做什么了不起的事，只是安安静静立在桌面上，走着正确的时间，数着我们一起走过的天数，在深夜屏幕亮起来的时候轻声说一句晚安。
+这个项目技术含量不算高，Nano 的性能也简陋得可怜，但它可能是我在这个夏天写过的最喜欢的一段代码，做过最开心的一个项目。它不做什么了不起的事，只是安安静静立在桌面上，走着正确的时间，数着我们一起走过的天数，在深夜屏幕亮起来的时候轻声对宝宝说一句晚安，爱你~
