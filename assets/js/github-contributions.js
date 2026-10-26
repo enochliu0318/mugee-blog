@@ -1,14 +1,14 @@
 (() => {
-  const calendar = document.querySelector(".contributions-chart");
+  var calendar = document.querySelector(".contributions-chart");
   if (!calendar) return;
 
-  const username = calendar.dataset.username;
-  const weeksContainer = calendar.querySelector(".contribution-weeks");
-  const fallback = calendar.querySelector(".contributions-fallback");
-  const apiUrl = `https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(username)}?y=last`;
+  var username = calendar.dataset.username;
+  var weeksContainer = calendar.querySelector(".contribution-weeks");
+  var fallback = calendar.querySelector(".contributions-fallback");
+  var apiUrl = `https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(username)}?y=last`;
 
   function fetchFreshContributions() {
-    const freshUrl = new URL(apiUrl);
+    var freshUrl = new URL(apiUrl);
     freshUrl.searchParams.set("_", Date.now().toString());
     return fetch(freshUrl, { cache: "reload" });
   }
@@ -30,32 +30,32 @@
         throw new Error("Contribution API returned no daily data");
       }
 
-      const contributions = data.contributions;
-      const byDate = new Map(contributions.map((day) => [day.date, day]));
-      const [year, month, date] = contributions.reduce((current, day) => (
+      var contributions = data.contributions;
+      var byDate = new Map(contributions.map((day) => [day.date, day]));
+      var latestDateParts = contributions.reduce((current, day) => (
         day.date > current ? day.date : current
       ), contributions[0].date).split("-").map(Number);
-      const latestDate = new Date(Date.UTC(year, month - 1, date));
-      const lastWeekStart = new Date(latestDate);
+      var latestDate = new Date(Date.UTC(latestDateParts[0], latestDateParts[1] - 1, latestDateParts[2]));
+      var lastWeekStart = new Date(latestDate);
       lastWeekStart.setUTCDate(lastWeekStart.getUTCDate() - latestDate.getUTCDay());
-      const firstWeekStart = new Date(lastWeekStart);
+      var firstWeekStart = new Date(lastWeekStart);
       firstWeekStart.setUTCDate(firstWeekStart.getUTCDate() - 21 * 7);
 
-      for (let weekIndex = 0; weekIndex < 22; weekIndex += 1) {
-        const weekStart = new Date(firstWeekStart);
+      for (var weekIndex = 0; weekIndex < 22; weekIndex += 1) {
+        var weekStart = new Date(firstWeekStart);
         weekStart.setUTCDate(weekStart.getUTCDate() + weekIndex * 7);
-        const week = document.createElement("div");
+        var week = document.createElement("div");
         week.className = "contribution-week";
         week.setAttribute("aria-hidden", "true");
 
-        for (let dayIndex = 0; dayIndex < 7; dayIndex += 1) {
-          const dayDate = new Date(weekStart);
+        for (var dayIndex = 0; dayIndex < 7; dayIndex += 1) {
+          var dayDate = new Date(weekStart);
           dayDate.setUTCDate(dayDate.getUTCDate() + dayIndex);
-          const dateKey = dayDate.toISOString().slice(0, 10);
-          const contribution = byDate.get(dateKey);
-          const count = contribution?.count ?? 0;
-          const level = Math.max(0, Math.min(4, contribution?.level ?? 0));
-          const cell = document.createElement("span");
+          var dateKey = dayDate.toISOString().slice(0, 10);
+          var contribution = byDate.get(dateKey);
+          var count = contribution?.count ?? 0;
+          var level = Math.max(0, Math.min(4, contribution?.level ?? 0));
+          var cell = document.createElement("span");
           cell.className = "contribution-day";
           cell.dataset.level = String(level);
           cell.title = `${dateKey} · ${count} 次贡献`;
