@@ -7,6 +7,12 @@
   const fallback = calendar.querySelector(".contributions-fallback");
   const apiUrl = `https://github-contributions-api.jogruber.de/v4/${encodeURIComponent(username)}?y=last`;
 
+  function fetchFreshContributions() {
+    const freshUrl = new URL(apiUrl);
+    freshUrl.searchParams.set("_", Date.now().toString());
+    return fetch(freshUrl, { cache: "reload" });
+  }
+
   function showUnavailable(error) {
     console.error("Unable to load GitHub contributions:", error);
     weeksContainer.hidden = true;
@@ -53,6 +59,7 @@
   }
 
   fetch(apiUrl)
+    .then((response) => response.status === 304 ? fetchFreshContributions() : response)
     .then((response) => {
       if (!response.ok) throw new Error(`Contribution API returned ${response.status}`);
       return response.json();
