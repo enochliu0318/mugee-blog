@@ -1,38 +1,88 @@
 .home-cover {
-  max-width: 960px;
-  padding: 2rem 1.5rem 3rem;
+  max-width: 1080px;
+  padding: 4rem clamp(1.5rem, 3.5vw, 3rem) 3rem;
 }
 
 .home-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2.5rem;
-  align-items: start;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 1.3rem;
+  align-items: center;
+}
+
+@media only screen and (min-width: 769px) {
+  .navigation {
+    height: auto;
+    min-height: 6rem;
+
+    > .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: none;
+      padding-inline: clamp(1.5rem, 3.5vw, 3rem);
+    }
+
+    .navigation-title {
+      flex-shrink: 0;
+      font-size: clamp(1.4rem, 1.55vw, 1.7rem);
+    }
+
+    .navigation-list {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: clamp(0.15rem, 0.8vw, 0.8rem);
+      float: none;
+      margin-left: auto;
+      padding-left: 0;
+
+      .navigation-item {
+        float: none;
+      }
+
+      .navigation-item a,
+      .navigation-item span {
+        margin: 0;
+        font-size: clamp(1.2rem, 1.35vw, 1.7rem);
+        white-space: nowrap;
+      }
+    }
+  }
 }
 
 .home-profile {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 
   .avatar img {
-    width: 10rem;
-    height: 10rem;
+    display: block;
+    width: 9rem;
+    height: 9rem;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid var(--darker-alt-bg-color, #ccc);
+    border: 3px solid rgba(137, 200, 254, 0.55);
+    box-shadow: 0 0 0 6px rgba(137, 200, 254, 0.1);
+  }
+
+  .profile-details {
+    min-width: 0;
   }
 
   .profile-text {
-    margin-top: 1.2rem;
-
     h1 {
-      margin: 0 0 0.4rem;
-      font-size: 2.4rem;
+      margin: 0 0 0.3rem;
+      font-size: 2.6rem;
       font-weight: 700;
     }
 
     .profile-tagline {
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       line-height: 1.5;
       color: var(--alt-fg-color, #666);
     }
@@ -41,32 +91,18 @@
   .quick-links {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-    margin: 1.6rem 0 1.2rem;
+    gap: 1.2rem;
+    margin: 1.1rem 0 0.8rem;
   }
 
   .quick-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.5rem 1rem;
-    font-size: 1.3rem;
-    font-weight: 500;
-    color: var(--fg-color, #212121);
+    color: var(--alt-fg-color, #666);
+    font-size: 1.2rem;
     text-decoration: none;
-    background: var(--alt-bg-color, #e0e0e0);
-    border-radius: 2rem;
-    transition: background 0.15s ease, color 0.15s ease;
-
-    i {
-      font-size: 1.1rem;
-      opacity: 0.75;
-    }
+    transition: color 0.15s ease;
 
     &:hover {
       color: var(--link-color, #1565c0);
-      background: var(--darker-alt-bg-color, #ccc);
     }
   }
 
@@ -79,9 +115,9 @@
       display: inline-block;
 
       a {
-        color: var(--fg-color, #212121);
-        margin: 0 0.6rem;
-        font-size: 1.5rem;
+        color: var(--alt-fg-color, #666);
+        margin-right: 0.9rem;
+        font-size: 1.4rem;
         transition: color 0.15s ease;
 
         &:hover {
@@ -93,35 +129,34 @@
 }
 
 .home-updates {
+  margin-top: 3rem;
+
   .updates-container {
-    background: var(--alt-bg-color, #e0e0e0);
-    border-radius: 1rem;
-    padding: 1.6rem 1.8rem;
-    height: 100%;
+    padding-top: 1.3rem;
+    border-top: 1px solid var(--darker-alt-bg-color, #ccc);
   }
 
   .updates-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid var(--darker-alt-bg-color, #ccc);
+    margin-bottom: 0.8rem;
 
     h2 {
       margin: 0;
-      font-size: 1.6rem;
-      font-weight: 600;
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--alt-fg-color, #666);
 
       i {
         margin-right: 0.4rem;
-        color: var(--link-color, #1565c0);
-        font-size: 1.4rem;
+        color: #4da8fc;
+        font-size: 1.2rem;
       }
     }
 
     .view-all {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: var(--link-color, #1565c0);
       text-decoration: none;
       opacity: 0.85;
@@ -141,14 +176,12 @@
 
     li {
       display: grid;
-      grid-template-columns: 3.6rem 1fr;
-      gap: 0.8rem;
+      grid-template-columns: 4rem 1fr;
+      gap: 0.7rem;
       align-items: baseline;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid var(--darker-alt-bg-color, #ccc);
+      padding: 0.45rem 0;
 
       &:last-child {
-        border-bottom: none;
         padding-bottom: 0;
       }
 
@@ -159,15 +192,14 @@
 
     .update-date {
       flex-shrink: 0;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
       color: var(--alt-fg-color, #666);
       opacity: 0.8;
     }
 
     .update-title {
-      font-size: 1.4rem;
-      font-weight: 500;
+      font-size: 1.3rem;
       color: var(--fg-color, #212121);
       text-decoration: none;
       line-height: 1.4;
@@ -182,7 +214,7 @@
 
 @media only screen and (max-width: 768px) {
   .home-cover {
-    padding: 1.5rem 1rem 2rem;
+    padding: 2.5rem 1rem 2rem;
   }
 
   .home-grid {
@@ -192,12 +224,12 @@
 
   .home-profile {
     .avatar img {
-      width: 8rem;
-      height: 8rem;
+      width: 7rem;
+      height: 7rem;
     }
 
     .profile-text h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
     }
 
     .profile-tagline {
@@ -205,7 +237,27 @@
     }
   }
 
-  .home-updates .updates-container {
-    padding: 1.4rem;
+  .home-updates {
+    margin-top: 2.2rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home-profile {
+    align-items: flex-start;
+    gap: 1.3rem;
+
+    .avatar img {
+      width: 5.8rem;
+      height: 5.8rem;
+    }
+
+    .profile-text h1 {
+      font-size: 2rem;
+    }
+
+    .quick-links {
+      gap: 0.8rem;
+    }
   }
 }

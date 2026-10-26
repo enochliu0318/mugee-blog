@@ -27,11 +27,12 @@ summaryLength = 50
   hidecolorschemetoggle = false
 
   avatarurl = "images/avatar.jpg"
+  githubusername = "enochliu0318"
 
   enableSearch = true
 
-  customSCSS = ["scss/colors.scss", "scss/home.scss", "scss/vault.scss", "scss/posts-updates.scss", "scss/back-nav.scss", "scss/diary-calendar.scss", "scss/figure.scss"]
-  customJS = ["js/vault.js", "js/vault-updates.js", "js/posts-updates.js", "js/back-to-top.js", "js/gallery-lightbox.js", "js/diary-calendar.js"]
+  customSCSS = ["scss/colors.scss", "scss/home.scss", "scss/vault.scss", "scss/posts-updates.scss", "scss/back-nav.scss", "scss/diary-calendar.scss", "scss/figure.scss", "scss/github-contributions.scss"]
+  customJS = ["js/vault.js", "js/vault-updates.js", "js/posts-updates.js", "js/back-to-top.js", "js/gallery-lightbox.js", "js/diary-calendar.js", "js/github-contributions.js"]
 
 [params.vault]
   title = "保险箱"

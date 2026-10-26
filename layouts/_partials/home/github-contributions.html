@@ -1,0 +1,15 @@
+{{ $username := .Site.Params.githubusername | default "enochliu0318" }}
+<section class="github-contributions" aria-label="最近五个月的 GitHub 贡献">
+  <div class="contributions-heading">
+    <div class="contributions-title">
+      <i class="fa-brands fa-github" aria-hidden="true"></i>
+      <span>CODE ACTIVITY</span>
+      <span class="contributions-period">近五个月</span>
+    </div>
+    <a href="https://github.com/{{ $username }}" target="_blank" rel="noopener noreferrer" aria-label="访问 @{{ $username }} 的 GitHub 主页">GitHub <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="contributions-chart" data-username="{{ $username }}" aria-live="polite">
+    <div class="contribution-weeks" role="img" aria-label="正在加载 GitHub 贡献日历"></div>
+    <span class="contributions-fallback" hidden>贡献日历暂时不可用</span>
+  </div>
+</section>
