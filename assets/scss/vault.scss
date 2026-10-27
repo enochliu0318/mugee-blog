@@ -5,125 +5,279 @@
 .vault-gate {
   display: flex;
   justify-content: center;
-  padding: 3rem 1.5rem 4rem;
+  align-items: center;
+  min-height: 60vh;
+  padding: 3rem 1.5rem;
 }
 
-/* JS 解锁后会给门加上 hidden 属性，但上面的 display:flex
-   会覆盖浏览器默认的 [hidden] { display: none }，
-   导致解锁后密码框仍然显示，这里显式补回。 */
 .vault-gate[hidden],
 .vault-body[hidden] {
   display: none;
 }
 
+:root {
+  --vault-accent: #89C8FE;
+  --vault-accent-soft: rgba(137, 200, 254, 0.12);
+  --vault-accent-glow: rgba(137, 200, 254, 0.3);
+}
 
-.vault-gate-card {
+.vault-gate-inner {
   width: 100%;
-  max-width: 420px;
-  padding: 2.4rem 2rem;
+  max-width: 360px;
   text-align: center;
-  background: var(--alt-bg-color, #e0e0e0);
-  border-radius: 1.2rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  animation: vault-reveal 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes vault-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vault-gate-inner { animation: none; opacity: 1; }
 }
 
 .vault-gate-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 4.8rem;
-  height: 4.8rem;
-  margin-bottom: 1.2rem;
-  border-radius: 50%;
-  background: var(--bg-color, #fafafa);
-  color: var(--link-color, #1565c0);
-  font-size: 2rem;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  border-radius: 16px;
+  background: var(--vault-accent-soft);
+  color: var(--vault-accent);
+  font-size: 1.5rem;
+  animation: vault-icon-float 3.5s ease-in-out infinite;
+  box-shadow:
+    0 0 0 1px rgba(137, 200, 254, 0.15),
+    0 4px 20px var(--vault-accent-glow);
+}
+
+@keyframes vault-icon-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vault-gate-icon { animation: none; }
 }
 
 .vault-gate-title {
-  margin: 0 0 0.6rem;
-  font-size: 2.2rem;
-  font-weight: 700;
+  margin: 0 0 0.375rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--fg-color, #1a1a1a);
+  letter-spacing: -0.015em;
 }
 
 .vault-gate-desc {
-  margin: 0 0 1.8rem;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  color: var(--alt-fg-color, #666);
+  margin: 0 0 2rem;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--alt-fg-color, #737373);
 }
 
 .vault-gate-form {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
-  text-align: left;
+  gap: 1rem;
 }
 
-.vault-gate-label {
-  font-size: 1.3rem;
-  font-weight: 600;
+.vault-gate-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .vault-gate-input {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  font-size: 1.5rem;
-  color: var(--fg-color, #212121);
-  background: var(--bg-color, #fafafa);
-  border: 1px solid var(--darker-alt-bg-color, #ccc);
-  border-radius: 0.6rem;
+  flex: 1;
+  min-width: 0;
+  padding: 1rem 1.125rem;
+  font-size: 1.0625rem;
+  color: var(--fg-color, #1a1a1a);
+  background: var(--bg-color, #fff);
+  border: 1.5px solid var(--darker-alt-bg-color, #d4d4d4);
+  border-radius: 10px;
   outline: none;
-  transition: border-color 0.15s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    transform 0.15s ease;
+
+  &:hover {
+    border-color: #bdbdbd;
+  }
 
   &:focus {
-    border-color: var(--link-color, #1565c0);
+    border-color: var(--vault-accent);
+    box-shadow:
+      0 0 0 4px var(--vault-accent-soft),
+      0 8px 30px rgba(137, 200, 254, 0.12);
+    transform: translateY(-1px);
+    background: #fff;
+  }
+
+  &::placeholder {
+    color: var(--alt-fg-color, #a3a3a3);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  &:focus::placeholder {
+    opacity: 0.6;
+    transform: translateX(4px);
+  }
+}
+
+.vault-gate-toggle,
+.vault-gate-submit {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.vault-gate-toggle {
+  background: transparent;
+  border: none;
+  color: var(--alt-fg-color, #a3a3a3);
+  cursor: pointer;
+
+  i { font-size: 0.9375rem; }
+
+  .fa-eye { display: block; }
+  .fa-eye-slash { display: none; }
+
+  &:hover {
+    color: var(--vault-accent);
+    background: var(--vault-accent-soft);
+    transform: scale(1.05);
+  }
+
+  &:active { transform: scale(0.95); }
+
+  &[aria-pressed="true"] {
+    .fa-eye { display: none; }
+    .fa-eye-slash { display: block; }
+  }
+}
+
+.vault-gate-submit {
+  position: relative;
+  overflow: hidden;
+  background: var(--vault-accent);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  box-shadow:
+    0 2px 8px rgba(137, 200, 254, 0.25),
+    0 0 0 1px rgba(137, 200, 254, 0.15);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  i { font-size: 1rem; transition: transform 0.2s ease; }
+
+  &:hover {
+    background: #6db8fd;
+    transform: translateY(-1px);
+    box-shadow:
+      0 4px 16px rgba(137, 200, 254, 0.35),
+      0 0 0 1px rgba(137, 200, 254, 0.2);
+  }
+
+  &:hover::before { opacity: 1; }
+  &:hover i { transform: translateX(2px); }
+
+  &:active {
+    transform: translateY(0) scale(0.96);
+    box-shadow:
+      0 1px 4px rgba(137, 200, 254, 0.25),
+      0 0 0 1px rgba(137, 200, 254, 0.15);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 4px var(--vault-accent-soft),
+      0 4px 16px rgba(137, 200, 254, 0.35);
   }
 }
 
 .vault-gate-remember {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  margin-top: 0.2rem;
-  font-size: 1.3rem;
-  color: var(--alt-fg-color, #666);
+  margin-top: 0.75rem;
+  font-size: 0.8125rem;
+  color: var(--alt-fg-color, #737373);
   cursor: pointer;
 
   input {
-    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    accent-color: var(--vault-accent);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+    &:hover { transform: scale(1.1); }
   }
 }
 
 .vault-gate-error {
-  margin: 0;
-  font-size: 1.3rem;
-  color: var(--error-color, #c62828);
+  margin: 0.5rem 0 0;
+  font-size: 0.8125rem;
+  color: var(--error-color, #dc2626);
+  text-align: center;
+  animation: vault-shake 0.4s ease;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
 }
 
-.vault-gate-submit {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 0.4rem;
-  padding: 0.9rem 1.2rem;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #fff;
-  background: var(--link-color, #1565c0);
-  border: none;
-  border-radius: 0.6rem;
-  cursor: pointer;
-  transition: opacity 0.15s ease;
+.vault-gate-error:not([hidden]) {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
-  &:hover {
-    opacity: 0.9;
-  }
+@keyframes vault-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vault-gate-error:not([hidden]) { animation: none; }
 }
 
 .vault-body {
-  animation: vault-fade-in 0.25s ease;
+  animation: vault-fade-in 0.3s ease;
 }
 
 .vault-toolbar {
@@ -137,146 +291,102 @@
 .vault-lock-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
   padding: 0.5rem 1rem;
-  font-size: 1.3rem;
-  color: var(--alt-fg-color, #666);
+  font-size: 0.8125rem;
+  color: var(--alt-fg-color, #737373);
   background: transparent;
-  border: 1px solid var(--darker-alt-bg-color, #ccc);
-  border-radius: 2rem;
+  border: 1px solid var(--darker-alt-bg-color, #d4d4d4);
+  border-radius: 8px;
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
 
   &:hover {
-    color: var(--link-color, #1565c0);
-    border-color: var(--link-color, #1565c0);
+    color: var(--vault-accent);
+    border-color: var(--vault-accent);
+    background: var(--vault-accent-soft);
+    transform: translateY(-1px);
   }
+
+  &:active { transform: translateY(0); }
+
+  &:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--vault-accent-soft); }
 }
 
 .vault-intro {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  color: var(--alt-fg-color, #666);
+  margin-top: 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--alt-fg-color, #737373);
 }
 
 .vault-empty {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  color: var(--alt-fg-color, #666);
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+  color: var(--alt-fg-color, #737373);
+  text-align: center;
 }
 
 .vault-list .title-link i {
   margin-right: 0.4rem;
-  color: var(--link-color, #1565c0);
+  color: var(--vault-accent);
 }
 
-/* 列表页：文章有更新时，标题旁的小圆点提示。
-   不改变 .date / .title 原有的两栏 flex 布局，
-   只作为标题文字内的行内小圆点，紧贴文字右上角。 */
 .vault-update-dot {
   display: inline-block;
   width: 0.5rem;
   height: 0.5rem;
   margin-left: 0.5rem;
   vertical-align: super;
-  background: var(--link-color, #1565c0);
+  background: var(--vault-accent);
   border-radius: 50%;
-  cursor: default;
-}
-
-.vault-update-dot[hidden] {
-  display: none;
-}
-
-/* 呼吸灯：透明度、大小、外圈光晕一起缓慢地"吸-呼"，像设备待机灯一样 */
-.vault-update-dot:not([hidden]) {
+  box-shadow: 0 0 8px var(--vault-accent-glow);
   animation: vault-dot-breathe 2.4s ease-in-out infinite;
 }
 
-@keyframes vault-dot-breathe {
-  0%,
-  100% {
-    opacity: 0.45;
-    transform: scale(0.8);
-    box-shadow: 0 0 0 0
-      color-mix(in srgb, var(--link-color, #1565c0) 55%, transparent);
-  }
+.vault-update-dot[hidden] { display: none; }
 
-  50% {
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 0 0 0.45rem transparent;
-  }
+@keyframes vault-dot-breathe {
+  0%, 100% { opacity: 0.5; transform: scale(0.9); box-shadow: 0 0 4px var(--vault-accent-glow); }
+  50% { opacity: 1; transform: scale(1); box-shadow: 0 0 12px var(--vault-accent-glow); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .vault-update-dot:not([hidden]) {
-    animation: none;
-  }
+  .vault-update-dot:not([hidden]) { animation: none; }
 }
 
-/* 文章页：跳转到最新更新的按钮 */
 .vault-jump-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin: 0 0 1.6rem;
-  padding: 0.6rem 1.2rem;
-  font-size: 1.3rem;
-  font-weight: 600;
+  margin: 0 0 1.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
   color: #fff;
-  background: var(--link-color, #1565c0);
+  background: var(--vault-accent);
   border: none;
-  border-radius: 2rem;
+  border-radius: 8px;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+  box-shadow: 0 2px 8px rgba(137, 200, 254, 0.25);
 
-  &:hover {
-    opacity: 0.88;
-  }
-
-  &::before {
-    content: "\2193";
-  }
+  &:hover { background: #6db8fd; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(137, 200, 254, 0.35); }
+  &:active { transform: translateY(0) scale(0.98); }
+  &::before { content: "\2193"; }
 }
 
-/* 文章页：改动段落的高亮标注（保险箱主题色，很淡） */
-.vault-diff-block {
-  margin: 1.2rem 0;
-  padding: 0.4rem 1rem;
-  border-radius: 0.4rem;
-}
-
-.vault-diff-new {
-  background: rgba(21, 101, 192, 0.12);
-  background: color-mix(in srgb, var(--link-color, #1565c0) 6%, transparent);
-  border-left: 3px solid rgba(21, 101, 192, 0.7);
-  border-left-color: color-mix(in srgb, var(--link-color, #1565c0) 35%, transparent);
-}
+.vault-diff-block { margin: 1rem 0; padding: 0.5rem 1rem; border-radius: 0.375rem; }
+.vault-diff-new { background: var(--vault-accent-soft); border-left: 3px solid var(--vault-accent); }
 
 @keyframes vault-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(0.4rem);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(0.25rem); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media only screen and (max-width: 768px) {
-  .vault-gate {
-    padding: 2rem 1rem 3rem;
-  }
-
-  .vault-gate-card {
-    padding: 2rem 1.4rem;
-  }
-
-  .vault-toolbar {
-    padding: 0 1rem;
-  }
+  .vault-gate { min-height: 50vh; padding: 2rem 1rem; }
+  .vault-gate-icon { width: 48px; height: 48px; font-size: 1.25rem; }
+  .vault-gate-title { font-size: 1.375rem; }
+  .vault-toolbar { padding: 0 1rem; }
 }

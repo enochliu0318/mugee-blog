@@ -77,6 +77,8 @@
     const remember = shell.querySelector("#vault-remember");
     const error = shell.querySelector("#vault-error");
     const lockBtn = shell.querySelector("#vault-lock-btn");
+    const toggleBtn = shell.querySelector("#vault-toggle");
+    const passwordInput = shell.querySelector("#vault-password");
 
     if (!expectedHash || expectedHash === "CHANGE_ME") {
       const desc = shell.querySelector(".vault-gate-desc");
@@ -89,6 +91,17 @@
     if (readUnlockState()) {
       unlockShell(shell);
     }
+
+    // 密码显示/隐藏切换
+    toggleBtn?.addEventListener("click", () => {
+      const isPassword = passwordInput?.type === "password";
+      if (passwordInput) {
+        passwordInput.type = isPassword ? "text" : "password";
+      }
+      toggleBtn.setAttribute("aria-pressed", isPassword.toString());
+      toggleBtn.setAttribute("aria-label", isPassword ? "隐藏密码" : "显示密码");
+      passwordInput?.focus();
+    });
 
     form?.addEventListener("submit", async (event) => {
       event.preventDefault();
